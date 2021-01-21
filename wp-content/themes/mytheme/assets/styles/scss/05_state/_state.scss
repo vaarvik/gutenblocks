@@ -1,0 +1,28 @@
+/**
+ *
+ * ███████╗████████╗ █████╗ ████████╗███████╗
+ * ██╔════╝╚══██╔══╝██╔══██╗╚══██╔══╝██╔════╝
+ * ███████╗   ██║   ███████║   ██║   █████╗
+ * ╚════██║   ██║   ██╔══██║   ██║   ██╔══╝
+ * ███████║   ██║   ██║  ██║   ██║   ███████╗
+ * ╚══════╝   ╚═╝   ╚═╝  ╚═╝   ╚═╝   ╚══════╝
+ *
+ *
+ * This sheet contains:
+ * * All State changes
+ *
+ * This sheet is a part of the State folder and follow the State rules:
+ * A state is something that augments and overrides all other styles (something that changes the state of something).
+ * For example, an accordion section may be in a collapsed or expanded state. A message may be in a success or error
+ * state. States are generally applied to the same element as a layout rule or applied to the same element as a
+ * base module class.
+ */
+
+.site-header.has-bg {
+
+}
+
+
+a.is-active {
+
+}

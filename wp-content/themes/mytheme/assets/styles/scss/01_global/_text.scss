@@ -1,0 +1,31 @@
+/**
+ *
+ * ████████╗███████╗██╗  ██╗████████╗
+ * ╚══██╔══╝██╔════╝╚██╗██╔╝╚══██╔══╝
+ *    ██║   █████╗   ╚███╔╝    ██║
+ *    ██║   ██╔══╝   ██╔██╗    ██║
+ *    ██║   ███████╗██╔╝ ██╗   ██║
+ *    ╚═╝   ╚══════╝╚═╝  ╚═╝   ╚═╝
+ *
+ *
+ * This sheet contains:
+ * * Global text/font variables
+ *
+ * This sheet is a part of the Global folder which is not really a part of SMACSS:
+ * Global stores variables that can be used all over the document and create a consistency in the style.
+*/
+
+$base-font-size: 18px;
+$base-line-height: 24px;
+
+$font-base: Arial, Helvetica, sans-serif;
+$font-headings: Georgia, serif;
+$font-mono: Monaco, Consolas, monospace;
+
+$font-code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font-pre: "Courier 10 Pitch", Courier, monospace;
+
+//Set base font size for the entire site
+html {
+	font-size: $base-font-size;
+}

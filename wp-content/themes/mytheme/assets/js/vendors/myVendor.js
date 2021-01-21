@@ -1,0 +1,7 @@
+( function() {
+
+	/**
+	 * Any JS library
+	 */
+
+})();

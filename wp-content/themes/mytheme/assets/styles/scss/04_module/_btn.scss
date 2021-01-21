@@ -1,0 +1,61 @@
+/**
+ *
+ * ██████╗ ████████╗███╗   ██╗
+ * ██╔══██╗╚══██╔══╝████╗  ██║
+ * ██████╔╝   ██║   ██╔██╗ ██║
+ * ██╔══██╗   ██║   ██║╚██╗██║
+ * ██████╔╝   ██║   ██║ ╚████║
+ * ╚═════╝    ╚═╝   ╚═╝  ╚═══╝
+ *
+ *
+ * This sheet contains:
+ * * The btn (button) module
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+ .btn {
+	box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+	border-radius: 3em;
+	padding: 16px 32px;
+	text-transform: uppercase;
+	transition: .15s ease;
+	font-weight: 700;
+
+
+	//Modifiers
+	&.primary {
+		color: $white;
+		background-color: $blue1;
+		&:hover {
+			background-color: $white;
+			color: $blue;
+		}
+	}
+	&.secondary {
+		background-color: $white;
+		color: $blue;
+		&:hover {
+			border: 3px solid transparent;
+			background-color: $blue;
+			color: $white;
+		}
+	}
+	&.clean {
+		background-color: initial;
+		border: 0;
+		box-shadow: initial;
+		padding: 0;
+	}
+}
+
+.btn__icon{
+	display: block;
+	height: 100%;
+	svg {
+		height: 100%;
+	}
+}

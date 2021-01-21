@@ -1,0 +1,35 @@
+/**
+ *
+ * ███████╗███╗   ██╗████████╗██████╗ ██╗   ██╗
+ * ██╔════╝████╗  ██║╚══██╔══╝██╔══██╗╚██╗ ██╔╝
+ * █████╗  ██╔██╗ ██║   ██║   ██████╔╝ ╚████╔╝
+ * ██╔══╝  ██║╚██╗██║   ██║   ██╔══██╗  ╚██╔╝
+ * ███████╗██║ ╚████║   ██║   ██║  ██║   ██║
+ * ╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝   ╚═╝
+ *
+ *
+ * This sheet contains:
+ * * The entry layout header
+ * * The entry layout content
+ * * The entry layout footer
+ * --------------------
+ * The entry components wraps the main sections in a standard post or page.
+ *
+ *
+ * This sheet is a part of the Layout folder and follow the Layout rules:
+ * The major components are referred to as Layout styles. The minor (Module) components such as a callout, or login form,
+ * or a navigation item sit within the scope of major components such as a header or footer.
+ * Generally, a Layout style only has a single selector: a single ID or class name.
+ */
+
+.entry-header {
+
+}
+
+.entry-content {
+
+}
+
+.entry-footer {
+
+}

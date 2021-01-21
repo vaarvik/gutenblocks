@@ -1,0 +1,31 @@
+
+/**
+ *
+ * ██╗███╗   ██╗███████╗ ██████╗ ██████╗  ██████╗ ██╗  ██╗
+ * ██║████╗  ██║██╔════╝██╔═══██╗██╔══██╗██╔═══██╗╚██╗██╔╝
+ * ██║██╔██╗ ██║█████╗  ██║   ██║██████╔╝██║   ██║ ╚███╔╝
+ * ██║██║╚██╗██║██╔══╝  ██║   ██║██╔══██╗██║   ██║ ██╔██╗
+ * ██║██║ ╚████║██║     ╚██████╔╝██████╔╝╚██████╔╝██╔╝ ██╗
+ * ╚═╝╚═╝  ╚═══╝╚═╝      ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝
+ *
+ *
+ * This sheet contains:
+ * * The infobox module
+ * --------------------
+ * A box that contain facts or similar. Can be used as a sidebar, section or similar.
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+.infobox {
+	color: $white;
+	padding: 8px;
+	width: 100%;
+	max-width: 100%;
+	@include tablet-p-up {
+		max-width: 250px;
+	}
+}

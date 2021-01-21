@@ -1,0 +1,27 @@
+/**
+ *
+ * ███████╗██╗████████╗███████╗     ██████╗ ██████╗ ███╗   ██╗████████╗███████╗███╗   ██╗████████╗
+ * ██╔════╝██║╚══██╔══╝██╔════╝    ██╔════╝██╔═══██╗████╗  ██║╚══██╔══╝██╔════╝████╗  ██║╚══██╔══╝
+ * ███████╗██║   ██║   █████╗      ██║     ██║   ██║██╔██╗ ██║   ██║   █████╗  ██╔██╗ ██║   ██║
+ * ╚════██║██║   ██║   ██╔══╝      ██║     ██║   ██║██║╚██╗██║   ██║   ██╔══╝  ██║╚██╗██║   ██║
+ * ███████║██║   ██║   ███████╗    ╚██████╗╚██████╔╝██║ ╚████║   ██║   ███████╗██║ ╚████║   ██║
+ * ╚══════╝╚═╝   ╚═╝   ╚══════╝     ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═══╝   ╚═╝
+ *
+ *
+ * This sheet contains:
+ * * The site layout content
+ * --------------------
+ * The site component that wraps the main section of the entire site.
+ *
+ * This sheet is a part of the Layout folder and follow the Layout rules:
+ * The major components are referred to as Layout styles. The minor (Module) components—such as a callout, or login form,
+ * or a navigation item—sit within the scope of major components such as a header or footer.
+ * Generally, a Layout style only has a single selector: a single ID or class name.
+ */
+
+.site-content {
+	min-height: calc( 100vh - #{$site-header-height-mobile} - #{$site-footer-height-mobile} );
+	@include tablet-p-up {
+		min-height: calc( 100vh - #{$site-header-height} - #{$site-footer-height});
+	}
+}

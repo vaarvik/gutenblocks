@@ -1,0 +1,29 @@
+
+/**
+ *
+ * ███████╗██╗████████╗███████╗    ███████╗ ██████╗  ██████╗ ████████╗███████╗██████╗
+ * ██╔════╝██║╚══██╔══╝██╔════╝    ██╔════╝██╔═══██╗██╔═══██╗╚══██╔══╝██╔════╝██╔══██╗
+ * ███████╗██║   ██║   █████╗      █████╗  ██║   ██║██║   ██║   ██║   █████╗  ██████╔╝
+ * ╚════██║██║   ██║   ██╔══╝      ██╔══╝  ██║   ██║██║   ██║   ██║   ██╔══╝  ██╔══██╗
+ * ███████║██║   ██║   ███████╗    ██║     ╚██████╔╝╚██████╔╝   ██║   ███████╗██║  ██║
+ * ╚══════╝╚═╝   ╚═╝   ╚══════╝    ╚═╝      ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝
+ *
+ *
+ * This sheet contains:
+ * * The site layout footer
+ * --------------------
+ * The site component that wraps the master footer of the entire site.
+ *
+ * This sheet is a part of the Layout folder and follow the Layout rules:
+ * The major components are referred to as Layout styles. The minor (Module) components—such as a callout, or login form,
+ * or a navigation item—sit within the scope of major components such as a header or footer.
+ * Generally, a Layout style only has a single selector: a single ID or class name.
+ */
+
+//footer
+$site-footer-height: 140px;
+$site-footer-height-mobile: 120px;
+
+.site-footer {
+
+}

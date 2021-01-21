@@ -1,0 +1,39 @@
+/**
+ *
+ * ███████╗███████╗ ██████╗████████╗██╗ ██████╗ ███╗   ██╗
+ * ██╔════╝██╔════╝██╔════╝╚══██╔══╝██║██╔═══██╗████╗  ██║
+ * ███████╗█████╗  ██║        ██║   ██║██║   ██║██╔██╗ ██║
+ * ╚════██║██╔══╝  ██║        ██║   ██║██║   ██║██║╚██╗██║
+ * ███████║███████╗╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║
+ * ╚══════╝╚══════╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+ *
+ *
+ * This sheet contains:
+ * * The section module
+ * --------------------
+ * Used for sections.
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+.section {
+	width: 100vw;
+	.block-editor &{
+		width: 100%;
+	}
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: $grey2;
+}
+
+.section__content {
+	margin: 0 auto;
+	max-width: $text-max-width;
+	&.wide{
+		max-width: $normal-max-width;
+	}
+}

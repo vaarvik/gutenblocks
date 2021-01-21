@@ -1,0 +1,43 @@
+/**
+ *
+ * ███████╗██╗███████╗██╗     ██████╗
+ * ██╔════╝██║██╔════╝██║     ██╔══██╗
+ * █████╗  ██║█████╗  ██║     ██║  ██║
+ * ██╔══╝  ██║██╔══╝  ██║     ██║  ██║
+ * ██║     ██║███████╗███████╗██████╔╝
+ * ╚═╝     ╚═╝╚══════╝╚══════╝╚═════╝
+ *
+ *
+ * This sheet contains:
+ * * The field module (primarily for inputs and textareas)
+ * --------------------
+ * Used for fields that often has a value a user write or have written.
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+.field {
+	box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+	border-radius: 5px;
+	display: block;
+	background-color: $grey2;
+	border: 0;
+
+	//Modifiers
+	&.input {
+		padding: 16px;
+	}
+}
+
+//Elements
+.field__option {
+	padding: 8px;
+	border-bottom: 2px solid $grey;
+	&:hover {
+		background-color: $white;
+		cursor: pointer;
+	}
+}

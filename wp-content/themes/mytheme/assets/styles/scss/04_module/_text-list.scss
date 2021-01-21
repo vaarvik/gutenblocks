@@ -1,0 +1,43 @@
+/**
+ *
+ * ████████╗███████╗██╗  ██╗████████╗    ██╗     ██╗███████╗████████╗
+ * ╚══██╔══╝██╔════╝╚██╗██╔╝╚══██╔══╝    ██║     ██║██╔════╝╚══██╔══╝
+ *    ██║   █████╗   ╚███╔╝    ██║       ██║     ██║███████╗   ██║
+ *    ██║   ██╔══╝   ██╔██╗    ██║       ██║     ██║╚════██║   ██║
+ *    ██║   ███████╗██╔╝ ██╗   ██║       ███████╗██║███████║   ██║
+ *    ╚═╝   ╚══════╝╚═╝  ╚═╝   ╚═╝       ╚══════╝╚═╝╚══════╝   ╚═╝
+ *
+ *
+ * This sheet contains:
+ * * The text list module
+ * --------------------
+ * A regular ul or ol list
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+.text-list {
+	padding-inline-start: 40px;
+
+	//Modifiers
+	&.disc{
+		list-style: disc;
+	}
+	&.square{
+		list-style: square;
+	}
+	&.roman{
+		list-style: upper-roman;
+	}
+	&.decimal{
+		list-style: decimal;
+	}
+}
+
+//Elements
+.text-list__item {
+	list-style: inherit;
+}

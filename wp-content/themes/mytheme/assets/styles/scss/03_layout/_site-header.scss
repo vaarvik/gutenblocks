@@ -1,0 +1,47 @@
+/**
+ *
+ * ███████╗██╗████████╗███████╗    ██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗
+ * ██╔════╝██║╚══██╔══╝██╔════╝    ██║  ██║██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗
+ * ███████╗██║   ██║   █████╗      ███████║█████╗  ███████║██║  ██║█████╗  ██████╔╝
+ * ╚════██║██║   ██║   ██╔══╝      ██╔══██║██╔══╝  ██╔══██║██║  ██║██╔══╝  ██╔══██╗
+ * ███████║██║   ██║   ███████╗    ██║  ██║███████╗██║  ██║██████╔╝███████╗██║  ██║
+ * ╚══════╝╚═╝   ╚═╝   ╚══════╝    ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝
+ *
+ *
+ * This sheet contains:
+ * * The site layout header
+ * --------------------
+ * The site component that wraps the master header of the entire site.
+ *
+ * This sheet is a part of the Layout folder and follow the Layout rules:
+ * The major components are referred to as Layout styles. The minor (Module) components—such as a callout, or login form,
+ * or a navigation item—sit within the scope of major components such as a header or footer.
+ * Generally, a Layout style only has a single selector: a single ID or class name.
+ */
+
+$site-header-height: 80px;
+$site-header-height-mobile: 65px;
+
+.site-header {
+	@include phone-l-down {
+		.admin-bar & {
+			top: 46px;
+		}
+	}
+	.admin-bar & {
+		top: 32px;
+	}
+}
+
+.site-header__logo {
+	height: 100%;
+}
+
+.site-header__navigation{
+	&.mobile {
+
+		&.show{
+
+		}
+	}
+}

@@ -1,0 +1,72 @@
+/**
+ *
+ * ███████╗██╗████████╗███████╗███████╗
+ * ██╔════╝██║╚══██╔══╝██╔════╝██╔════╝
+ * ███████╗██║   ██║   █████╗  ███████╗
+ * ╚════██║██║   ██║   ██╔══╝  ╚════██║
+ * ███████║██║   ██║   ███████╗███████║
+ * ╚══════╝╚═╝   ╚═╝   ╚══════╝╚══════╝
+ *
+ *
+ * This sheet contains:
+ * * Layout containers that defines different page types
+ *
+ * Types:
+ * ----------
+ * * A site is defined as any page
+ * * A page shows a custom page
+ * * A single shows a single post of any type
+ * * An archive shows a collection of posts
+ * * A search shows search results
+ * * An attachment shows a single attachment
+ * * A category shows a collection of posts for the specific category
+ * * A tag shows a collection of posts with the specific tag attached to it
+ * * An author shows a single author
+ * * A home shows a home page
+ * * An error404 shows an 404 error page
+ *
+ * This sheet is a part of the Layout folder and follow the Layout rules:
+ * The major components are referred to as Layout styles. The minor (Module) components—such as a callout, or login form,
+ * or a navigation item—sit within the scope of major components such as a header or footer.
+ * Generally, a Layout style only has a single selector: a single ID or class name.
+ */
+
+.page {
+
+}
+
+.single {
+
+}
+
+.archive {
+
+}
+
+.search {
+
+}
+
+.attachment {
+
+}
+
+.category {
+
+}
+
+.tag {
+
+}
+
+.author {
+
+}
+
+.home {
+
+}
+
+.error404 {
+
+}

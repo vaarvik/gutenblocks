@@ -1,0 +1,38 @@
+/**
+ *
+ * ████████╗ █████╗ ██████╗ ██╗     ███████╗███████╗
+ * ╚══██╔══╝██╔══██╗██╔══██╗██║     ██╔════╝██╔════╝
+ *    ██║   ███████║██████╔╝██║     █████╗  ███████╗
+ *    ██║   ██╔══██║██╔══██╗██║     ██╔══╝  ╚════██║
+ *    ██║   ██║  ██║██████╔╝███████╗███████╗███████║
+ *    ╚═╝   ╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝╚══════╝
+ *
+ *
+ * This sheet contains:
+ * * The spreadsheet module (primarily for tables)
+ * --------------------
+ * A spreadsheet for budgets or similar. Kind of like an Excel sheet.
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+.spreadsheet {
+	border-collapse: collapse; //Removes spacing in table
+	border-style: hidden; //Removes all the outside borders of the existing table
+	margin: 8px auto;
+}
+
+//Elements
+.spreadsheet__cell { //td
+	padding: 48px;
+	border: 2px solid $blue1;
+
+	//Element modifiers
+	&.header { //th
+		text-align: inherit;
+		border: 3px solid $blue1;
+	}
+}
