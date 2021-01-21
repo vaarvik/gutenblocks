@@ -131,8 +131,12 @@ gulp.task('styles', function( done ) {
         .pipe(purify([
             //the WP block block js
             `../../../wp-includes/js/dist/block-library.js`,
-            //all js files in js warwick plugin dist folder
-            `../../plugins/warwick-blocks/dist/*.js`,
+            //all js files in js the gutenberg blocks plugin src folder
+            `../../plugins/${gutenBlocksName}/src/**/*.js`,
+            //all js files in js the gutenberg blocks plugin dist folder
+            `../../plugins/${gutenBlocksName}/dist/**/*.js`,
+            //all js files in js the gutenberg blocks plugin build folder
+            `../../plugins/${gutenBlocksName}/build/**/*.js`,
             //all js files in js assets folder
             `${assetsUri}/js/*/**/*.js`,
             //all html files from root
@@ -167,8 +171,12 @@ gulp.task('styles', function( done ) {
             `../../../wp-includes/js/dist/block-library.js`,
             //the WP block editor js
             `../../../wp-includes/js/dist/block-editor.js`,
-            //all js files in js warwick plugin dist folder
-            `../../plugins/${gutenBlocksName}/dist/*.js`,
+            //all js files in js the gutenberg blocks plugin src folder
+            `../../plugins/${gutenBlocksName}/src/**/*.js`,
+            //all js files in js the gutenberg blocks plugin dist folder
+            `../../plugins/${gutenBlocksName}/dist/**/*.js`,
+            //all js files in js the gutenberg blocks plugin build folder
+            `../../plugins/${gutenBlocksName}/build/**/*.js`,
             //all js files in js assets folder
             `${assetsUri}/js/*/**/*.js`,
             //all html files from root
