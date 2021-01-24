@@ -40,4 +40,4 @@ function mytheme_sidebar_registration() {
 
 }
 
-add_action( 'widgets_init', 'mytheme_sidebar_registration' );
+// add_action( 'widgets_init', 'mytheme_sidebar_registration' );

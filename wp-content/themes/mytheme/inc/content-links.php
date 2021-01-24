@@ -6,7 +6,7 @@ function mytheme_skip_link() {
 	echo '<a class="skip-link" href="#site-content">' . __( 'Skip to the content', 'mytheme' ) . '</a>';
 }
 
-add_action( 'wp_body_open', 'mytheme_skip_link', 5 );
+// add_action( 'wp_body_open', 'mytheme_skip_link', 5 );
 
 
 /**

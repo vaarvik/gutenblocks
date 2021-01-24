@@ -32,6 +32,7 @@
 		wp_body_open();
 		?>
 
+		<?php /* ?>
 		<header id="site-header" role="banner">
 
 			<?php
@@ -105,3 +106,5 @@
 			</div>
 
 		</header>
+
+		<?php */ ?>

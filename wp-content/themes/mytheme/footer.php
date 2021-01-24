@@ -11,6 +11,7 @@
  * @since MyTheme 1.0
  */
 
+/*
 ?>
 			<footer id="site-footer" class="site-footer" role="contentinfo">
 
@@ -19,7 +20,7 @@
 						<p class="credits__copyright">&copy;
 							<?php
 							echo date_i18n(
-								/* translators: Copyright date format, see https://www.php.net/date */
+								// translators: Copyright date format, see https://www.php.net/date
 								_x( 'Y', 'copyright date format', 'mytheme' )
 							);
 							?>
@@ -31,7 +32,7 @@
 					<a class="to-top-navigation" href="#site-header">
 						<span class="to-top-navigation__text">
 							<?php
-							/* translators: %s: HTML character for up arrow. */
+							// translators: %s: HTML character for up arrow.
 							printf( __( 'To the top %s', 'mytheme' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
 							?>
 						</span>
@@ -39,6 +40,7 @@
 
 			</footer>
 
+			*/?>
 		<?php wp_footer(); ?>
 
 	</body>
