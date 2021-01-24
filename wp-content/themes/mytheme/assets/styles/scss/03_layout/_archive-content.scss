@@ -1,5 +1,9 @@
 .archive-content {
-
+	margin: 0 auto;
+	max-width: $wide-max-width;
+	width: 100%;
+	display: flex;
+	padding: 24px;
 }
 
 .archive-content__entry {

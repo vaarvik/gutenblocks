@@ -19,24 +19,33 @@ get_header();
 
 <main id="site-content" role="main">
 
-<?php
+	<div class="archive-content">
+		<?php
 
-if ( have_posts() ) {
+		if ( have_posts() ) {
 
-	while ( have_posts() ) {
-		the_post();
+			while ( have_posts() ) {
+				the_post();
+				?>
+
+				<div class="card">
+					<div class="card__image">
+						<?php the_post_thumbnail() ?>
+					</div>
+					<div class="card__content">
+						<h3 class="card__heading"><?php echo the_title(); ?></h3>
+						<div class="card__body"><?php echo the_content(); ?></div>
+					</div>
+				</div>
+
+				<?php
+			}
+		}
+
 		?>
 
-		<h1><?php echo the_title(); ?></h1>
-
-		<?php
-		the_content();
-	}
-}
-
-?>
-
-	<?php get_template_part( 'template-parts/pagination' ); ?>
+		<?php get_template_part( 'template-parts/pagination' ); ?>
+	</div>
 
 </main>
 

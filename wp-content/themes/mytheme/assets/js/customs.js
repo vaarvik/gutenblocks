@@ -1,7 +1,10 @@
 "use strict";
 
 (function () {
-  /**
-   * JS for customizing the site.
-   */
+  var CARDS = document.querySelectorAll(".card");
+  CARDS.forEach(function (card) {
+    card.addEventListener("click", function () {
+      card.classList.toggle("is-open");
+    });
+  });
 })();

@@ -81,6 +81,19 @@ function mytheme_theme_support() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+	/**
+	 * Add the meta-tags template part into the wp_head
+	 */
+	add_action( 'wp_head', function(){
+		<<<HTML
+			<script>
+				// Polyfill to make forEach available for NodeLists
+				if (window.NodeList && !NodeList.prototype.forEach)
+					NodeList.prototype.forEach = Array.prototype.forEach;
+			</script>
+		HTML;
+	} );
+
 }
 
 add_action( 'after_setup_theme', 'mytheme_theme_support' );
