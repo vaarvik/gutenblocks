@@ -1,1 +1,1 @@
-import './hello/hello';
+import './WPComponents/WPComponents';

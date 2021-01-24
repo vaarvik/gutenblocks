@@ -54,3 +54,19 @@ function gutenblocks_block_init() {
 	);
 }
 add_action( 'init', 'gutenblocks_block_init' );
+
+/**
+ * Add Gutenblocks as its own category
+ */
+function gutenblocks_block_category( $categories, $post ) {
+	return array_merge(
+		array(
+			array(
+				'slug' => 'gutenblocks',
+				'title' => __( 'Gutenblcks', 'gutenblocks' ),
+			),
+		),
+		$categories
+	);
+}
+add_filter( 'block_categories', 'gutenblocks_block_category', 10, 2);
