@@ -21,6 +21,7 @@
 
 .site-content {
 	min-height: calc( 100vh - #{$site-header-height-mobile} - #{$site-footer-height-mobile} );
+	background-color: $grey2;
 	@include tablet-p-up {
 		min-height: calc( 100vh - #{$site-header-height} - #{$site-footer-height});
 	}

@@ -21,13 +21,15 @@
 	max-width: 400px;
 	width: 100%;
 	height: 200px;
-	box-shadow: 1px 1px 5px 2px rgba($color: $black, $alpha: 0.15);
+	box-shadow: 1px 1px 0px 1px rgba($color: $black, $alpha: 0.15);
 	border-radius: 5px;
 	overflow: hidden;
 	position: relative;
+	margin: 8px;
+	background-color: $white;
 	cursor: pointer;
 	@include tablet-l-up {
-		width: 33.3%;
+		width: calc(33.3% - 16px);
 	}
 	&.is-open {
 		.card__content {
@@ -47,6 +49,7 @@
 	padding: 16px 24px;
 	top: -100%;
 	transition: .2s;
+	overflow-y: auto;
 }
 
 .card__image {

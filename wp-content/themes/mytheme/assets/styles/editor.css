@@ -818,11 +818,13 @@ html {
   max-width: 400px;
   width: 100%;
   height: 200px;
-  -webkit-box-shadow: 1px 1px 5px 2px rgba(13, 13, 13, 0.15);
-  box-shadow: 1px 1px 5px 2px rgba(13, 13, 13, 0.15);
+  -webkit-box-shadow: 1px 1px 0px 1px rgba(13, 13, 13, 0.15);
+  box-shadow: 1px 1px 0px 1px rgba(13, 13, 13, 0.15);
   border-radius: 5px;
   overflow: hidden;
   position: relative;
+  margin: 8px;
+  background-color: #FFFFFF;
   cursor: pointer;
 }
 
@@ -842,6 +844,7 @@ html {
   top: -100%;
   -webkit-transition: .2s;
   transition: .2s;
+  overflow-y: auto;
 }
 
 .card__image {
@@ -948,6 +951,6 @@ html {
 
 @media only screen and (min-width: 900px) {
   .card {
-    width: 33.3%;
+    width: calc(33.3% - 16px);
   }
 }

@@ -222,12 +222,12 @@ registerBlockType( BLOCKPATH, {
 
 					{/* Just a wrapper for user inputs really */}
 					<BaseControl
-						help="Pressing the Select an author button will open a modal that allows an advanced mechanism for author selection"
+						help="Anything you want opens on click"
 					>
 						<BaseControl.VisualLabel>
 							Author
 						</BaseControl.VisualLabel>
-						<Button isSecondary>
+						<Button isSecondary style={{ marginLeft: "8px"}}>
 							Select an author
 						</Button>
 					</BaseControl>
@@ -260,9 +260,9 @@ registerBlockType( BLOCKPATH, {
 					}
 					<Card>
 						<CardHeader>Card Header</CardHeader>
-						<CardBody>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit vel turpis in vehicula. Nam luctus condimentum mollis. Nulla feugiat porta est, non bibendum justo laoreet vel. Donec euismod, nunc nec vehicula blandit, purus nulla laoreet urna, non maximus lorem urna a diam. Ut placerat ac velit vel sodales. Vivamus laoreet cursus viverra. Pellentesque at ex sit amet massa egestas posuere. Praesent id lacinia lorem. </CardBody>
+						<CardBody>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit vel turpis in vehicula. </CardBody>
 						<CardDivider />
-						<CardBody size="large">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit vel turpis in vehicula. Nam luctus condimentum mollis. Nulla feugiat porta est, non bibendum justo laoreet vel. Donec euismod, nunc nec vehicula blandit, purus nulla laoreet urna, non maximus lorem urna a diam. Ut placerat ac velit vel sodales. Vivamus laoreet cursus viverra. Pellentesque at ex sit amet massa egestas posuere. Praesent id lacinia lorem. </CardBody>
+						<CardBody size="large">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit vel turpis in vehicula. Nam luctus condimentum mollis. </CardBody>
 						<CardMedia>
 							<img src="https://cdn.the-scientist.com/assets/articleNo/66864/aImg/35078/foresttb-m.jpg" />
 						</CardMedia>

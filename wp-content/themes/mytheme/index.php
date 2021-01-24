@@ -17,7 +17,7 @@
 get_header();
 ?>
 
-<main id="site-content" role="main">
+<main id="site-content" class="site-content" role="main">
 
 	<div class="archive-content">
 		<?php
@@ -33,7 +33,7 @@ get_header();
 						<?php the_post_thumbnail() ?>
 					</div>
 					<div class="card__content">
-						<h3 class="card__heading"><?php echo the_title(); ?></h3>
+						<h5 class="card__heading"><?php echo the_title(); ?></h5>
 						<div class="card__body"><?php echo the_content(); ?></div>
 					</div>
 				</div>
