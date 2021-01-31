@@ -17,23 +17,57 @@
  * designed to exist as a standalone component.
  */
 
+$card-height: 200px;
+$card-title-height: 32px;
+$card-total-height: $card-height + $card-title-height;
+
+$card-margin: 16px;
+
 .card {
 	max-width: 400px;
 	width: 100%;
-	height: 200px;
+	height: $card-total-height;
 	box-shadow: 1px 1px 0px 1px rgba($color: $black, $alpha: 0.15);
 	border-radius: 5px;
 	overflow: hidden;
 	position: relative;
-	margin: 8px;
+	margin: $card-margin;
 	background-color: $white;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
 	cursor: pointer;
+	transition: .2s;
 	@include tablet-l-up {
-		width: calc(33.3% - 16px);
+		width: calc(33.3% - #{$card-margin *  2});
+	}
+	&.experimental {
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 60px;
+			height: 60px;
+			margin-top: -30px;
+			margin-left: -30px;
+			transform: rotate(45deg);
+			background-color: $red;
+			z-index: 2;
+		}
 	}
 	&.is-open {
 		.card__content {
 			top: 0;
+		}
+	}
+	&:hover {
+		width: 33.3%;
+		height: #{$card-total-height + $card-margin};
+		margin: 0;
+		.card__title {
+			opacity: 1;
 		}
 	}
 }
@@ -50,6 +84,25 @@
 	top: -100%;
 	transition: .2s;
 	overflow-y: auto;
+}
+
+.card__title {
+	height: $card-title-height;
+	@include font-size(12px);
+	bottom: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	position: absolute;
+	text-align: center;
+	margin: 0;
+	padding: 16px 16px;
+	color: $grey2;
+	background-color: $black1;
+	opacity: .6;
+	text-transform: uppercase;
+	letter-spacing: 1.25px;
+	transition: .2s;
 }
 
 .card__image {

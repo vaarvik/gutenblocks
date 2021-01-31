@@ -17,6 +17,7 @@ import Autocomplete from "../components/Autocomplete/Autocomplete"
 import {_default as DraggalbeExample} from "./draggable";
 import MyFormTokenField from "./MyFormTokenField";
 import MyQueryControls from "./MyQueryControls";
+import {_default as MyTreeGrid} from "./MyTreeGrid";
 
 // Components
 import  {  __experimentalAlignmentMatrixControl as AlignmentMatrixControl } from '@wordpress/components';
@@ -37,7 +38,7 @@ import  {  CardHeader } from '@wordpress/components';
 import  {  CardMedia } from '@wordpress/components';
 import  {  CheckboxControl } from '@wordpress/components';
 import  {  ClipboardButton } from '@wordpress/components';
-import  {  __experimentalColorEdit } from '@wordpress/components';
+import  {  __experimentalColorEdit as ColorEdit } from '@wordpress/components';
 import  {  ColorIndicator } from '@wordpress/components';
 import  {  ColorPalette } from '@wordpress/components';
 import  {  ColorPicker } from '@wordpress/components';
@@ -45,7 +46,7 @@ import  {  ComboboxControl } from '@wordpress/components';
 import  {  CustomSelectControl } from '@wordpress/components';
 import  {  Dashicon } from '@wordpress/components';
 import  {  DateTimePicker, DatePicker, TimePicker } from '@wordpress/components';
-import  {  __experimentalDimensionControl } from '@wordpress/components';
+import  {  __experimentalDimensionControl as DimensionControl } from '@wordpress/components';
 import  {  Disabled } from '@wordpress/components';
 import  {  Draggable } from '@wordpress/components';
 import  {
@@ -122,22 +123,31 @@ import  {  ToolbarItem } from '@wordpress/components';
 import  {  Tooltip } from '@wordpress/components';
 import  {
 	 __experimentalTreeGrid as TreeGrid,
-	TreeGridRow ,
-	TreeGridCell ,
-	TreeGridItem ,
+	__experimentalTreeGridRow as TreeGridRow,
+	__experimentalTreeGridCell as TreeGridCell,
+	__experimentalTreeGridItem as TreeGridItem,
 } from '@wordpress/components';
 import  {  TreeSelect } from '@wordpress/components';
 import  {  __experimentalUnitControl as UnitControl } from '@wordpress/components';
 import  {  VisuallyHidden } from '@wordpress/components';
+
 // import  {  IsolatedEventContainer } from '@wordpress/components';
 import  {
 	createSlotFill,
 	Slot,
 	Fill,
-	Provider as SlotFillProvider,
-	useSlot as __experimentalUseSlot,
+	SlotFillProvider,
+	__experimentalUseSlot,
 } from '@wordpress/components';
 
+import { __unstableDisclosureContent } from '@wordpress/components';
+
+import {
+	__unstableComposite,
+	__unstableCompositeGroup,
+	__unstableCompositeItem,
+	__unstableUseCompositeState,
+} from '@wordpress/components';
 
 import { useBlockProps, RichText, InspectorControls } from '@wordpress/block-editor';
 
@@ -187,7 +197,7 @@ registerBlockType( BLOCKPATH, {
 		const [scrollLock, setScrollLock] = useState(false);
 		const [user, setUser] = useState("");
 
-		return (
+		const allBlocks = (
 			<div { ...useBlockProps() }>
 
 				<PanelBody>
@@ -285,6 +295,7 @@ registerBlockType( BLOCKPATH, {
 
 					{/* A button that text can be copied from */}
 					<ClipboardButton
+						isPrimary
 						text="Text to be copied."
 						onCopy={ () => true }
 						onFinishCopy={ () => false }
@@ -293,6 +304,18 @@ registerBlockType( BLOCKPATH, {
 					</ClipboardButton>
 
 				</PanelBody>
+
+				{/* Got some problems with making the immutableColorSlugs prop work. */}
+				<PanelBody>
+					<ColorEdit
+						colors={ [
+							{ name: 'red', color: '#f00', slug: "1" },
+							{ name: 'white', color: '#fff' },
+							{ name: 'blue', color: '#00f' },
+						] }
+					/>
+				</PanelBody>
+
 				<PanelBody>
 
 					{/* Just shows a color */}
@@ -311,6 +334,7 @@ registerBlockType( BLOCKPATH, {
 							{ name: 'blue', color: '#00f' },
 						] }
 						value={ '#f00' }
+						style={{width: "200px" }}
 					/>
 
 				</PanelBody>
@@ -378,6 +402,44 @@ registerBlockType( BLOCKPATH, {
 					<GradientPicker
 						value={ '#f00' }
 						onChange={ () => true }
+						gradients={[
+							{
+								name: 'Vivid cyan blue to vivid purple',
+								gradient:
+									'linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%)',
+								slug: 'vivid-cyan-blue-to-vivid-purple',
+							},
+							{
+								name: 'Light green cyan to vivid green cyan',
+								gradient:
+									'linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%)',
+								slug: 'light-green-cyan-to-vivid-green-cyan',
+							},
+							{
+								name: 'Luminous vivid amber to luminous vivid orange',
+								gradient:
+									'linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%)',
+								slug: 'luminous-vivid-amber-to-luminous-vivid-orange',
+							},
+							{
+								name: 'Luminous vivid orange to vivid red',
+								gradient:
+									'linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%)',
+								slug: 'luminous-vivid-orange-to-vivid-red',
+							},
+							{
+								name: 'Very light gray to cyan bluish gray',
+								gradient:
+									'linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%)',
+								slug: 'very-light-gray-to-cyan-bluish-gray',
+							},
+							{
+								name: 'Cool to warm spectrum',
+								gradient:
+									'linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%)',
+								slug: 'cool-to-warm-spectrum',
+							},
+						]}
 					/>
 
 				</PanelBody>
@@ -434,14 +496,12 @@ registerBlockType( BLOCKPATH, {
 				</PanelBody>
 				<PanelBody>
 
-					<Dashicon icon="admin-home" />
-					<Dashicon icon="products" />
-					<Dashicon icon="wordpress" />
+					<Dashicon icon="admin-home" style={{ fontSize: "54px", width: "54px", height: "54px" }}/>
 
 				</PanelBody>
 				<PanelBody>
 
-					<p>Both:</p>
+					{/* <p>Both:</p> */}
 
 					<DateTimePicker
 						currentDate={ new Date() }
@@ -452,7 +512,7 @@ registerBlockType( BLOCKPATH, {
 				</PanelBody>
 				<PanelBody>
 
-					<p>Date:</p>
+					{/* <p>Date:</p> */}
 
 					<DatePicker
 						currentDate={ new Date() }
@@ -463,7 +523,7 @@ registerBlockType( BLOCKPATH, {
 				</PanelBody>
 				<PanelBody>
 
-					<p>Time:</p>
+					{/* <p>Time:</p> */}
 
 					<TimePicker
 						currentDate={ new Date() }
@@ -475,7 +535,7 @@ registerBlockType( BLOCKPATH, {
 				<PanelBody>
 
 					{/* Not quite sure how it's different from a select, but it seems to be connected with spacing */}
-					<__experimentalDimensionControl
+					<DimensionControl
 						label={ __( 'Padding' ) }
 						icon={ 'desktop' }
 						onChange={ (e) => console.log(e) }
@@ -488,7 +548,7 @@ registerBlockType( BLOCKPATH, {
 				<PanelBody>
 						<Disabled>
 							Content in here is disabled because it's in the disabled component
-							<__experimentalDimensionControl
+							<DimensionControl
 								label={ __( 'Padding' ) }
 								icon={ 'desktop' }
 								onChange={ (e) => console.log(e) }
@@ -535,8 +595,8 @@ registerBlockType( BLOCKPATH, {
 				</PanelBody>
 				<PanelBody>
 					<DropZoneProvider>
-						<div>
-							{ true ? 'Dropped!' : 'Drop something here' }
+						<div style={{ backgroundColor: "#e7e7e7", padding: "56px 64px" }}>
+							{ false ? 'Dropped!' : 'Drop something here' }
 							<DropZone
 								onFilesDrop={ (e) => console.log(e) }
 								onHTMLDrop={ (e) => console.log(e)  }
@@ -618,7 +678,7 @@ registerBlockType( BLOCKPATH, {
 					/>
 
 				</PanelBody>
-				{/* A dropdown menu */}
+
 				<PanelBody>
 					<Dropdown
 						className="my-container-class-name"
@@ -626,13 +686,18 @@ registerBlockType( BLOCKPATH, {
 						position="bottom right"
 						renderToggle={ ( { isOpen, onToggle, onClose } ) => (
 							<Button isPrimary onClick={ onToggle } aria-expanded={ isOpen }>
-								Toggle Popover!
+								Toggle a dropdown!
 							</Button>
 						) }
 						renderContent={ ({ isOpen, onToggle, onClose }) => (
-							<div>
-								<p>In the popover!</p>
-							</div>
+							<MenuGroup>
+								<MenuItem icon={ arrowUp } onClick={ onClose }>
+									Move Up
+								</MenuItem>
+								<MenuItem icon={ arrowDown } onClick={ onClose }>
+									Move Down
+								</MenuItem>
+							</MenuGroup>
 						) }
 					/>
 
@@ -644,29 +709,26 @@ registerBlockType( BLOCKPATH, {
 				</PanelBody>
 
 				{/* FlexItem is basicly just a div with some styling which is not that important */}
-				{/* FlexBlock has some more styles but act similar. Has style "flex: 1 1 0%". Basicly it grows and is the biggest box unless there is another FlexBlock */}
+				{/* FlexBlock has some more styles but act similar. FlexBox has style "flex: 1 1 0%" so it grows and becomes the biggest box unless there is another FlexBlock */}
 				<PanelBody>
 					<Flex
-						gap={12}
+						gap={2}
 						align="center"
 						justify="space-between"
 					>
-						<FlexItem>
+						<FlexItem style={{ backgroundColor:"#ff000050", height: "100px", display: "flex", alignItems: "center", justifyContent: "center", padding: "10px" }}>
 							<h5>FlexItem</h5>
 						</FlexItem>
-						<FlexBlock>
+						<FlexBlock style={{ backgroundColor:"#00ff0050", height: "100px", display: "flex", alignItems: "center", justifyContent: "center", padding: "10px" }}>
 							<h5>FlexBlock</h5>
 						</FlexBlock>
-						<FlexItem>
-							<h5>FlexItem</h5>
-						</FlexItem>
 					</Flex>
 				</PanelBody>
 
 				{/* Handy when a specific background-position should be used on an image */}
 				<PanelBody>
 					<FocalPointPicker
-						url={ "https://cdn.the-scientist.com/assets/articleNo/66864/aImg/35078/foresttb-m.jpg" }
+						url={ "https://scx2.b-cdn.net/gfx/news/hires/2019/2-nature.jpg" }
 						dimensions={{
 							width: 400,
 							height: 100,
@@ -682,12 +744,11 @@ registerBlockType( BLOCKPATH, {
 				{/* Basicly an iframe but easier to handle than a regular iframe */}
 				<PanelBody>
 					<FocusableIframe
-						src="/my-iframe-url"
+						src="https://www.youtube.com/embed/xK0kKbNXZc4"
 						onFocus={ () => console.log( 'iframe is focused' ) }
 					/>
 				</PanelBody>
 
-				{/* Basicly an iframe but easier to handle than a regular iframe */}
 				<PanelBody>
 					<FontSizePicker
 						fontSizes={[
@@ -716,9 +777,9 @@ registerBlockType( BLOCKPATH, {
 						onChange={ (e) => console.log('new image', e) }
 						render={ ( { openFileDialog } ) => (
 							<div>
-								<p>You can only upload image files. But I can change this if you ask.</p>
+								<p>Upload an image below: </p>
 								<Button isSecondary onClick={ openFileDialog }>
-									Upload (shown with render)
+									Upload image
 								</Button>
 							</div>
 						)}
@@ -730,6 +791,7 @@ registerBlockType( BLOCKPATH, {
 						checked={ true }
 						onChange={ () => console.log("toggled") }
 					/>
+					<br/>
 					<br/>
 					<FormToggle
 						checked={ false }
@@ -747,10 +809,10 @@ registerBlockType( BLOCKPATH, {
 					onFinish={ () => console.log("finished") }
 					pages={ [
 						{
+							image: <img src="https://acmestore.com/add-to-cart.png" />,
 							content: <p>Welcome to the ACME Store!</p>,
 						},
 						{
-							image: <img src="https://acmestore.com/add-to-cart.png" />,
 							content: <p>Click <i>Add to Cart</i> to buy a product.</p>,
 						},
 					] }
@@ -770,7 +832,7 @@ registerBlockType( BLOCKPATH, {
 							/>
 						<p>Another icon:</p>
 						<Icon
-							icon="arrow-up"
+							icon="smiley"
 							size={56}
 						/>
 					</Fragment>
@@ -778,12 +840,9 @@ registerBlockType( BLOCKPATH, {
 
 				<PanelBody>
 					<Fragment>
-						<p>An icon:</p>
 						<IconButton isPrimary
 							icon={
-								<svg>
-									<path d="M5 4v3h5.5v12h3V7H19V4z" />
-								</svg>
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.537 2.592l-5.445 3.779c-1.504 1.043-1.877 3.108-.833 4.611l5.668 8.168c1.287 1.855 3.352 2.85 5.451 2.85 3.605 0 6.622-2.919 6.622-6.634 0-1.304-.384-2.621-1.182-3.773l-5.668-8.168c-.644-.927-1.676-1.425-2.726-1.425-.652 0-1.311.192-1.887.592zm.945 1.361c.751-.521 1.784-.334 2.307.416l1.415 2.042-3.912 2.693-2.36-3.403 2.55-1.748zm6.725 15.503c-2.252 1.563-5.356 1.002-6.919-1.25l-3.306-4.764 8.167-5.668 3.308 4.764c1.562 2.252 1.001 5.355-1.25 6.918zm-16.031-11.567l-2.499-1.74.62-.891 2.271 1.582c-.169.332-.3.681-.392 1.049zm.702 4.006l-2.299 1.615-.624-.888 2.414-1.699c.135.338.299.665.509.972zm-.778-1.906h-3.1v-1.085h3.029c-.013.366.005.729.071 1.085z"/></svg>
 							}
 						>
 							IconButton
@@ -792,13 +851,13 @@ registerBlockType( BLOCKPATH, {
 				</PanelBody>
 
 				<PanelBody>
-					<p>Right now it won't change until you press enter, but this can be changed</p>
+					{/* <p>Right now it won't change until you press enter, but this can be changed</p> */}
 					<InputControl
 						label="InputControl"
 						labelPosition="top"
-						prefix={ //you can add some stuff inside the field before the text
-							<span>Your email:</span>
-						}
+						// prefix={ //you can add some stuff inside the field before the text
+						// 	<span>Your email:</span>
+						// }
 						value=""
 						type="email"
 						isPressEnterToChange
@@ -806,7 +865,7 @@ registerBlockType( BLOCKPATH, {
 					/>
 				</PanelBody>
 
-				{/* Can also be added to the global document if the component dont have children. Works best with form elements. Not sure how the bind global prop works */}
+				{/* Can also be added to the global document if the component doesn't have children. Works best with form elements. Not sure how the bind global prop works. */}
 				<PanelBody>
 					<KeyboardShortcuts
 						shortcuts={ {
@@ -818,24 +877,30 @@ registerBlockType( BLOCKPATH, {
 				</PanelBody>
 
 				<PanelBody>
-					<MenuGroup label="Settings">
-						<MenuItem>Setting 1</MenuItem>
-						<MenuItem>Setting 2</MenuItem>
-						<MenuItemsChoice
-							choices={[
-								{
-									value: 'visual',
-									label: 'Visual editor',
-								},
-								{
-									value: 'text',
-									label: 'Code editor',
-								},
-							]}
-							icon={ arrowDown }
-							onSelect={ (e) =>console.log(e) }
-							value="text">
-						</MenuItemsChoice>
+					<MenuGroup label="MenuGroup">
+						<MenuItem>MenuItem 1</MenuItem>
+						<MenuItem>MenuItem 2</MenuItem>
+						<MenuGroup label="MenuItemsChoices">
+							<MenuItemsChoice
+								choices={[
+									{
+										value: 'visual',
+										label: 'MenuItemsChoice 1',
+									},
+									{
+										value: 'text',
+										label: 'MenuItemsChoice 2',
+									},
+									{
+										value: '3',
+										label: 'MenuItemsChoice 3',
+									},
+								]}
+								icon={ arrowDown }
+								onSelect={ (e) =>console.log(e) }
+								value="text">
+							</MenuItemsChoice>
+						</MenuGroup>
 					</MenuGroup>
 				</PanelBody>
 
@@ -864,7 +929,11 @@ registerBlockType( BLOCKPATH, {
 							<Button isSecondary>Item 2</Button>
 							<Button isSecondary>Item 3</Button>
 						</NavigableMenu>
+					</div>
+				</PanelBody>
 
+				<PanelBody>
+					<div>
 						<span>Tabbable Container:</span>
 						{/* Seems to have a bug on my CPU when I click tab (skips an item) */}
 						<TabbableContainer onNavigate={ e => console.log(e) }>
@@ -960,26 +1029,12 @@ registerBlockType( BLOCKPATH, {
 				<PanelBody>
 					<Placeholder
 						icon={arrowDown}
-						label="Placeholder"
-						instructions="Instructions for the placeholder that is here."
-						notices={
-							<p>
-								Whatever HTML you want to have before the label.
-							</p>
-						}
-						preview={ <div>A preview for the placeholder</div> }
+						label="Image"
+						instructions="Select an image to remove this placeholder"
 						isColumnLayout //element is flex if this is not used
 					>
-						<div>
-							<TextControl
-								label="Sample Field"
-								placeholder="Enter something here"
-							/>
-						</div>
-						<div>
-							<p>Lots of content</p>
-							<p>Lots of content</p>
-							<p>Lots of content</p>
+						<div style={{ backgroundColor: "#e7e7e7", padding: "56px 64px", display: "flex", justifyContent: "center" }}>
+							<Button isSecondary>Select image</Button>
 						</div>
 					</Placeholder>
 				</PanelBody>
@@ -989,7 +1044,7 @@ registerBlockType( BLOCKPATH, {
 						Toggle Popover!
 						{ visible && (
 							<Popover>
-								<div style={{padding: "24px"}}>
+								<div style={{padding: "16px"}}>
 									Popover is toggled!
 								</div>
 							</Popover>
@@ -1000,11 +1055,6 @@ registerBlockType( BLOCKPATH, {
 				{/* When querying stuff this can be used for sorting and controlling */}
 				<PanelBody>
 					<MyQueryControls />
-				</PanelBody>
-
-				<PanelBody>
-						<Radio value="option1">Option 1</Radio>
-						<Radio value="option2">Option 2</Radio>
 				</PanelBody>
 
 				{/* Basicly button group just with radio buttons */}
@@ -1115,7 +1165,9 @@ registerBlockType( BLOCKPATH, {
 						onResizeStart={ () => {
 							console.log("starts resizing")
 						} }
-					/>
+					>
+						<div>Hallo!</div>
+					</ResizableBox>
 				</PanelBody>
 
 				{/* Not really sure what it does. Adds a wrapper with some props that might make it more responsive. */}
@@ -1124,7 +1176,7 @@ registerBlockType( BLOCKPATH, {
 						naturalWidth={ 2000 }
 						naturalHeight={ 680 }
 					>
-						<img src="https://s.w.org/style/images/about/WordPress-logotype-standard.png" alt="WordPress" />
+						<img src="https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/tnc_69881045.jpg?crop=240,0,2400,1320&wid=4000&hei=2200&scl=0.6" alt="WordPress" />
 					</ResponsiveWrapper>
 				</PanelBody>
 
@@ -1254,15 +1306,13 @@ registerBlockType( BLOCKPATH, {
 							( tab ) => (
 								<PanelBody>
 									<p>{ tab.title }</p>
-									<Autocomplete
-										onChange={ onTextChange }
-										value={ props.attributes.text }
-										name={tab.title}
-										options={[
-											{ value: '🍎', label: 'Apple', id: 1 },
-											{ value: '🍊', label: 'Orange', id: 2 },
-											{ value: '🍇', label: 'Grapes', id: 3 },
-										]}
+									<NumberControl
+										onChange={ e => console.log(e) }
+										isDragEnabled
+										isShiftStepEnabled
+										shiftStep={ 10 }
+										step={10}
+										value={ 10 }
 									/>
 								</PanelBody>
 							)
@@ -1308,8 +1358,7 @@ registerBlockType( BLOCKPATH, {
 
 				<PanelBody>
 					<TextareaControl
-						label="Text"
-						help="Enter some text"
+						label="Textarea"
 						rows={2}
 						value={ "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia sem suscipit faucibus sollicitudin. Nam gravida lectus vitae elit vestibulum aliquam vitae ac nunc." }
 						onChange={ e => console.log(e) }
@@ -1329,12 +1378,6 @@ registerBlockType( BLOCKPATH, {
 						label="Fixed Background"
 						help={ true ? 'Has fixed background.' : 'No fixed background.' }
 						checked={ true }
-						onChange={ (e) => console.log(e) }
-					/>
-					<ToggleControl
-						label="Fixed Background"
-						help={ false ? 'Has fixed background.' : 'No fixed background.' }
-						checked={ false }
 						onChange={ (e) => console.log(e) }
 					/>
 				</PanelBody>
@@ -1362,18 +1405,8 @@ registerBlockType( BLOCKPATH, {
 				</PanelBody>
 
 				<PanelBody>
-					<ToolbarGroup>
-						<ToolbarButton
-							icon={ "edit" }
-							label="Edit"
-							onClick={ () => console.log( 'Editing' ) }
-						/>
-						<ToolbarButton
-							icon={ more }
-							label="More"
-							onClick={ () => console.log( 'More!' ) }
-						/>
-					</ToolbarGroup>
+					<Toolbar label="Options">
+					</Toolbar>
 				</PanelBody>
 
 				<PanelBody>
@@ -1410,6 +1443,24 @@ registerBlockType( BLOCKPATH, {
 								/>
 							) }
 						</ToolbarItem>
+						<ToolbarGroup>
+							<ToolbarButton
+								icon={ "edit" }
+								label="Edit"
+								onClick={ () => console.log( 'Editing' ) }
+							/>
+							<ToolbarButton
+								icon={ more }
+								label="More"
+								onClick={ () => console.log( 'More!' ) }
+							/>
+						</ToolbarGroup>
+							<ToolbarButton
+								icon={ arrowDown }
+								label="More"
+								isDisabled
+								onClick={ () => console.log( 'More!' ) }
+							/>
 					</Toolbar>
 				</PanelBody>
 
@@ -1429,9 +1480,7 @@ registerBlockType( BLOCKPATH, {
 				{/* TreeGrid */}
 
 				<PanelBody>
-					<p>TreeGrid: Seems to be an error with children for this component</p>
-					<TreeGrid>
-					</TreeGrid>
+					<MyTreeGrid />
 				</PanelBody>
 
 				{/* Endless branch selection. Guess you've seen Wordpress use this before */}
@@ -1474,7 +1523,7 @@ registerBlockType( BLOCKPATH, {
 					<UnitControl
 						onChange={ onNumberChange }
 						onUnitChange={ e => console.log("new unit") }
-						label="A number and a specific unit"
+						label="A number and a unit"
 						isUnitSelectTabbable
 						// isResetValueOnUnitChange //if you want value to reset on unit change
 						// units={ //enable to allow just some specifics
@@ -1494,6 +1543,14 @@ registerBlockType( BLOCKPATH, {
 
 			</div>
 		);
+		return (
+			<Fragment>
+				<InspectorControls>
+					{allBlocks}
+				</InspectorControls>
+				{allBlocks}
+			</Fragment>
+		)
 	},
 
 	save: (props) => {
