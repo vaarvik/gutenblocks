@@ -48,7 +48,7 @@ get_header();
 							</div>
 							<p class="card__title search-item__text"><?php echo the_title(); ?></p>
 							<div class="card__content">
-								<h5 class="card__heading"><?php echo the_title(); ?></h5>
+								<h3 class="card__heading"><?php echo the_title(); ?></h3>
 								<div class="card__body"><?php echo the_content(); ?></div>
 							</div>
 						</div>

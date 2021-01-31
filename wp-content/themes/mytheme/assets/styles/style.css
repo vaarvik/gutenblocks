@@ -123,7 +123,7 @@ html {
 */
 
 html {
-  font-size: 18px;
+  font-size: 20px;
   color: #22292E;
 }
 
@@ -360,8 +360,8 @@ li {
 input,option,select,textarea,button {
   font-family: inherit;
   font-size: 14px;
-  font-size: 0.77778rem;
-  line-height: 1.333;
+  font-size: 0.7rem;
+  line-height: 1.2;
 }
 
 /**
@@ -490,39 +490,40 @@ h2,h4 {
 }
 
 h1 {
-  font-size: 40px;
-  font-size: 2.22222rem;
-  line-height: 1.333;
+  font-size: 48px;
+  font-size: 2.4rem;
+  line-height: 1.2;
 }
 
 h2 {
-  font-size: 24px;
-  font-size: 1.33333rem;
-  line-height: 1.333;
+  font-size: 32px;
+  font-size: 1.6rem;
+  line-height: 1.2;
 }
 
 h3 {
-  font-size: 32px;
-  font-size: 1.77778rem;
-  line-height: 1.333;
+  font-size: 24px;
+  font-size: 1.2rem;
+  line-height: 1.2;
 }
 
 h4 {
-  font-size: 24px;
-  font-size: 1.33333rem;
-  line-height: 1.333;
+  font-size: 20px;
+  font-size: 1rem;
+  line-height: 1.2;
 }
 
 h5 {
-  font-size: 24px;
-  font-size: 1.33333rem;
-  line-height: 1.333;
+  font-size: 20px;
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: bold;
 }
 
 h6 {
   font-size: 16px;
-  font-size: 0.88889rem;
-  line-height: 1.333;
+  font-size: 0.8rem;
+  line-height: 1.2;
   margin-bottom: 4px;
 }
 
@@ -550,8 +551,8 @@ a:hover {
 
 small,sub {
   font-size: 12px;
-  font-size: 0.66667rem;
-  line-height: 1.333;
+  font-size: 0.6rem;
+  line-height: 1.2;
 }
 
 mark {
@@ -567,8 +568,8 @@ mark {
 
 figcaption {
   font-size: 14px;
-  font-size: 0.77778rem;
-  line-height: 1.333;
+  font-size: 0.7rem;
+  line-height: 1.2;
 }
 
 /**
@@ -743,7 +744,7 @@ ol,ul,dd,li,tr,th,caption {
  */
 
 .singular-content {
-  max-width: 580px;
+  max-width: 640px;
   margin: 0 auto;
 }
 
@@ -753,7 +754,7 @@ ol,ul,dd,li,tr,th,caption {
 
 .archive-content {
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1440px;
   width: 100%;
   padding: 24px;
 }
@@ -897,8 +898,8 @@ ol,ul,dd,li,tr,th,caption {
   max-width: 200px;
   margin: 8px 0;
   font-size: 16px;
-  font-size: 0.88889rem;
-  line-height: 1.333;
+  font-size: 0.8rem;
+  line-height: 1.2;
 }
 
 .field.input {
@@ -937,9 +938,9 @@ ol,ul,dd,li,tr,th,caption {
 .label {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
   font-size: 1rem;
-  line-height: 1.333;
+  line-height: 1.2;
   text-transform: uppercase;
   letter-spacing: 1.25px;
 }
@@ -1039,7 +1040,7 @@ ol,ul,dd,li,tr,th,caption {
 
 .section__content {
   margin: 0 auto;
-  max-width: 580px;
+  max-width: 640px;
 }
 
 .section__content.wide {
@@ -1069,8 +1070,8 @@ ol,ul,dd,li,tr,th,caption {
 
 .quote {
   font-size: 24px;
-  font-size: 1.33333rem;
-  line-height: 1.333;
+  font-size: 1.2rem;
+  line-height: 1.2;
   background-color: #2A2F3E;
   color: #FFFFFF;
   padding: 4px;
@@ -1080,8 +1081,8 @@ ol,ul,dd,li,tr,th,caption {
 .quote:before {
   content: "\"";
   font-size: 160px;
-  font-size: 8.88889rem;
-  line-height: 1.333;
+  font-size: 8rem;
+  line-height: 1.2;
   float: right;
   vertical-align: text-top;
   margin-top: calc( 32px * -1);
@@ -1090,8 +1091,8 @@ ol,ul,dd,li,tr,th,caption {
 
 .quote__cite {
   font-size: 16px;
-  font-size: 0.88889rem;
-  line-height: 1.333;
+  font-size: 0.8rem;
+  line-height: 1.2;
 }
 
 /**
@@ -1235,9 +1236,9 @@ ol,ul,dd,li,tr,th,caption {
 
 .card__title {
   height: 32px;
-  font-size: 12px;
-  font-size: 0.66667rem;
-  line-height: 1.333;
+  font-size: 16px;
+  font-size: 0.8rem;
+  line-height: 1.2;
   bottom: 0;
   right: 0;
   display: -webkit-box;
@@ -1352,7 +1353,7 @@ ol,ul,dd,li,tr,th,caption {
 }
 
 .header__preamble {
-  max-width: 580px;
+  max-width: 640px;
   margin: 24px auto;
 }
 
@@ -1408,15 +1409,33 @@ ol,ul,dd,li,tr,th,caption {
 
 @media only screen and (min-width: 600px) {
   h1 {
-    font-size: 48px;
-    font-size: 2.66667rem;
-    line-height: 1.333;
+    font-size: 56px;
+    font-size: 2.8rem;
+    line-height: 1.2;
   }
 
   h2 {
+    font-size: 40px;
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  h3 {
     font-size: 32px;
-    font-size: 1.77778rem;
-    line-height: 1.333;
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  h4 {
+    font-size: 24px;
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+
+  h5 {
+    font-size: 24px;
+    font-size: 1.2rem;
+    line-height: 1.2;
   }
 
   .site-content {
@@ -1424,17 +1443,17 @@ ol,ul,dd,li,tr,th,caption {
   }
 
   .card-list {
-    width: calc(100% + 16px);
-    margin-left: -8px;
+    width: calc(100% + 32px);
+    margin-left: -16px;
   }
 
   .card-list__item {
     width: 50%;
-    padding: 8px;
+    padding: 16px;
   }
 
   .card-list__item:hover {
-    padding: 0px;
+    padding: 8px;
   }
 }
 
