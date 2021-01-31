@@ -68,7 +68,7 @@
 
 .card__content {
 	z-index: 2;
-	background-color: $black1;
+	background-color: $blue-1;
 	color: $grey2;
 	position: absolute;
 	width: 100%;
@@ -91,8 +91,8 @@
 	text-align: center;
 	margin: 0;
 	padding: 16px 16px;
-	color: $grey2;
-	background-color: $black1;
+	color: $grey1;
+	background-color: $blue-1;
 	opacity: .6;
 	text-transform: uppercase;
 	letter-spacing: 1.25px;
@@ -105,7 +105,7 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 100%;
-	filter: grayscale(1);
+	filter: grayscale(.1);
 	img {
 		width: auto;
 		height: 100%;

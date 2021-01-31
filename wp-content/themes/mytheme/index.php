@@ -21,12 +21,14 @@ get_header();
 
 	<div class="archive-content">
 		<header class="header">
-			<h2 class="header__heading">Search</h2>
+			<h1 class="header__heading">WP-GB</h1>
+			<p class="header__heading">WordPress Gutenberg</p>
+			<p class="header__preamble">WP-GP helps you find the right components when creating blocks in Gutenberg. Below is a list of all the components are available in @wordpress/components. Click on an image to get a more detailed description. A red mark means that WordPress has marked it as an experimental component.</p>
 			<div class="header__body">
 				<div class="filter-section">
-					<div class="filter-section__item full">
+					<div class="filter-section__item">
 						<label for="filter-search" class="label">Search</label>
-						<input class="field search" type="search" name="s" id="filter-search" data-search-in="components-list" />
+						<input class="field input search" type="search" name="s" id="filter-search" data-search-in="components-list" />
 					</div>
 				</div>
 			</div>

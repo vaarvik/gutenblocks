@@ -123,6 +123,7 @@ html {
 
 html {
   font-size: 18px;
+  color: #22292E;
 }
 
 /**
@@ -310,11 +311,6 @@ html {
 */
   /**
  * =========================
- *    || Container tags
- * =========================
- */
-  /**
- * =========================
  *    || Typography tags
  * =========================
  */
@@ -357,7 +353,7 @@ html {
 }
 
 .edit-post-visual-editor.editor-styles-wrapper body {
-  background-color: #FFFFFF;
+  background-color: #EFEFEF;
   margin: 0;
 }
 
@@ -373,11 +369,6 @@ html {
 .edit-post-visual-editor.editor-styles-wrapper audio,.edit-post-visual-editor.editor-styles-wrapper video,.edit-post-visual-editor.editor-styles-wrapper canvas,.edit-post-visual-editor.editor-styles-wrapper iframe,.edit-post-visual-editor.editor-styles-wrapper meter,.edit-post-visual-editor.editor-styles-wrapper progress,.edit-post-visual-editor.editor-styles-wrapper figure,.edit-post-visual-editor.editor-styles-wrapper figcaption {
   margin-top: 8px;
   margin-bottom: 8px;
-}
-
-.edit-post-visual-editor.editor-styles-wrapper body {
-  font-family: #2A2F3E;
-  color: #0D0D0D;
 }
 
 .edit-post-visual-editor.editor-styles-wrapper h1,.edit-post-visual-editor.editor-styles-wrapper h2,.edit-post-visual-editor.editor-styles-wrapper h3,.edit-post-visual-editor.editor-styles-wrapper h4,.edit-post-visual-editor.editor-styles-wrapper h5,.edit-post-visual-editor.editor-styles-wrapper h6,.edit-post-visual-editor.editor-styles-wrapper p,.edit-post-visual-editor.editor-styles-wrapper a,.edit-post-visual-editor.editor-styles-wrapper blockquote,.edit-post-visual-editor.editor-styles-wrapper cite,.edit-post-visual-editor.editor-styles-wrapper pre,.edit-post-visual-editor.editor-styles-wrapper label,.edit-post-visual-editor.editor-styles-wrapper figcaption {
@@ -401,7 +392,7 @@ html {
 
 .edit-post-visual-editor.editor-styles-wrapper h2,.edit-post-visual-editor.editor-styles-wrapper h4 {
   letter-spacing: .5px;
-  font-family: #0073aa;
+  font-family: #00478C;
 }
 
 .edit-post-visual-editor.editor-styles-wrapper h1 {
@@ -451,7 +442,7 @@ html {
 }
 
 .edit-post-visual-editor.editor-styles-wrapper a {
-  color: #0073aa;
+  color: #FF530D;
   text-decoration: none;
   cursor: pointer;
   -webkit-transition: .1s;
@@ -459,7 +450,7 @@ html {
 }
 
 .edit-post-visual-editor.editor-styles-wrapper a:hover {
-  color: #0073aa;
+  color: #FF530D;
   text-decoration: underline;
 }
 
@@ -474,7 +465,7 @@ html {
 }
 
 .edit-post-visual-editor.editor-styles-wrapper mark {
-  background-color: #0073aa;
+  background-color: #00478C;
   color: #2A2F3E;
 }
 
@@ -534,7 +525,7 @@ html {
 
 .btn.primary {
   color: #FFFFFF;
-  background-color: #0073aa;
+  background-color: #00478C;
 }
 
 .btn.primary:hover {
@@ -625,14 +616,17 @@ html {
 .field {
   border-radius: 2px;
   display: block;
-  background-color: #F2F2F2;
-  border: 1px solid #0073aa;
+  background-color: #EFEFEF;
+  border: 1px solid #22292E;
   max-width: 200px;
   margin: 8px 0;
+  font-size: 16px;
+  font-size: 0.88889rem;
+  line-height: 1.333;
 }
 
 .field.input {
-  padding: 16px;
+  padding: 8px;
 }
 
 .field__option {
@@ -667,8 +661,8 @@ html {
 .label {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
-  font-size: 14px;
-  font-size: 0.77778rem;
+  font-size: 18px;
+  font-size: 1rem;
   line-height: 1.333;
   text-transform: uppercase;
   letter-spacing: 1.25px;
@@ -760,7 +754,7 @@ html {
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  background-color: #F2F2F2;
+  background-color: #EFEFEF;
 }
 
 .block-editor .section {
@@ -950,8 +944,8 @@ html {
 
 .card__content {
   z-index: 2;
-  background-color: #262626;
-  color: #F2F2F2;
+  background-color: #22292E;
+  color: #EFEFEF;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -980,8 +974,8 @@ html {
   text-align: center;
   margin: 0;
   padding: 16px 16px;
-  color: #F2F2F2;
-  background-color: #262626;
+  color: #D9D9D9;
+  background-color: #22292E;
   opacity: .6;
   text-transform: uppercase;
   letter-spacing: 1.25px;
@@ -996,8 +990,8 @@ html {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 100%;
-  -webkit-filter: grayscale(1);
-  filter: grayscale(1);
+  -webkit-filter: grayscale(0.1);
+  filter: grayscale(0.1);
 }
 
 .card__image img {
@@ -1040,6 +1034,10 @@ html {
   margin: 16px 0;
 }
 
+.filter-section__item {
+  text-align: center;
+}
+
 .filter-section__item.full {
   width: 100%;
   -webkit-box-flex: 1;
@@ -1075,6 +1073,11 @@ html {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1.25px;
+}
+
+.header__preamble {
+  max-width: 580px;
+  margin: 24px auto;
 }
 
 .editor-styles-wrapper {

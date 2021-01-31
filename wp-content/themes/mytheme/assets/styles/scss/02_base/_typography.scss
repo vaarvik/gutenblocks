@@ -19,17 +19,6 @@
 
 /**
  * =========================
- *    || Container tags
- * =========================
- */
-
-body {
-	font-family: $blue;
-	color: $black;
-}
-
-/**
- * =========================
  *    || Typography tags
  * =========================
  */
@@ -99,12 +88,12 @@ p {
 }
 
 a {
-	color: $blue1;
+	color: $orange;
 	text-decoration: none;
 	cursor: pointer;
 	transition: .1s;
 	&:hover{
-		color: $blue1;
+		color: $orange;
 		text-decoration: underline;
 	}
 }

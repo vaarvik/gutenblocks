@@ -24,13 +24,14 @@
 	border-radius: 2px;
 	display: block;
 	background-color: $grey2;
-	border: 1px solid $blue1;
+	border: 1px solid $blue-1;
 	max-width: 200px;
 	margin: 8px 0;
+	@include font-size(16px);
 
 	//Modifiers
 	&.input {
-		padding: 16px;
+		padding: 8px;
 	}
 }
 
