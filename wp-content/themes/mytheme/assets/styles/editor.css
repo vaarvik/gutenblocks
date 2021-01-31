@@ -401,7 +401,7 @@ html {
 
 .edit-post-visual-editor.editor-styles-wrapper h2,.edit-post-visual-editor.editor-styles-wrapper h4 {
   letter-spacing: .5px;
-  font-family: #3EB5FE;
+  font-family: #0073aa;
 }
 
 .edit-post-visual-editor.editor-styles-wrapper h1 {
@@ -451,7 +451,7 @@ html {
 }
 
 .edit-post-visual-editor.editor-styles-wrapper a {
-  color: #3EB5FE;
+  color: #0073aa;
   text-decoration: none;
   cursor: pointer;
   -webkit-transition: .1s;
@@ -459,7 +459,7 @@ html {
 }
 
 .edit-post-visual-editor.editor-styles-wrapper a:hover {
-  color: #3EB5FE;
+  color: #0073aa;
   text-decoration: underline;
 }
 
@@ -474,7 +474,7 @@ html {
 }
 
 .edit-post-visual-editor.editor-styles-wrapper mark {
-  background-color: #3EB5FE;
+  background-color: #0073aa;
   color: #2A2F3E;
 }
 
@@ -534,7 +534,7 @@ html {
 
 .btn.primary {
   color: #FFFFFF;
-  background-color: #3EB5FE;
+  background-color: #0073aa;
 }
 
 .btn.primary:hover {
@@ -623,12 +623,12 @@ html {
  */
 
 .field {
-  -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
-  box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
-  border-radius: 5px;
+  border-radius: 2px;
   display: block;
   background-color: #F2F2F2;
-  border: 0;
+  border: 1px solid #0073aa;
+  max-width: 200px;
+  margin: 8px 0;
 }
 
 .field.input {
@@ -795,6 +795,24 @@ html {
   line-height: 1.333;
 }
 
+/**
+ *  ██████╗ █████╗ ██████╗ ██████╗     ██╗     ██╗███████╗████████╗
+ * ██╔════╝██╔══██╗██╔══██╗██╔══██╗    ██║     ██║██╔════╝╚══██╔══╝
+ * ██║     ███████║██████╔╝██║  ██║    ██║     ██║███████╗   ██║
+ * ██║     ██╔══██║██╔══██╗██║  ██║    ██║     ██║╚════██║   ██║
+ * ╚██████╗██║  ██║██║  ██║██████╔╝    ███████╗██║███████║   ██║
+ *  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝     ╚══════╝╚═╝╚══════╝   ╚═╝
+ *
+ *
+ * This sheet contains:
+ * * The card-list module
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
 .card-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -804,6 +822,18 @@ html {
   align-items: center;
   -ms-flex-flow: wrap;
   flex-flow: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.card-list__item {
+  width: 100%;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 /**
@@ -826,15 +856,12 @@ html {
  */
 
 .card {
-  max-width: 400px;
   width: 100%;
-  height: 232px;
   -webkit-box-shadow: 1px 1px 0px 1px rgba(13, 13, 13, 0.15);
   box-shadow: 1px 1px 0px 1px rgba(13, 13, 13, 0.15);
   border-radius: 5px;
   overflow: hidden;
   position: relative;
-  margin: 16px;
   background-color: #FFFFFF;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -852,6 +879,12 @@ html {
   cursor: pointer;
   -webkit-transition: .2s;
   transition: .2s;
+  margin: 8px 0;
+}
+
+.card::before {
+  content: "";
+  padding-bottom: 75%;
 }
 
 .card.experimental::after {
@@ -874,13 +907,16 @@ html {
 }
 
 .card:hover {
-  width: 33.3%;
-  height: 248px;
-  margin: 0;
+  width: 100%;
 }
 
 .card:hover .card__title {
   opacity: 1;
+}
+
+.card:hover .card__image {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .card__content {
@@ -925,13 +961,89 @@ html {
 }
 
 .card__image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 100%;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 .card__image img {
   width: auto;
   height: 100%;
   max-width: 100%;
+}
+
+/**
+ *
+ * ███████╗██╗██╗  ████████╗███████╗██████╗     ███████╗███████╗ ██████╗████████╗██╗ ██████╗ ███╗   ██╗
+ * ██╔════╝██║██║  ╚══██╔══╝██╔════╝██╔══██╗    ██╔════╝██╔════╝██╔════╝╚══██╔══╝██║██╔═══██╗████╗  ██║
+ * █████╗  ██║██║     ██║   █████╗  ██████╔╝    ███████╗█████╗  ██║        ██║   ██║██║   ██║██╔██╗ ██║
+ * ██╔══╝  ██║██║     ██║   ██╔══╝  ██╔══██╗    ╚════██║██╔══╝  ██║        ██║   ██║██║   ██║██║╚██╗██║
+ * ██║     ██║███████╗██║   ███████╗██║  ██║    ███████║███████╗╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║
+ * ╚═╝     ╚═╝╚══════╝╚═╝   ╚══════╝╚═╝  ╚═╝    ╚══════╝╚══════╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+ *
+ *
+ * This sheet contains:
+ * * The filter section module
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+.filter-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  margin: 16px 0;
+}
+
+.filter-section__item.full {
+  width: 100%;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+/**
+ *
+ * ██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗
+ * ██║  ██║██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗
+ * ███████║█████╗  ███████║██║  ██║█████╗  ██████╔╝
+ * ██╔══██║██╔══╝  ██╔══██║██║  ██║██╔══╝  ██╔══██╗
+ * ██║  ██║███████╗██║  ██║██████╔╝███████╗██║  ██║
+ * ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝
+ *
+ *
+ * This sheet contains:
+ * * The header module
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+.header {
+  width: 100%;
+  margin: 24px 0;
+}
+
+.header__heading {
+  text-align: center;
 }
 
 .editor-styles-wrapper {
@@ -1024,10 +1136,24 @@ html {
     font-size: 1.77778rem;
     line-height: 1.333;
   }
+
+  .card-list {
+    width: calc(100% + 16px);
+    margin-left: -8px;
+  }
+
+  .card-list__item {
+    width: 50%;
+    padding: 8px;
+  }
+
+  .card-list__item:hover {
+    padding: 0px;
+  }
 }
 
 @media only screen and (min-width: 900px) {
-  .card {
-    width: calc(33.3% - 32px);
+  .card-list__item {
+    width: 33.3%;
   }
 }

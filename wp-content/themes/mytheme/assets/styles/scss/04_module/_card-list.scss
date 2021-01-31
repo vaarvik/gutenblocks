@@ -1,5 +1,44 @@
+/**
+ *  ██████╗ █████╗ ██████╗ ██████╗     ██╗     ██╗███████╗████████╗
+ * ██╔════╝██╔══██╗██╔══██╗██╔══██╗    ██║     ██║██╔════╝╚══██╔══╝
+ * ██║     ███████║██████╔╝██║  ██║    ██║     ██║███████╗   ██║
+ * ██║     ██╔══██║██╔══██╗██║  ██║    ██║     ██║╚════██║   ██║
+ * ╚██████╗██║  ██║██║  ██║██████╔╝    ███████╗██║███████║   ██║
+ *  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝     ╚══════╝╚═╝╚══════╝   ╚═╝
+ *
+ *
+ * This sheet contains:
+ * * The card-list module
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
 .card-list {
 	display: flex;
 	align-items: center;
 	flex-flow: wrap;
+	justify-content: space-between;
+	@include tablet-p-up {
+		width: calc(100% + 16px);
+		margin-left: -8px;
+	}
+}
+
+.card-list__item {
+	width: 100%;
+	flex-grow: 1;
+	transition: .2s;
+	@include tablet-p-up {
+		width: 50%;
+		padding: 8px;
+		&:hover {
+			padding: 0px;
+		}
+	}
+	@include tablet-l-up {
+		width: 33.3%;
+	}
 }

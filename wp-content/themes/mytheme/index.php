@@ -20,7 +20,18 @@ get_header();
 <main id="site-content" class="site-content" role="main">
 
 	<div class="archive-content">
-		<div class="card-list">
+		<header class="header">
+			<h2 class="header__heading">Search</h2>
+			<div class="header__body">
+				<div class="filter-section">
+					<div class="filter-section__item full">
+						<label for="filter-search">Search</label>
+						<input class="field search" type="search" name="s" id="filter-search" data-search-in="components-list" />
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="card-list" id="components-list">
 			<?php
 
 			if ( have_posts() ) {
@@ -28,18 +39,18 @@ get_header();
 				while ( have_posts() ) {
 					the_post();
 					?>
-
-					<div class="card <?php echo has_tag( "experimental" ) ? "experimental" : "" ?>">
-						<div class="card__image">
-							<?php the_post_thumbnail() ?>
-						</div>
-						<p class="card__title"><?php echo the_title(); ?></p>
-						<div class="card__content">
-							<h5 class="card__heading"><?php echo the_title(); ?></h5>
-							<div class="card__body"><?php echo the_content(); ?></div>
+					<div class="card-list__item search-item">
+						<div class="card <?php echo has_tag( "experimental" ) ? "experimental" : "" ?>">
+							<div class="card__image">
+								<?php the_post_thumbnail() ?>
+							</div>
+							<p class="card__title search-item__text"><?php echo the_title(); ?></p>
+							<div class="card__content">
+								<h5 class="card__heading"><?php echo the_title(); ?></h5>
+								<div class="card__body"><?php echo the_content(); ?></div>
+							</div>
 						</div>
 					</div>
-
 					<?php
 				}
 			}

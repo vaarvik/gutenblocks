@@ -20,11 +20,13 @@
  */
 
 .field {
-	box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
-	border-radius: 5px;
+	// box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+	border-radius: 2px;
 	display: block;
 	background-color: $grey2;
-	border: 0;
+	border: 1px solid $blue1;
+	max-width: 200px;
+	margin: 8px 0;
 
 	//Modifiers
 	&.input {

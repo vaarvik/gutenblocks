@@ -17,21 +17,12 @@
  * designed to exist as a standalone component.
  */
 
-$card-height: 200px;
-$card-title-height: 32px;
-$card-total-height: $card-height + $card-title-height;
-
-$card-margin: 16px;
-
 .card {
-	max-width: 400px;
 	width: 100%;
-	height: $card-total-height;
 	box-shadow: 1px 1px 0px 1px rgba($color: $black, $alpha: 0.15);
 	border-radius: 5px;
 	overflow: hidden;
 	position: relative;
-	margin: $card-margin;
 	background-color: $white;
 	display: flex;
 	flex-flow: column;
@@ -39,8 +30,10 @@ $card-margin: 16px;
 	justify-content: center;
 	cursor: pointer;
 	transition: .2s;
-	@include tablet-l-up {
-		width: calc(33.3% - #{$card-margin *  2});
+	margin: 8px 0;
+	&::before {
+		content: "";
+		padding-bottom: 75%;
 	}
 	&.experimental {
 		&::after {
@@ -63,11 +56,12 @@ $card-margin: 16px;
 		}
 	}
 	&:hover {
-		width: 33.3%;
-		height: #{$card-total-height + $card-margin};
-		margin: 0;
+		width: 100%;
 		.card__title {
 			opacity: 1;
+		}
+		.card__image {
+			filter: grayscale(0);
 		}
 	}
 }
@@ -87,7 +81,7 @@ $card-margin: 16px;
 }
 
 .card__title {
-	height: $card-title-height;
+	height: 32px;
 	@include font-size(12px);
 	bottom: 0;
 	right: 0;
@@ -106,7 +100,12 @@ $card-margin: 16px;
 }
 
 .card__image {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	width: 100%;
+	filter: grayscale(1);
 	img {
 		width: auto;
 		height: 100%;
