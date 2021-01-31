@@ -27,6 +27,9 @@ $font-pre: "Courier 10 Pitch", Courier, monospace;
 
 //Set base font size for the entire site
 html {
-	font-size: $base-font-size;
+	font-size: #{$base-font-size - 2px};
+	@media only screen and (min-width: 600px) {
+		font-size: $base-font-size;
+	}
 	color: $blue-1;
 }

@@ -123,7 +123,7 @@ html {
 */
 
 html {
-  font-size: 20px;
+  font-size: 18px;
   color: #22292E;
 }
 
@@ -756,7 +756,7 @@ ol,ul,dd,li,tr,th,caption {
   margin: 0 auto;
   max-width: 1440px;
   width: 100%;
-  padding: 24px;
+  padding: 8px;
 }
 
 /**
@@ -1407,7 +1407,17 @@ ol,ul,dd,li,tr,th,caption {
  * Used for alternate themes.
  */
 
+@media only screen and (min-width: 376px) {
+  .archive-content {
+    padding: 16px;
+  }
+}
+
 @media only screen and (min-width: 600px) {
+  html {
+    font-size: 20px;
+  }
+
   h1 {
     font-size: 56px;
     font-size: 2.8rem;
@@ -1440,6 +1450,10 @@ ol,ul,dd,li,tr,th,caption {
 
   .site-content {
     min-height: calc( 100vh - 80px - 140px);
+  }
+
+  .archive-content {
+    padding: 24px;
   }
 
   .card-list {
