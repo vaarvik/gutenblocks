@@ -481,7 +481,7 @@ h1,h2,h3,h4,h5,h6,p,a,blockquote,cite,pre,label,figcaption {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: Georgia, serif;
+  font-family: Arial, Helvetica, sans-serif;
   margin-top: 8px;
   margin-bottom: 8px;
 }
@@ -925,6 +925,35 @@ ol,ul,dd,li,tr,th,caption {
 
 /**
  *
+ * ██╗      █████╗ ██████╗ ███████╗██╗
+ * ██║     ██╔══██╗██╔══██╗██╔════╝██║
+ * ██║     ███████║██████╔╝█████╗  ██║
+ * ██║     ██╔══██║██╔══██╗██╔══╝  ██║
+ * ███████╗██║  ██║██████╔╝███████╗███████╗
+ * ╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝
+ *
+ *
+ * This sheet contains:
+ * * The label module
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+.label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  font-size: 0.77778rem;
+  line-height: 1.333;
+  text-transform: uppercase;
+  letter-spacing: 1.25px;
+}
+
+/**
+ *
  * ████████╗███████╗██╗  ██╗████████╗    ██╗     ██╗███████╗████████╗
  * ╚══██╔══╝██╔════╝╚██╗██╔╝╚══██╔══╝    ██║     ██║██╔════╝╚══██╔══╝
  *    ██║   █████╗   ╚███╔╝    ██║       ██║     ██║███████╗   ██║
@@ -1322,6 +1351,8 @@ ol,ul,dd,li,tr,th,caption {
 
 .header__heading {
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.25px;
 }
 
 /**

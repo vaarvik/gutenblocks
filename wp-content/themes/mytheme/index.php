@@ -25,7 +25,7 @@ get_header();
 			<div class="header__body">
 				<div class="filter-section">
 					<div class="filter-section__item full">
-						<label for="filter-search">Search</label>
+						<label for="filter-search" class="label">Search</label>
 						<input class="field search" type="search" name="s" id="filter-search" data-search-in="components-list" />
 					</div>
 				</div>
