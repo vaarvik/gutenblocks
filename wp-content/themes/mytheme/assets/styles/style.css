@@ -1469,7 +1469,8 @@ ol,ul,dd,li,tr,th,caption {
   }
 
   .card-list__item:hover {
-    padding: 8px;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
   }
 }
 
