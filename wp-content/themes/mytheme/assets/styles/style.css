@@ -1272,6 +1272,7 @@ ol,ul,dd,li,tr,th,caption {
 }
 
 .card__image img {
+  margin: 0 auto;
   width: auto;
   height: 100%;
   max-width: 100%;
