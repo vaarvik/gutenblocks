@@ -40,8 +40,10 @@ get_header();
 
 				while ( have_posts() ) {
 					the_post();
+					$text_content = preg_replace( "/\"/", "'", wp_strip_all_tags( get_the_content() ) );
 					?>
-					<div class="card-list__item search-item" data-search-content="<?php echo get_the_title() ?>">
+
+					<div class="card-list__item search-item" data-search-content="<?php echo get_the_title() . " | " . $text_content ?>">
 						<div class="card <?php echo has_tag( "experimental" ) ? "experimental" : "" ?>">
 							<div class="card__image">
 								<?php the_post_thumbnail() ?>
