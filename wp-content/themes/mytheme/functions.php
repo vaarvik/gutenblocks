@@ -43,3 +43,12 @@ require get_template_directory() . '/inc/CPT/bootstrap.php';
 
 // Custom option manus
 require get_template_directory() . '/inc/COM/bootstrap.php';
+
+function mytheme_redirect_all_pages_to_home() {
+    if ( ! is_front_page() ) {
+        wp_redirect( get_home_url() );
+        exit;
+    }
+}
+
+add_action('template_redirect','mytheme_redirect_all_pages_to_home');
