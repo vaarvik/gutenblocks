@@ -47,7 +47,7 @@
     var filter = field.value.toUpperCase();
     var items = list.querySelectorAll(".search-item");
     items.forEach(function (item, i) {
-      var itemText = item.querySelector(".search-item__text").innerText;
+      var itemText = item.dataset.searchContent;
 
       if (itemText.toUpperCase().indexOf(filter) > -1) {
         item.style.display = "";

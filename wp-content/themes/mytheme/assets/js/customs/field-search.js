@@ -20,7 +20,7 @@
 		const filter = field.value.toUpperCase();
 		const items = list.querySelectorAll(".search-item");
 		items.forEach((item, i) => {
-			const itemText = item.querySelector(".search-item__text").innerText;
+			const itemText = item.dataset.searchContent;
 			if (itemText.toUpperCase().indexOf(filter) > -1) {
 				item.style.display = "";
 			} else {
