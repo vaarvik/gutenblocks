@@ -514,34 +514,35 @@ html {
  */
 
 .btn {
-  -webkit-box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 3em;
-  padding: 16px 32px;
+  padding: 8px 32px;
   text-transform: uppercase;
   -webkit-transition: .15s ease;
   transition: .15s ease;
-  font-weight: 700;
+  margin: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  font-size: 0.8rem;
+  line-height: 1.2;
 }
 
 .btn.primary {
   color: #FFFFFF;
-  background-color: #00478C;
+  background-color: #262626;
 }
 
-.btn.primary:hover {
-  background-color: #FFFFFF;
-  color: #2A2F3E;
+.btn.primary:hover,.btn.primary.active {
+  background-color: #0D0D0D;
 }
 
 .btn.secondary {
-  background-color: #FFFFFF;
-  color: #2A2F3E;
+  background-color: transparent;
+  border: 2px solid #262626;
+  color: #262626;
 }
 
-.btn.secondary:hover {
-  border: 3px solid transparent;
-  background-color: #2A2F3E;
+.btn.secondary:hover,.btn.secondary.active {
+  background-color: #262626;
   color: #FFFFFF;
 }
 
@@ -628,6 +629,10 @@ html {
 
 .field.input {
   padding: 8px;
+}
+
+.field.hide {
+  display: none;
 }
 
 .field__option {
@@ -1003,6 +1008,38 @@ html {
 }
 
 /**
+ *  ██████╗ █████╗ ██████╗ ██████╗     ██╗     ██╗███████╗████████╗
+ * ██╔════╝██╔══██╗██╔══██╗██╔══██╗    ██║     ██║██╔════╝╚══██╔══╝
+ * ██║     ███████║██████╔╝██║  ██║    ██║     ██║███████╗   ██║
+ * ██║     ██╔══██║██╔══██╗██║  ██║    ██║     ██║╚════██║   ██║
+ * ╚██████╗██║  ██║██║  ██║██████╔╝    ███████╗██║███████║   ██║
+ *  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝     ╚══════╝╚═╝╚══════╝   ╚═╝
+ *
+ *
+ * This sheet contains:
+ * * The card-list module
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+.checkbox-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/**
  *
  * ███████╗██╗██╗  ████████╗███████╗██████╗     ███████╗███████╗ ██████╗████████╗██╗ ██████╗ ███╗   ██╗
  * ██╔════╝██║██║  ╚══██╔══╝██╔════╝██╔══██╗    ██╔════╝██╔════╝██╔════╝╚══██╔══╝██║██╔═══██╗████╗  ██║
@@ -1038,6 +1075,7 @@ html {
 
 .filter-section__item {
   text-align: center;
+  margin: 16px;
 }
 
 .filter-section__item.full {

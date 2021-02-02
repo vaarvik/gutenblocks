@@ -34,3 +34,43 @@ function mytheme_asset_url( $path ) {
 
 	return get_template_directory_uri() . $path;
 }
+
+/**
+ * Pretty Print
+ * ----------
+ * Pretty prints an array.
+ *
+ * @param   string  $value  The value to be printed
+ *
+ * @return  boolean         True
+ */
+function mytheme_pretty_print( $value ) {
+	echo "<pre>";
+	print_r( $value );
+	echo "</pre>";
+
+	return true;
+}
+
+/**
+ * Get String From Array Property
+ * ----------
+ * Creates a comma seperated string from a property in an array.
+ *
+ * @param   array  	$array  The array to scanned
+ * @param   string  $prop  	The property to be used
+ *
+ * @return  string         	The final string with the values
+ */
+function mytheme_get_string_from_array_prop( $array, $prop ) {
+	$array_string = "";
+
+	foreach ( $array as $key => $item) {
+		$array_string .= $item->$prop;
+		if( $key < count( $array ) - 1 ) {
+			$array_string .= ",";
+		}
+	}
+
+	return $array_string;
+}

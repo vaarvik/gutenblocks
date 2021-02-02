@@ -17,13 +17,18 @@
 	});
 
 	function searchInList(field, list) {
-		const filter = field.value.toUpperCase();
+		const filter = field.value;
 		const items = list.querySelectorAll(".search-item");
 		items.forEach((item, i) => {
 			const itemText = item.dataset.searchContent;
-			if (itemText.toUpperCase().indexOf(filter) > -1) {
-				item.style.display = "";
+			if (itemText.toUpperCase().indexOf(filter.toUpperCase()) > -1) {
+				if(!item.dataset.filters || item.dataset.filters === ""){
+					item.style.display = "";
+				}
+				//tell the element that it is not affected by the filtering from the search input
+				item.dataset.hasSearchFilter = "false";
 			} else {
+				item.dataset.hasSearchFilter = "true";
 				item.style.display = "none";
 			}
 		});

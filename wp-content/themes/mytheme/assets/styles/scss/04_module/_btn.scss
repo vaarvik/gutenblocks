@@ -18,29 +18,29 @@
  */
 
  .btn {
-	box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
-	border-radius: 3em;
-	padding: 16px 32px;
+	// box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+	// border-radius: 3em;
+	padding: 8px 32px;
 	text-transform: uppercase;
 	transition: .15s ease;
-	font-weight: 700;
+	margin: 16px;
+	@include font("default", 500, 16px);
 
 
 	//Modifiers
 	&.primary {
 		color: $white;
-		background-color: $blue1;
-		&:hover {
-			background-color: $white;
-			color: $blue;
+		background-color: $black1;
+		&:hover, &.active {
+			background-color: $black;
 		}
 	}
 	&.secondary {
-		background-color: $white;
-		color: $blue;
-		&:hover {
-			border: 3px solid transparent;
-			background-color: $blue;
+		background-color: transparent;
+		border: 2px solid $black1;
+		color: $black1;
+		&:hover, &.active {
+			background-color: $black1;
 			color: $white;
 		}
 	}
