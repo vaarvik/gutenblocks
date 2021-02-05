@@ -23,13 +23,13 @@
 			const itemText = item.dataset.searchContent;
 			if (itemText.toUpperCase().indexOf(filter.toUpperCase()) > -1) {
 				if(!item.dataset.filters || item.dataset.filters === ""){
-					item.style.display = "";
+					item.classList.remove("has-search-filter");
 				}
 				//tell the element that it is not affected by the filtering from the search input
 				item.dataset.hasSearchFilter = "false";
 			} else {
 				item.dataset.hasSearchFilter = "true";
-				item.style.display = "none";
+				item.classList.add("has-search-filter");
 			}
 		});
 	}

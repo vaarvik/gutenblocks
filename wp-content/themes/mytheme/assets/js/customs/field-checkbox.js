@@ -13,48 +13,79 @@
 		const listToSearch = document.querySelector(`#${checkbox.dataset.searchIn}`);
 		const filterType = checkbox.dataset.searchFor;
 		const btn = checkbox.querySelector(`.btn`);
+
+		createFilterStyle(filterType);
 		btn.addEventListener("click", (e) => {
-			btn.classList.toggle("active");
-			searchInList(checkbox, listToSearch, filterType);
+			const notActive = btn.classList.toggle("active");
+			searchInList(checkbox, listToSearch, filterType, notActive);
 		});
 	});
 
-	function searchInList(checkbox, list, filterType) {
+	function searchInList(checkbox, list, filterType, notActive) {
 		const filter = checkbox.innerText.toLowerCase().replace(" ", "-");
 		const items = list.querySelectorAll(".search-item");
-		items.forEach((item, i) => {
-			const optionsText = item.dataset[filterType];
-			const optionsArray = optionsText.split(",");
-			for(let i in optionsArray) {
-				//if the component has the category then don't do anything more with it
-				if (optionsArray[i].toLowerCase() === filter ) {
+		let currentFilters = list.dataset.filters ? list.dataset.filters.split(",") : [];
+
+		updateFiltersArray();
+
+		if(!currentFilters.length && !notActive){
+			resetFilter();
+			return;
+		}
+
+		updateItemFilters();
+
+
+		function updateItemFilters() {
+			items.forEach((item, i) => {
+				const itemCategories = item.dataset.searchCategories.split(",");
+				if(arraysHasMatch(currentFilters, itemCategories)) {
+					item.classList.remove(filterType + "-filter");
 					return;
 				}
-			};
+				item.classList.add(filterType + "-filter");
+			});
+		}
 
-			//if there is no match...
-			//create an array from the string in dataset.filters
-			const oldFilters = item.dataset.filters ? item.dataset.filters.split(",") : [];
-			//create a variable that checks if there is any filter already and if they include the current filter
-			const hasThisFilter = oldFilters && oldFilters.includes(filter);
-			//if this item don't have this filter
-			if(!hasThisFilter){
-				//add filters to the component
-				item.dataset.filters = `${ filter }${ oldFilters ? "," + oldFilters.join(",") : "" }`;
-				//hide item
-				item.style.display = "none";
-			}
-			//if the filter is already on the component then remove it again
-			else {
-				//remove filter
-				item.dataset.filters = oldFilters.filter(string => string !== filter);
 
-				//show item is no filters is on it
-				const hasSearchFilter = item.dataset.hasSearchFilter && item.dataset.hasSearchFilter === "true";
-				if(item.dataset.filters === "" && !hasSearchFilter){
-					item.style.display = "";
-				}
+		function updateFiltersArray() {
+			if (notActive) {
+				currentFilters.push(filter);
+				list.dataset.filters = currentFilters;
+			} else {
+				currentFilters = currentFilters.filter(string => string !== filter);
+				list.dataset.filters = currentFilters;
 			}
-		});
+		}
+
+
+		function resetFilter() {
+			items.forEach(item => {
+				item.classList.remove(filterType + "-filter");
+			});
+		}
+	}
+
+	function arraysHasMatch(array1, array2) {
+		for(let i in array1) {
+			for(let j in array2) {
+				if(array1[i].toLowerCase() === array2[j].toLowerCase())
+					return true;
+			}
+		};
+		return false;
+	}
+
+	function createFilterStyle(filterType) {
+		if( !document.querySelector(`#${filterType}-style`)){
+			const styleEl = document.createElement("style");
+			styleEl.id = `${filterType}-style`;
+
+			styleEl.innerText = `.${filterType}-filter {
+				display: none;
+			}`.replace(/(\r\n|\n|\r)/gm, "");
+
+			document.getElementsByTagName('head')[0].appendChild(styleEl);
+		}
 	}
 })();

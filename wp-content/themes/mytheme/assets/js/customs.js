@@ -40,52 +40,76 @@
     var listToSearch = document.querySelector("#".concat(checkbox.dataset.searchIn));
     var filterType = checkbox.dataset.searchFor;
     var btn = checkbox.querySelector(".btn");
+    createFilterStyle(filterType);
     btn.addEventListener("click", function (e) {
-      btn.classList.toggle("active");
-      searchInList(checkbox, listToSearch, filterType);
+      var notActive = btn.classList.toggle("active");
+      searchInList(checkbox, listToSearch, filterType, notActive);
     });
   });
 
-  function searchInList(checkbox, list, filterType) {
+  function searchInList(checkbox, list, filterType, notActive) {
     var filter = checkbox.innerText.toLowerCase().replace(" ", "-");
     var items = list.querySelectorAll(".search-item");
-    items.forEach(function (item, i) {
-      var optionsText = item.dataset[filterType];
-      var optionsArray = optionsText.split(",");
+    var currentFilters = list.dataset.filters ? list.dataset.filters.split(",") : [];
+    updateFiltersArray();
 
-      for (var _i in optionsArray) {
-        //if the component has the category then don't do anything more with it
-        if (optionsArray[_i].toLowerCase() === filter) {
+    if (!currentFilters.length && !notActive) {
+      resetFilter();
+      return;
+    }
+
+    updateItemFilters();
+
+    function updateItemFilters() {
+      items.forEach(function (item, i) {
+        var itemCategories = item.dataset.searchCategories.split(",");
+
+        if (arraysHasMatch(currentFilters, itemCategories)) {
+          item.classList.remove(filterType + "-filter");
           return;
         }
+
+        item.classList.add(filterType + "-filter");
+      });
+    }
+
+    function updateFiltersArray() {
+      if (notActive) {
+        currentFilters.push(filter);
+        list.dataset.filters = currentFilters;
+      } else {
+        currentFilters = currentFilters.filter(function (string) {
+          return string !== filter;
+        });
+        list.dataset.filters = currentFilters;
       }
+    }
 
-      ; //if there is no match...
-      //create an array from the string in dataset.filters
+    function resetFilter() {
+      items.forEach(function (item) {
+        item.classList.remove(filterType + "-filter");
+      });
+    }
+  }
 
-      var oldFilters = item.dataset.filters ? item.dataset.filters.split(",") : []; //create a variable that checks if there is any filter already and if they include the current filter
+  function arraysHasMatch(array1, array2) {
+    for (var i in array1) {
+      for (var j in array2) {
+        if (array1[i].toLowerCase() === array2[j].toLowerCase()) return true;
+      }
+    }
 
-      var hasThisFilter = oldFilters && oldFilters.includes(filter); //if this item don't have this filter
+    ;
+    return false;
+  }
 
-      if (!hasThisFilter) {
-        //add filters to the component
-        item.dataset.filters = "".concat(filter).concat(oldFilters ? "," + oldFilters.join(",") : ""); //hide item
-
-        item.style.display = "none";
-      } //if the filter is already on the component then remove it again
-      else {
-          //remove filter
-          item.dataset.filters = oldFilters.filter(function (string) {
-            return string !== filter;
-          }); //show item is no filters is on it
-
-          var hasSearchFilter = item.dataset.hasSearchFilter && item.dataset.hasSearchFilter === "true";
-
-          if (item.dataset.filters === "" && !hasSearchFilter) {
-            item.style.display = "";
-          }
-        }
-    });
+  function createFilterStyle(filterType) {
+    if (!document.querySelector("#".concat(filterType, "-style"))) {
+      var styleEl = document.createElement("style");
+      styleEl.id = "".concat(filterType, "-style");
+      styleEl.innerText = ".".concat(filterType, "-filter {\n\t\t\t\tdisplay: none;\n\t\t\t}").replace(/(\r\n|\n|\r)/gm, "");
+      document.getElementsByTagName('head')[0].appendChild(styleEl);
+    }
   }
 })();
 /**
@@ -116,14 +140,14 @@
 
       if (itemText.toUpperCase().indexOf(filter.toUpperCase()) > -1) {
         if (!item.dataset.filters || item.dataset.filters === "") {
-          item.style.display = "";
+          item.classList.remove("has-search-filter");
         } //tell the element that it is not affected by the filtering from the search input
 
 
         item.dataset.hasSearchFilter = "false";
       } else {
         item.dataset.hasSearchFilter = "true";
-        item.style.display = "none";
+        item.classList.add("has-search-filter");
       }
     });
   }
