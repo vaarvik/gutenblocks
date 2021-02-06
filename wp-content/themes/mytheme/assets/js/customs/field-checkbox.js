@@ -24,7 +24,7 @@
 	function searchInList(checkbox, list, filterType, notActive) {
 		const filter = checkbox.innerText.toLowerCase().replace(" ", "-");
 		const items = list.querySelectorAll(".search-item");
-		let currentFilters = list.dataset.filters ? list.dataset.filters.split(",") : [];
+		let currentFilters = list.dataset[`${filterType}Filters`] ? list.dataset[`${filterType}Filters`].split(",") : [];
 
 		updateFiltersArray();
 
@@ -38,7 +38,7 @@
 
 		function updateItemFilters() {
 			items.forEach((item, i) => {
-				const itemCategories = item.dataset.searchCategories.split(",");
+				const itemCategories = item.dataset[filterType].split(",");
 				if(arraysHasMatch(currentFilters, itemCategories)) {
 					item.classList.remove(filterType + "-filter");
 					return;
@@ -51,10 +51,10 @@
 		function updateFiltersArray() {
 			if (notActive) {
 				currentFilters.push(filter);
-				list.dataset.filters = currentFilters;
+				list.dataset[`${filterType}Filters`] = currentFilters;
 			} else {
 				currentFilters = currentFilters.filter(string => string !== filter);
-				list.dataset.filters = currentFilters;
+				list.dataset[`${filterType}Filters`] = currentFilters;
 			}
 		}
 

@@ -45,6 +45,20 @@ get_header();
 						</div>
 					</div>
 
+					<div class="filter-section__item full">
+						<label for="filter-tag" class="label">Tags</label>
+						<div class="checkbox-list">
+							<?php foreach ( get_tags() as $key => $tag) : ?>
+								<div class="checkbox-list__item">
+									<div class="filter-checkbox" data-search-in="components-list" data-search-for="searchTags">
+										<input class="field input checkbox hide" type="checkbox" id="filter-tag" />
+										<button class="btn secondary"><?php echo $tag->name ?></button>
+									</div>
+								</div>
+							<?php endforeach; ?>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</header>
@@ -56,10 +70,11 @@ get_header();
 				while ( have_posts() ) {
 					the_post();
 					$text_content = preg_replace( "/\"/", "'", wp_strip_all_tags( get_the_content() ) );
-					$categories = mytheme_get_string_from_array_prop( get_the_category(), "slug" );
+					$categories = mytheme_get_string_from_array_prop( get_the_category() ?? null, "slug" );
+					$tags = mytheme_get_string_from_array_prop( get_the_tags() ?? null, "slug" );
 					?>
 
-					<div class="card-list__item search-item" data-search-content="<?php echo get_the_title() . " | " . $text_content ?>" data-search-categories="<?php echo $categories ?>">
+					<div class="card-list__item search-item" data-search-content="<?php echo get_the_title() . " | " . $text_content ?>" data-search-categories="<?php echo $categories ?>" data-search-tags="<?php echo $tags ?>">
 						<div class="card <?php echo has_tag( "experimental" ) ? "experimental" : "" ?>">
 							<div class="card__image">
 								<?php the_post_thumbnail() ?>

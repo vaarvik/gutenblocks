@@ -50,7 +50,7 @@
   function searchInList(checkbox, list, filterType, notActive) {
     var filter = checkbox.innerText.toLowerCase().replace(" ", "-");
     var items = list.querySelectorAll(".search-item");
-    var currentFilters = list.dataset.filters ? list.dataset.filters.split(",") : [];
+    var currentFilters = list.dataset["".concat(filterType, "Filters")] ? list.dataset["".concat(filterType, "Filters")].split(",") : [];
     updateFiltersArray();
 
     if (!currentFilters.length && !notActive) {
@@ -62,7 +62,7 @@
 
     function updateItemFilters() {
       items.forEach(function (item, i) {
-        var itemCategories = item.dataset.searchCategories.split(",");
+        var itemCategories = item.dataset[filterType].split(",");
 
         if (arraysHasMatch(currentFilters, itemCategories)) {
           item.classList.remove(filterType + "-filter");
@@ -76,12 +76,12 @@
     function updateFiltersArray() {
       if (notActive) {
         currentFilters.push(filter);
-        list.dataset.filters = currentFilters;
+        list.dataset["".concat(filterType, "Filters")] = currentFilters;
       } else {
         currentFilters = currentFilters.filter(function (string) {
           return string !== filter;
         });
-        list.dataset.filters = currentFilters;
+        list.dataset["".concat(filterType, "Filters")] = currentFilters;
       }
     }
 
