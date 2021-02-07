@@ -546,6 +546,21 @@ html {
   color: #FFFFFF;
 }
 
+.btn.tertiary {
+  padding: 8px;
+  font-size: 12px;
+  font-size: 0.6rem;
+  line-height: 1.2;
+  text-transform: initial;
+  border: 1px solid #262626;
+  margin: 2px;
+}
+
+.btn.tertiary:hover,.btn.tertiary.active {
+  background-color: #262626;
+  color: #FFFFFF;
+}
+
 .btn.clean {
   background-color: initial;
   border: 0;

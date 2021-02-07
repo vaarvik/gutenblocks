@@ -47,12 +47,12 @@ get_header();
 
 					<div class="filter-section__item full">
 						<label for="filter-tag" class="label">Tags</label>
-						<div class="checkbox-list">
+						<div class="checkbox-list tight">
 							<?php foreach ( get_tags() as $key => $tag) : ?>
 								<div class="checkbox-list__item">
 									<div class="filter-checkbox" data-search-in="components-list" data-search-for="searchTags">
 										<input class="field input checkbox hide" type="checkbox" id="filter-tag" />
-										<button class="btn secondary"><?php echo $tag->name ?></button>
+										<button class="btn tertiary"><?php echo $tag->name ?></button>
 									</div>
 								</div>
 							<?php endforeach; ?>
