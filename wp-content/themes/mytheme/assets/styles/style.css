@@ -1338,6 +1338,8 @@ ol,ul,dd,li,tr,th,caption {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 /**
