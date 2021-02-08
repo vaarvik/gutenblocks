@@ -34,7 +34,7 @@ get_header();
 					<div class="filter-section__item">
 						<label for="filter-category" class="label">Categories</label>
 						<div class="checkbox-list">
-							<?php foreach ( get_categories() as $key => $category) : ?>
+							<?php foreach ( get_categories( array ('orderby' => 'name', 'order' => 'asc' ) ) as $key => $category) : ?>
 								<div class="checkbox-list__item">
 									<div class="filter-checkbox" data-search-in="components-list" data-search-for="searchCategories">
 										<input class="field input checkbox hide" type="checkbox" id="filter-category" />
@@ -48,7 +48,7 @@ get_header();
 					<div class="filter-section__item full">
 						<label for="filter-tag" class="label">Tags</label>
 						<div class="checkbox-list tight">
-							<?php foreach ( get_tags() as $key => $tag) : ?>
+							<?php foreach ( get_tags( array ('orderby' => 'name', 'order' => 'asc' ) ) as $key => $tag) : ?>
 								<div class="checkbox-list__item">
 									<div class="filter-checkbox" data-search-in="components-list" data-search-for="searchTags">
 										<input class="field input checkbox hide" type="checkbox" id="filter-tag" />
