@@ -1304,6 +1304,8 @@ ol,ul,dd,li,tr,th,caption {
   width: auto;
   height: 100%;
   max-width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 /**

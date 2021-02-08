@@ -1020,6 +1020,8 @@ html {
   width: auto;
   height: 100%;
   max-width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 /**
