@@ -13,7 +13,9 @@
  * Requires all custom post types in this folder.
  */
 
-$files = glob( __DIR__ . "\*.php" );
+//choose the right slash for the site
+$slash = preg_match("/\//", __DIR__) ? "/" : "\\";
+$files = glob( __DIR__ . $slash ."*.php" );
 
 if( !empty( $files ) )
 
