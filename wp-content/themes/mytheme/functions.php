@@ -10,12 +10,28 @@
  */
 
 /**
+ * --------------------
  * REQUIRED FILES
  * Include required files.
+ * --------------------
  */
 
-// Constants
+/**
+ * CONSTANTS
+ */
+
 define( "THEME_VERSION", wp_get_theme()->get( 'Version' ) );
+
+/**
+ * CLASSES
+ */
+
+// Meta fields
+require get_template_directory() . '/classes/meta-fields.php';
+
+/**
+ * INC
+ */
 
 // General functions
 require get_template_directory() . '/inc/helper-functions.php';
@@ -42,7 +58,7 @@ require get_template_directory() . '/inc/content-links.php';
 require get_template_directory() . '/inc/CPT/bootstrap.php';
 
 // Custom option manus
-require get_template_directory() . '/inc/COM/bootstrap.php';
+require get_template_directory() . '/inc/COP/bootstrap.php';
 
 // Custom option manus
 require get_template_directory() . '/inc/other.php';
