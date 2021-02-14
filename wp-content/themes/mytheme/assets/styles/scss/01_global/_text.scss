@@ -18,8 +18,8 @@
 $base-font-size: 20px;
 $base-line-height: 24px;
 
-$font-base: Arial, Helvetica, sans-serif;
-$font-headings: Arial, Helvetica, sans-serif;
+$font-base: 'Open Sans', Helvetica, sans-serif;
+$font-headings: 'Lato', Helvetica, sans-serif;
 $font-mono: Monaco, Consolas, monospace;
 
 $font-code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
@@ -28,6 +28,7 @@ $font-pre: "Courier 10 Pitch", Courier, monospace;
 //Set base font size for the entire site
 html {
 	font-size: #{$base-font-size - 2px};
+	font-family: $font-base;
 	@media only screen and (min-width: 600px) {
 		font-size: $base-font-size;
 	}

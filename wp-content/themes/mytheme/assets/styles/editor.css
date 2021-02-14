@@ -123,6 +123,7 @@ html {
 
 html {
   font-size: 18px;
+  font-family: "Open Sans", Helvetica, sans-serif;
   color: #22292E;
 }
 
@@ -377,7 +378,7 @@ html {
 }
 
 .edit-post-visual-editor.editor-styles-wrapper h1,.edit-post-visual-editor.editor-styles-wrapper h2,.edit-post-visual-editor.editor-styles-wrapper h3,.edit-post-visual-editor.editor-styles-wrapper h4,.edit-post-visual-editor.editor-styles-wrapper h5,.edit-post-visual-editor.editor-styles-wrapper h6 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lato", Helvetica, sans-serif;
   margin-top: 8px;
   margin-bottom: 8px;
 }
@@ -519,7 +520,7 @@ html {
   -webkit-transition: .15s ease;
   transition: .15s ease;
   margin: 16px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 500;
   font-size: 16px;
   font-size: 0.8rem;
@@ -680,7 +681,7 @@ html {
  */
 
 .label {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 600;
   font-size: 20px;
   font-size: 1rem;
