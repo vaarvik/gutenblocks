@@ -27,7 +27,7 @@ add_action( 'pre_get_posts', 'mytheme_modify_main_query' );
  * @return  [type]  [return description]
  */
 function mytheme_redirect_all_pages_to_home() {
-    if ( ! is_front_page() ) {
+    if ( ! is_front_page() && ! is_single() ) {
         wp_redirect( get_home_url() );
         exit;
     }

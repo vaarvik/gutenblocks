@@ -94,7 +94,7 @@ get_header();
 									<div class="card__categories">
 										<?php echo $categories ?>
 									</div>
-									<button class="card__btn btn primary"><?php _e( "Read more" ) ?></button>
+									<a class="card__btn btn primary" href="<?php echo get_the_permalink(); ?>"><?php _e( "Read more" ) ?></a>
 								</div>
 							</div>
 						</div>

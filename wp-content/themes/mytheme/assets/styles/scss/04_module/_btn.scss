@@ -26,6 +26,9 @@
 	letter-spacing: .3px;
 	position: relative;
 	@include font("heading", 600, 12px);
+	&:hover {
+		text-decoration: none;
+	}
 
 
 	//Modifiers

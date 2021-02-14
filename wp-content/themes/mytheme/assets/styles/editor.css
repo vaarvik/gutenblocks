@@ -434,12 +434,13 @@ html {
   margin-bottom: 4px;
 }
 
-.edit-post-visual-editor.editor-styles-wrapper a,.edit-post-visual-editor.editor-styles-wrapper blockquote,.edit-post-visual-editor.editor-styles-wrapper cite,.edit-post-visual-editor.editor-styles-wrapper pre,.edit-post-visual-editor.editor-styles-wrapper label,.edit-post-visual-editor.editor-styles-wrapper figcaption {
+.edit-post-visual-editor.editor-styles-wrapper blockquote,.edit-post-visual-editor.editor-styles-wrapper cite,.edit-post-visual-editor.editor-styles-wrapper pre,.edit-post-visual-editor.editor-styles-wrapper label,.edit-post-visual-editor.editor-styles-wrapper figcaption {
   margin-top: 8px;
   margin-bottom: 8px;
 }
 
 .edit-post-visual-editor.editor-styles-wrapper p {
+  margin-top: 0;
   margin-bottom: 8px;
 }
 
@@ -528,6 +529,10 @@ html {
   font-size: 12px;
   font-size: 0.6rem;
   line-height: 1.2;
+}
+
+.btn:hover {
+  text-decoration: none;
 }
 
 .btn.primary {
