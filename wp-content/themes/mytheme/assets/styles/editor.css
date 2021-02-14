@@ -354,7 +354,7 @@ html {
 }
 
 .edit-post-visual-editor.editor-styles-wrapper body {
-  background-color: #EFEFEF;
+  background-color: #F2F2F2;
   margin: 0;
 }
 
@@ -532,7 +532,7 @@ html {
 
 .btn.primary {
   color: #db074d;
-  background-color: #FFFFFF;
+  background-color: transparent;
   border: 1px solid #db074d;
 }
 
@@ -577,6 +577,7 @@ html {
 }
 
 .btn.tertiary {
+  background-color: transparent;
   padding: 4px 8px;
   font-weight: 300;
   font-size: 14px;

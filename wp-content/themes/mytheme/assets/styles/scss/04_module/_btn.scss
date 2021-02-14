@@ -31,7 +31,7 @@
 	//Modifiers
 	&.primary {
 		color: $red;
-		background-color: $white;
+		background-color: transparent;
 		border: 1px solid $red;
 		&::after {
 			content: "";
@@ -67,6 +67,7 @@
 		}
 	}
 	&.tertiary {
+		background-color: transparent;
 		padding: 4px 8px;
 		font-weight: 300;
 		@include font-size(14px);
