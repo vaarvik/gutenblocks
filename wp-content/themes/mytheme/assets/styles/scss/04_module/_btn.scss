@@ -18,26 +18,48 @@
  */
 
  .btn {
-	// box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
-	// border-radius: 3em;
-	padding: 8px 32px;
-	text-transform: uppercase;
+	border-radius: 2px;
+	padding: 5px 12px;
+	padding-right: 24px;
 	transition: .15s ease;
-	margin: 16px;
-	@include font("default", 500, 16px);
+	text-transform: uppercase;
+	letter-spacing: .3px;
+	position: relative;
+	@include font("heading", 600, 12px);
 
 
 	//Modifiers
 	&.primary {
-		color: $white;
-		background-color: $black1;
+		color: $red;
+		background-color: $white;
+		border: 1px solid $red;
+		&::after {
+			content: "";
+			display: block;
+			width: 8px;
+			height: 8px;
+			transform: rotate(-45deg) translateY(-50%);
+			position: absolute;
+			right: 8px;
+			top: 50%;
+			border-right: 2px solid $red;
+			border-bottom: 2px solid $red;
+		}
 		&:hover, &.active {
-			background-color: $black;
+			color: $white;
+			background-color: $red;
+			&::after {
+				border-color: $white;
+			}
 		}
 	}
 	&.secondary {
 		background-color: transparent;
-		border: 2px solid $black1;
+		border: 1px solid $black1;
+		@include font-size(14px);
+		font-weight: normal;
+		padding: 5px 16px;
+		letter-spacing: .5px;
 		color: $black1;
 		&:hover, &.active {
 			background-color: $black1;
@@ -45,11 +67,11 @@
 		}
 	}
 	&.tertiary {
-		padding: 8px;
-		@include font-size(12px);
+		padding: 4px 8px;
+		font-weight: 300;
+		@include font-size(14px);
 		text-transform: initial;
 		border: 1px solid $black1;
-		margin: 2px;
 		&:hover, &.active {
 			background-color: $black1;
 			color: $white;

@@ -23,4 +23,13 @@
 	justify-content: center;
 	max-width: $text-max-width;
 	margin: 0 auto;
+	&.tight {
+		.checkbox-list__item {
+			margin: 2px;
+		}
+	}
+}
+
+.checkbox-list__item {
+	margin: 16px;
 }

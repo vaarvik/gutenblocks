@@ -19,22 +19,16 @@
 
 .card {
 	width: 100%;
-	box-shadow: 1px 1px 0px 1px rgba($color: $black, $alpha: 0.15);
-	border-radius: 5px;
+	height: 100%;
+	box-shadow: 1px 1px 5px 1px rgba($color: $black, $alpha: 0.01);
 	overflow: hidden;
 	position: relative;
 	background-color: $white;
 	display: flex;
 	flex-flow: column;
-	align-items: center;
-	justify-content: center;
 	cursor: pointer;
 	transition: .2s;
 	margin: 8px 0;
-	&::before {
-		content: "";
-		padding-bottom: 75%;
-	}
 	&.experimental {
 		&::after {
 			content: "";
@@ -67,46 +61,46 @@
 }
 
 .card__content {
-	z-index: 2;
-	background-color: $blue-1;
-	color: $grey2;
-	position: absolute;
 	width: 100%;
 	height: 100%;
-	top: 0;
-	padding: 16px 24px;
-	top: -100%;
+	padding: 24px;
 	transition: .2s;
-	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
 }
 
-.card__title {
-	height: 32px;
-	@include font-size(16px);
-	bottom: 0;
-	right: 0;
+.card__heading {
+	@include font-size(22px);
+	@include font("heading", 600, 22px);
+}
+
+.card__body {
+	@include font("default", 300, 18px);
+	color: $grey-1;
+}
+
+.card__footer {
+	flex-grow: 1;
 	display: flex;
-	align-items: center;
-	position: absolute;
-	text-align: center;
-	margin: 0;
-	padding: 16px 16px;
-	color: $grey1;
-	background-color: $blue-1;
-	opacity: .6;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+
+.card__categories {
+	@include font("default", 700, 14px);
 	text-transform: uppercase;
-	letter-spacing: 1.25px;
-	transition: .2s;
+	letter-spacing: 1px;
 }
 
 .card__image {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
 	width: 100%;
+	padding-bottom: 50%;
 	filter: grayscale(.1);
 	img {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 		margin: 0 auto;
 		width: auto;
 		height: 100%;

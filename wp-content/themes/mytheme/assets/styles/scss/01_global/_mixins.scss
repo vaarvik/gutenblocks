@@ -29,6 +29,9 @@
 @mixin font($font: "default", $weight: 300, $size: "", $line-height: false) {
 	@if $font == "default" {
 		font-family: $font-base;
+	}
+	@else if $font == "heading" {
+		font-family: $font-headings;
 	} @else {
 		font-family: $font;
 	}

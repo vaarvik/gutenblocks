@@ -87,10 +87,15 @@ get_header();
 							<div class="card__image">
 								<?php the_post_thumbnail() ?>
 							</div>
-							<p class="card__title search-item__text"><?php echo the_title(); ?></p>
 							<div class="card__content">
-								<h3 class="card__heading"><?php echo the_title(); ?></h3>
-								<div class="card__body"><?php echo the_content(); ?></div>
+								<h3 class="card__heading"><?php the_title(); ?></h3>
+								<div class="card__body"><?php the_content(); ?></div>
+								<div class="card__footer">
+									<div class="card__categories">
+										<?php echo $categories ?>
+									</div>
+									<button class="card__btn btn primary"><?php _e( "Read more" ) ?></button>
+								</div>
 							</div>
 						</div>
 					</div>
