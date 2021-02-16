@@ -72,6 +72,7 @@
 .card__heading {
 	@include font-size(22px);
 	@include font("heading", 600, 22px);
+	color: $black1;
 }
 
 .card__body {
@@ -90,6 +91,7 @@
 	@include font("default", 700, 14px);
 	text-transform: uppercase;
 	letter-spacing: 1px;
+	color: $black1;
 }
 
 .card__image {

@@ -1384,6 +1384,7 @@ ol,ul,dd,li,tr,th,caption {
   font-size: 22px;
   font-size: 1.1rem;
   line-height: 1.2;
+  color: #262626;
 }
 
 .card__body {
@@ -1418,6 +1419,7 @@ ol,ul,dd,li,tr,th,caption {
   line-height: 1.2;
   text-transform: uppercase;
   letter-spacing: 1px;
+  color: #262626;
 }
 
 .card__image {

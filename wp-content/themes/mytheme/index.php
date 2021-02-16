@@ -75,30 +75,31 @@ get_header();
 					$tags = mytheme_get_string_from_array_prop( get_the_tags() ?? null, "slug" );
 
 					?>
-
-					<div
-						id="card-<?php the_ID() ?>"
-						class="card-list__item search-item"
-						data-search-content="<?php echo get_the_title() . " | " . $text_content ?>"
-						data-search-categories="<?php echo $categories ?>"
-						data-search-tags="<?php echo $tags ?>"
-					>
-						<div class="card <?php echo has_tag( "experimental" ) ? "experimental" : "" ?>">
-							<div class="card__image">
-								<?php the_post_thumbnail() ?>
-							</div>
-							<div class="card__content">
-								<h3 class="card__heading"><?php the_title(); ?></h3>
-								<div class="card__body"><?php the_content(); ?></div>
-								<div class="card__footer">
-									<div class="card__categories">
-										<?php echo $categories ?>
+					<a href="<?php echo get_the_permalink(); ?>">
+						<div
+							id="card-<?php the_ID() ?>"
+							class="card-list__item search-item"
+							data-search-content="<?php echo get_the_title() . " | " . $text_content ?>"
+							data-search-categories="<?php echo $categories ?>"
+							data-search-tags="<?php echo $tags ?>"
+						>
+							<div class="card <?php echo has_tag( "experimental" ) ? "experimental" : "" ?>">
+								<div class="card__image">
+									<?php the_post_thumbnail() ?>
+								</div>
+								<div class="card__content">
+									<h3 class="card__heading"><?php the_title(); ?></h3>
+									<div class="card__body"><?php the_content(); ?></div>
+									<div class="card__footer">
+										<div class="card__categories">
+											<?php echo $categories ?>
+										</div>
+										<a class="card__btn btn primary" href="<?php echo get_the_permalink(); ?>"><?php _e( "Read more" ) ?></a>
 									</div>
-									<a class="card__btn btn primary" href="<?php echo get_the_permalink(); ?>"><?php _e( "Read more" ) ?></a>
 								</div>
 							</div>
 						</div>
-					</div>
+					</a>
 					<?php
 				}
 			}
