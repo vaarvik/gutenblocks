@@ -80,6 +80,7 @@ Finally, Theme rules are similar to state rules in that they describe how module
 @import '02_base/reset.scss';
 @import '02_base/containers.scss';
 @import '02_base/listings.scss';
+@import '02_base/hr.scss';
 @import '02_base/form.scss';
 @import '02_base/media.scss';
 @import '02_base/typography.scss';
@@ -98,6 +99,7 @@ Finally, Theme rules are similar to state rules in that they describe how module
 @import '03_layout/singular-content.scss';
 @import '03_layout/archive-content.scss';
 @import '03_layout/entry.scss';
+@import '03_layout/wrapper.scss';
 
 /**
  * =========================
@@ -109,6 +111,7 @@ Finally, Theme rules are similar to state rules in that they describe how module
 @import '04_module/img.scss';
 @import '04_module/field.scss';
 @import '04_module/label.scss';
+@import '04_module/featured-media.scss';
 @import '04_module/text-list.scss';
 @import '04_module/spreadsheet.scss';
 @import '04_module/section.scss';
@@ -118,6 +121,7 @@ Finally, Theme rules are similar to state rules in that they describe how module
 @import '04_module/checkbox-list.scss';
 @import '04_module/filter-section.scss';
 @import '04_module/header.scss';
+@import '04_module/pagination-single.scss';
 
 // ----- Blocks ----- //
 

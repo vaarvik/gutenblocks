@@ -334,6 +334,12 @@ li {
   list-style: none;
 }
 
+hr {
+  margin: 40px 0;
+  border: 1.5px solid #8C8C8C;
+  width: 100%;
+}
+
 /**
  *
  * ███████╗ ██████╗ ██████╗ ███╗   ███╗
@@ -434,8 +440,7 @@ img {
 }
 
 audio,video,canvas,iframe,figure,figcaption {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin: 0;
 }
 
 /**
@@ -532,11 +537,11 @@ blockquote,cite,pre,label,figcaption {
 
 p {
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
 }
 
 a {
-  color: #FF530D;
+  color: #db074d;
   text-decoration: none;
   cursor: pointer;
   -webkit-transition: .1s;
@@ -544,8 +549,16 @@ a {
 }
 
 a:hover {
-  color: #FF530D;
+  color: #db074d;
   text-decoration: underline;
+}
+
+a svg {
+  opacity: .8;
+}
+
+a svg:hover {
+  opacity: 1;
 }
 
 small,sub {
@@ -783,6 +796,40 @@ ol,ul,dd,li,tr,th,caption {
  */
 
 /**
+ *
+ * ███████╗███╗   ██╗████████╗██████╗ ██╗   ██╗
+ * ██╔════╝████╗  ██║╚══██╔══╝██╔══██╗╚██╗ ██╔╝
+ * █████╗  ██╔██╗ ██║   ██║   ██████╔╝ ╚████╔╝
+ * ██╔══╝  ██║╚██╗██║   ██║   ██╔══██╗  ╚██╔╝
+ * ███████╗██║ ╚████║   ██║   ██║  ██║   ██║
+ * ╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝   ╚═╝
+ *
+ *
+ * This sheet contains:
+ * * The entry layout header
+ * * The entry layout content
+ * * The entry layout footer
+ * --------------------
+ * The entry components wraps the main sections in a standard post or page.
+ *
+ *
+ * This sheet is a part of the Layout folder and follow the Layout rules:
+ * The major components are referred to as Layout styles. The minor (Module) components such as a callout, or login form,
+ * or a navigation item sit within the scope of major components such as a header or footer.
+ * Generally, a Layout style only has a single selector: a single ID or class name.
+ */
+
+.wrapper {
+  width: 640px;
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+.wrapper.wide {
+  width: 960px;
+}
+
+/**
  * =========================
  *    || Module
  * =========================
@@ -1007,6 +1054,50 @@ ol,ul,dd,li,tr,th,caption {
   line-height: 1.2;
   text-transform: uppercase;
   letter-spacing: 1.25px;
+}
+
+/**
+ * ███████╗███████╗ █████╗ ████████╗██╗   ██╗██████╗ ███████╗██████╗     ███╗   ███╗███████╗██████╗ ██╗ █████╗
+ * ██╔════╝██╔════╝██╔══██╗╚══██╔══╝██║   ██║██╔══██╗██╔════╝██╔══██╗    ████╗ ████║██╔════╝██╔══██╗██║██╔══██╗
+ * █████╗  █████╗  ███████║   ██║   ██║   ██║██████╔╝█████╗  ██║  ██║    ██╔████╔██║█████╗  ██║  ██║██║███████║
+ * ██╔══╝  ██╔══╝  ██╔══██║   ██║   ██║   ██║██╔══██╗██╔══╝  ██║  ██║    ██║╚██╔╝██║██╔══╝  ██║  ██║██║██╔══██║
+ * ██║     ███████╗██║  ██║   ██║   ╚██████╔╝██║  ██║███████╗██████╔╝    ██║ ╚═╝ ██║███████╗██████╔╝██║██║  ██║
+ * ╚═╝     ╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═════╝     ╚═╝     ╚═╝╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝
+ *
+ *
+ * This sheet contains:
+ * * The featured media module
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+.featured-media {
+  margin-bottom: 40px;
+}
+
+.featured-media__image {
+  width: 100%;
+  padding-bottom: 65.93407%;
+  -webkit-filter: grayscale(0.1);
+  filter: grayscale(0.1);
+  background-color: #FFFFFF;
+}
+
+.featured-media__image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 /**
@@ -1471,6 +1562,33 @@ ol,ul,dd,li,tr,th,caption {
 .header__preamble {
   max-width: 640px;
   margin: 24px auto;
+}
+
+/**
+ * ██████╗  █████╗  ██████╗ ███╗   ██╗████████╗███╗   ██╗    ███████╗██╗███╗   ██╗ ██████╗ ██╗     ███████╗
+ * ██╔══██╗██╔══██╗██╔════╝ ████╗  ██║╚══██╔══╝████╗  ██║    ██╔════╝██║████╗  ██║██╔════╝ ██║     ██╔════╝
+ * ██████╔╝███████║██║  ███╗██╔██╗ ██║   ██║   ██╔██╗ ██║    ███████╗██║██╔██╗ ██║██║  ███╗██║     █████╗
+ * ██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║   ██║   ██║╚██╗██║    ╚════██║██║██║╚██╗██║██║   ██║██║     ██╔══╝
+ * ██║     ██║  ██║╚██████╔╝██║ ╚████║   ██║   ██║ ╚████║    ███████║██║██║ ╚████║╚██████╔╝███████╗███████╗
+ * ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═══╝    ╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝╚══════╝
+ *
+ *
+ * This sheet contains:
+ * * The single pagnation module
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+.pagination-single__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 /**

@@ -95,17 +95,23 @@ blockquote, cite, pre, label, figcaption  {
 
 p {
 	margin-top: 0;
-	margin-bottom: 8px;
+	margin-bottom: 24px;
 }
 
 a {
-	color: $orange;
+	color: $red;
 	text-decoration: none;
 	cursor: pointer;
 	transition: .1s;
 	&:hover{
-		color: $orange;
+		color: $red;
 		text-decoration: underline;
+	}
+	svg {
+		opacity: .8;
+		&:hover {
+			opacity: 1;
+		}
 	}
 }
 

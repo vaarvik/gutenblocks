@@ -22,19 +22,6 @@
 		 * @param bool   Whether to show the categories in header, Default true.
 		 */
 
-		if ( has_category() ) {
-			?>
-
-			<div class="entry-categories">
-				<span class="entry-categories__title"><?php _e( 'Categories', 'mytheme' ); ?></span>
-				<div class="entry-categories__content">
-					<?php the_category( ' ' ); ?>
-				</div>
-			</div>
-
-			<?php
-		}
-
 		the_title( '<h1 class="entry-title">', '</h1>' );
 
 		if ( has_excerpt() ) {
