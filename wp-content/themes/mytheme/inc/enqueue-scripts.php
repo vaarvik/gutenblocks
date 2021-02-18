@@ -13,6 +13,17 @@ add_action( 'wp_enqueue_scripts', 'mytheme_register_scripts' );
 
 
 /**
+ * Register and Enqueue Scripts in editor.
+ */
+function headspin_editor_scripts() {
+
+	wp_enqueue_script( "mytheme-gutenberg-js", mytheme_asset_url( 'assets/js/gutenberg.js' ), array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ), THEME_VERSION );
+
+}
+
+add_action( "enqueue_block_editor_assets", "headspin_editor_scripts" );
+
+/**
  * Fix skip link focus in IE11.
  *
  * This does not enqueue the script because it is tiny and because it is only for IE11,
