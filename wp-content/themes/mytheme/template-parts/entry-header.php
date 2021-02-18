@@ -28,7 +28,7 @@
 			?>
 
 			<div class="entry-header__excerpt">
-				<?php the_excerpt(); ?>
+				<p class="is-style-preamble"><?php echo get_the_excerpt(); ?></p>
 			</div>
 
 			<?php

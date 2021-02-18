@@ -1283,16 +1283,16 @@ html {
 
 /**
  *
- * ███████╗████████╗ █████╗ ████████╗███████╗
- * ██╔════╝╚══██╔══╝██╔══██╗╚══██╔══╝██╔════╝
- * ███████╗   ██║   ███████║   ██║   █████╗
- * ╚════██║   ██║   ██╔══██║   ██║   ██╔══╝
- * ███████║   ██║   ██║  ██║   ██║   ███████╗
- * ╚══════╝   ╚═╝   ╚═╝  ╚═╝   ╚═╝   ╚══════╝
+ * ████████╗██╗   ██╗██████╗  ██████╗  ██████╗ ██████╗  █████╗ ██████╗ ██╗  ██╗██╗   ██╗
+ * ╚══██╔══╝╚██╗ ██╔╝██╔══██╗██╔═══██╗██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██║  ██║╚██╗ ██╔╝
+ *    ██║    ╚████╔╝ ██████╔╝██║   ██║██║  ███╗██████╔╝███████║██████╔╝███████║ ╚████╔╝
+ *    ██║     ╚██╔╝  ██╔═══╝ ██║   ██║██║   ██║██╔══██╗██╔══██║██╔═══╝ ██╔══██║  ╚██╔╝
+ *    ██║      ██║   ██║     ╚██████╔╝╚██████╔╝██║  ██║██║  ██║██║     ██║  ██║   ██║
+ *    ╚═╝      ╚═╝   ╚═╝      ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝   ╚═╝
  *
  *
  * This sheet contains:
- * * All State changes
+ * * All typography state changes
  *
  * This sheet is a part of the State folder and follow the State rules:
  * A state is something that augments and overrides all other styles (something that changes the state of something).
@@ -1300,6 +1300,15 @@ html {
  * state. States are generally applied to the same element as a layout rule or applied to the same element as a
  * base module class.
  */
+
+.is-style-preamble {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  font-style: italic;
+}
 
 /**
  * =========================
