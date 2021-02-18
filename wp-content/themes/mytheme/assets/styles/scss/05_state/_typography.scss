@@ -24,13 +24,21 @@ p.is-style-preamble {
 }
 
 p.is-style-notice {
-	@include font("heading", 700, 16px);
+	@include font("heading", 300, 16px);
+	font-style: italic;
 	$svg-color: str-replace("#{$white}", "#", "");
+	position: relative;
 	&::before {
 		content: "";
-		display: inline-block;
+		margin-right: 21px;
 		vertical-align: middle;
-		margin-right: 8px;
+	}
+	&::after {
+		position: absolute;
+		left: 0;
+		top: 2px;
+		content: "";
+		display: block;
 		height: 16px;
 		width: 16px;
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg data-name='Layer 2'%3E%3Cpath d='M12 2A10 10 0 112 12 10 10 0 0112 2zm0-2a12 12 0 1012 12A12 12 0 0012 0zm-1 6h2v8h-2zm1 12.25A1.25 1.25 0 1113.25 17 1.25 1.25 0 0112 18.25z' fill='%23#{$svg-color}' data-name='Layer 1'/%3E%3C/g%3E%3C/svg%3E");
