@@ -15,23 +15,30 @@
  * Global stores variables that can be used all over the document and create a consistency in the style.
 */
 
-$blue-1:#22292E;
-$blue:#2A2F3E;
-$blue1: #00478C;
+$blue-1:			#22292E;
+$blue:				#2A2F3E;
+$blue1:				#00478C;
 
-$red: #db074d;
+$red: 				#ea165c;
 
-$orange-1: #e4490c;
-$orange: #FF530D;
+$orange-1: 			#e4490c;
+$orange: 			#FF530D;
 
-$white: #FFFFFF;
+$white: 			#FFFFFF;
 
-$black:#0D0D0D;
-$black1:#262626;
+$black:				#0D0D0D;
+$black1:			#1C1C1C;
 
-$grey-1: #757575;
-$grey: #8C8C8C;
-$grey1: #dfe0e6;
-$grey2: #EFEFEF;
-$grey3: #F2F2F2;
-$grey4: #f6f6f6;
+$grey-2: 			#535353;
+$grey-1: 			#808080;
+$grey: 				#8C8C8C;
+$grey1: 			#dfe0e6;
+$grey2: 			#E2E2E2;
+$grey3: 			#ebebeb;
+$grey4: 			#F2F2F2;
+$grey5: 			#f6f6f6;
+
+$btn-bg:			transparent;
+$btn-color:			$white;
+
+$bg:				$black1;

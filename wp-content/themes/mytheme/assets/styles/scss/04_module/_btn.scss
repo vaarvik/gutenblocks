@@ -18,7 +18,7 @@
  */
 
  .btn {
-	border-radius: 2px;
+	border-radius: 3px;
 	padding: 5px 12px;
 	padding-right: 24px;
 	transition: .15s ease;
@@ -34,7 +34,7 @@
 	//Modifiers
 	&.primary {
 		color: $red;
-		background-color: transparent;
+		background-color: $btn-bg;
 		border: 1px solid $red;
 		&::after {
 			content: "";
@@ -57,28 +57,29 @@
 		}
 	}
 	&.secondary {
-		background-color: transparent;
-		border: 1px solid $black1;
+		background-color: $btn-bg;
+		border: 1px solid $btn-color;
 		@include font-size(14px);
 		font-weight: normal;
 		padding: 5px 16px;
 		letter-spacing: .5px;
-		color: $black1;
+		color: $btn-color;
 		&:hover, &.active {
-			background-color: $black1;
-			color: $white;
+			background-color: $btn-color;
+			color: $black1;
 		}
 	}
 	&.tertiary {
-		background-color: transparent;
+		background-color: $btn-bg;
 		padding: 4px 8px;
 		font-weight: 300;
 		@include font-size(14px);
 		text-transform: initial;
-		border: 1px solid $black1;
+		border: 1px solid $btn-color;
+		color: $btn-color;
 		&:hover, &.active {
-			background-color: $black1;
-			color: $white;
+			background-color: $btn-color;
+			color: $black1;
 		}
 	}
 	&.clean {

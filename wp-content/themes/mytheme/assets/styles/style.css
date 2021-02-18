@@ -125,7 +125,7 @@ html {
 html {
   font-size: 18px;
   font-family: "Open Sans", Helvetica, sans-serif;
-  color: #22292E;
+  color: #FFFFFF;
 }
 
 /**
@@ -277,7 +277,7 @@ html {
 }
 
 body {
-  background-color: #F2F2F2;
+  background-color: #1C1C1C;
   margin: 0;
 }
 
@@ -541,7 +541,7 @@ p {
 }
 
 a {
-  color: #db074d;
+  color: #ea165c;
   text-decoration: none;
   cursor: pointer;
   -webkit-transition: .1s;
@@ -549,7 +549,7 @@ a {
 }
 
 a:hover {
-  color: #db074d;
+  color: #ea165c;
   text-decoration: underline;
 }
 
@@ -855,7 +855,7 @@ ol,ul,dd,li,tr,th,caption {
  */
 
 .btn {
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 5px 12px;
   padding-right: 24px;
   -webkit-transition: .15s ease;
@@ -875,9 +875,9 @@ ol,ul,dd,li,tr,th,caption {
 }
 
 .btn.primary {
-  color: #db074d;
+  color: #ea165c;
   background-color: transparent;
-  border: 1px solid #db074d;
+  border: 1px solid #ea165c;
 }
 
 .btn.primary::after {
@@ -890,13 +890,13 @@ ol,ul,dd,li,tr,th,caption {
   position: absolute;
   right: 8px;
   top: 50%;
-  border-right: 2px solid #db074d;
-  border-bottom: 2px solid #db074d;
+  border-right: 2px solid #ea165c;
+  border-bottom: 2px solid #ea165c;
 }
 
 .btn.primary:hover,.btn.primary.active {
   color: #FFFFFF;
-  background-color: #db074d;
+  background-color: #ea165c;
 }
 
 .btn.primary:hover::after,.btn.primary.active::after {
@@ -905,19 +905,19 @@ ol,ul,dd,li,tr,th,caption {
 
 .btn.secondary {
   background-color: transparent;
-  border: 1px solid #262626;
+  border: 1px solid #FFFFFF;
   font-size: 14px;
   font-size: 0.7rem;
   line-height: 1.2;
   font-weight: normal;
   padding: 5px 16px;
   letter-spacing: .5px;
-  color: #262626;
+  color: #FFFFFF;
 }
 
 .btn.secondary:hover,.btn.secondary.active {
-  background-color: #262626;
-  color: #FFFFFF;
+  background-color: #FFFFFF;
+  color: #1C1C1C;
 }
 
 .btn.tertiary {
@@ -928,12 +928,13 @@ ol,ul,dd,li,tr,th,caption {
   font-size: 0.7rem;
   line-height: 1.2;
   text-transform: initial;
-  border: 1px solid #262626;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
 }
 
 .btn.tertiary:hover,.btn.tertiary.active {
-  background-color: #262626;
-  color: #FFFFFF;
+  background-color: #FFFFFF;
+  color: #1C1C1C;
 }
 
 .btn__icon {
@@ -1000,7 +1001,7 @@ ol,ul,dd,li,tr,th,caption {
 .field {
   border-radius: 2px;
   display: block;
-  background-color: #EFEFEF;
+  background-color: #E2E2E2;
   border: 1px solid #22292E;
   max-width: 200px;
   margin: 8px 0;
@@ -1186,7 +1187,7 @@ ol,ul,dd,li,tr,th,caption {
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  background-color: #EFEFEF;
+  background-color: #E2E2E2;
 }
 
 .block-editor .section {
@@ -1310,9 +1311,10 @@ ol,ul,dd,li,tr,th,caption {
 .card {
   width: 100%;
   height: 100%;
-  -webkit-box-shadow: 1px 1px 5px 1px rgba(13, 13, 13, 0.01);
-  box-shadow: 1px 1px 5px 1px rgba(13, 13, 13, 0.01);
+  -webkit-box-shadow: 1px 1px 5px 1px rgba(255, 255, 255, 0.05);
+  box-shadow: 1px 1px 5px 1px rgba(255, 255, 255, 0.05);
   overflow: hidden;
+  border-radius: 4px;
   position: relative;
   background-color: #FFFFFF;
   display: -webkit-box;
@@ -1339,7 +1341,7 @@ ol,ul,dd,li,tr,th,caption {
   margin-left: -30px;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-  background-color: #db074d;
+  background-color: #ea165c;
   z-index: 2;
 }
 
@@ -1373,6 +1375,8 @@ ol,ul,dd,li,tr,th,caption {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  background-color: #ebebeb;
+  border-top: 2px solid #808080;
 }
 
 .card__heading {
@@ -1384,7 +1388,7 @@ ol,ul,dd,li,tr,th,caption {
   font-size: 22px;
   font-size: 1.1rem;
   line-height: 1.2;
-  color: #262626;
+  color: #1C1C1C;
 }
 
 .card__body {
@@ -1393,7 +1397,7 @@ ol,ul,dd,li,tr,th,caption {
   font-size: 18px;
   font-size: 0.9rem;
   line-height: 1.2;
-  color: #757575;
+  color: #535353;
 }
 
 .card__footer {
@@ -1419,7 +1423,7 @@ ol,ul,dd,li,tr,th,caption {
   line-height: 1.2;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #262626;
+  color: #1C1C1C;
 }
 
 .card__image {
@@ -1427,6 +1431,7 @@ ol,ul,dd,li,tr,th,caption {
   padding-bottom: 50%;
   -webkit-filter: grayscale(0.1);
   filter: grayscale(0.1);
+  overflow: hidden;
 }
 
 .card__image img {
