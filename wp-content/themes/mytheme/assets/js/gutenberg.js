@@ -23,7 +23,7 @@
       });
       wp.blocks.registerBlockStyle("core/paragraph", {
         name: "notice",
-        label: "Ingress"
+        label: "Notis"
       });
       wp.blocks.unregisterBlockStyle("core/image", 'rounded'); //remove blocks
 

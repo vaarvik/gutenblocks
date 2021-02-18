@@ -325,6 +325,30 @@ html {
  *    || Listings tags
  * =========================
  */
+  /**
+	* =========================
+	*    || State
+	* =========================
+	*/
+  /**
+ *
+ * ████████╗██╗   ██╗██████╗  ██████╗  ██████╗ ██████╗  █████╗ ██████╗ ██╗  ██╗██╗   ██╗
+ * ╚══██╔══╝╚██╗ ██╔╝██╔══██╗██╔═══██╗██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██║  ██║╚██╗ ██╔╝
+ *    ██║    ╚████╔╝ ██████╔╝██║   ██║██║  ███╗██████╔╝███████║██████╔╝███████║ ╚████╔╝
+ *    ██║     ╚██╔╝  ██╔═══╝ ██║   ██║██║   ██║██╔══██╗██╔══██║██╔═══╝ ██╔══██║  ╚██╔╝
+ *    ██║      ██║   ██║     ╚██████╔╝╚██████╔╝██║  ██║██║  ██║██║     ██║  ██║   ██║
+ *    ╚═╝      ╚═╝   ╚═╝      ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝   ╚═╝
+ *
+ *
+ * This sheet contains:
+ * * All typography state changes
+ *
+ * This sheet is a part of the State folder and follow the State rules:
+ * A state is something that augments and overrides all other styles (something that changes the state of something).
+ * For example, an accordion section may be in a collapsed or expanded state. A message may be in a success or error
+ * state. States are generally applied to the same element as a layout rule or applied to the same element as a
+ * base module class.
+ */
 }
 
 .edit-post-visual-editor.editor-styles-wrapper html {
@@ -487,6 +511,37 @@ html {
 
 .edit-post-visual-editor.editor-styles-wrapper dl,.edit-post-visual-editor.editor-styles-wrapper ol,.edit-post-visual-editor.editor-styles-wrapper ul,.edit-post-visual-editor.editor-styles-wrapper dt,.edit-post-visual-editor.editor-styles-wrapper dd,.edit-post-visual-editor.editor-styles-wrapper li,.edit-post-visual-editor.editor-styles-wrapper tr,.edit-post-visual-editor.editor-styles-wrapper th,.edit-post-visual-editor.editor-styles-wrapper caption {
   font-family: inherit;
+}
+
+.edit-post-visual-editor.editor-styles-wrapper p.is-style-preamble {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  font-style: italic;
+}
+
+.edit-post-visual-editor.editor-styles-wrapper p.is-style-notice {
+  font-family: "Lato", Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+.edit-post-visual-editor.editor-styles-wrapper p.is-style-notice::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+  height: 16px;
+  width: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg data-name='Layer 2'%3E%3Cpath d='M12 2A10 10 0 112 12 10 10 0 0112 2zm0-2a12 12 0 1012 12A12 12 0 0012 0zm-1 6h2v8h-2zm1 12.25A1.25 1.25 0 1113.25 17 1.25 1.25 0 0112 18.25z' fill='%23FFFFFF' data-name='Layer 1'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.edit-post-visual-editor.editor-styles-wrapper p.is-style-notice.wp-block::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg data-name='Layer 2'%3E%3Cpath d='M12 2A10 10 0 112 12 10 10 0 0112 2zm0-2a12 12 0 1012 12A12 12 0 0012 0zm-1 6h2v8h-2zm1 12.25A1.25 1.25 0 1113.25 17 1.25 1.25 0 0112 18.25z' fill='%231C1C1C' data-name='Layer 1'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 /**
@@ -1273,41 +1328,6 @@ html {
 
 .alignwide {
   max-width: 100%;
-}
-
-/**
- * =========================
- *    || State
- * =========================
- */
-
-/**
- *
- * ████████╗██╗   ██╗██████╗  ██████╗  ██████╗ ██████╗  █████╗ ██████╗ ██╗  ██╗██╗   ██╗
- * ╚══██╔══╝╚██╗ ██╔╝██╔══██╗██╔═══██╗██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██║  ██║╚██╗ ██╔╝
- *    ██║    ╚████╔╝ ██████╔╝██║   ██║██║  ███╗██████╔╝███████║██████╔╝███████║ ╚████╔╝
- *    ██║     ╚██╔╝  ██╔═══╝ ██║   ██║██║   ██║██╔══██╗██╔══██║██╔═══╝ ██╔══██║  ╚██╔╝
- *    ██║      ██║   ██║     ╚██████╔╝╚██████╔╝██║  ██║██║  ██║██║     ██║  ██║   ██║
- *    ╚═╝      ╚═╝   ╚═╝      ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝   ╚═╝
- *
- *
- * This sheet contains:
- * * All typography state changes
- *
- * This sheet is a part of the State folder and follow the State rules:
- * A state is something that augments and overrides all other styles (something that changes the state of something).
- * For example, an accordion section may be in a collapsed or expanded state. A message may be in a success or error
- * state. States are generally applied to the same element as a layout rule or applied to the same element as a
- * base module class.
- */
-
-.is-style-preamble {
-  font-family: "Open Sans", Helvetica, sans-serif;
-  font-weight: 300;
-  font-size: 24px;
-  font-size: 1.2rem;
-  line-height: 1.2;
-  font-style: italic;
 }
 
 /**

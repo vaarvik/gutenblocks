@@ -1624,13 +1624,35 @@ ol,ul,dd,li,tr,th,caption {
  * base module class.
  */
 
-.is-style-preamble {
+p.is-style-preamble {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 300;
   font-size: 24px;
   font-size: 1.2rem;
   line-height: 1.2;
   font-style: italic;
+}
+
+p.is-style-notice {
+  font-family: "Lato", Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+p.is-style-notice::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+  height: 16px;
+  width: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg data-name='Layer 2'%3E%3Cpath d='M12 2A10 10 0 112 12 10 10 0 0112 2zm0-2a12 12 0 1012 12A12 12 0 0012 0zm-1 6h2v8h-2zm1 12.25A1.25 1.25 0 1113.25 17 1.25 1.25 0 0112 18.25z' fill='%23FFFFFF' data-name='Layer 1'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+p.is-style-notice.wp-block::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg data-name='Layer 2'%3E%3Cpath d='M12 2A10 10 0 112 12 10 10 0 0112 2zm0-2a12 12 0 1012 12A12 12 0 0012 0zm-1 6h2v8h-2zm1 12.25A1.25 1.25 0 1113.25 17 1.25 1.25 0 0112 18.25z' fill='%231C1C1C' data-name='Layer 1'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 /**

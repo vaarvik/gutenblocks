@@ -18,7 +18,7 @@
 		wp.domReady( () => {
 			// Paragraph
 			wp.blocks.registerBlockStyle("core/paragraph", { name: "preamble", label: "Ingress" });
-			wp.blocks.registerBlockStyle("core/paragraph", { name: "notice", label: "Ingress" });
+			wp.blocks.registerBlockStyle("core/paragraph", { name: "notice", label: "Notis" });
 			wp.blocks.unregisterBlockStyle("core/image", 'rounded');
 
 			//remove blocks

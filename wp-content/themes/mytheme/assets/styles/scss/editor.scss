@@ -84,6 +84,14 @@ Finally, Theme rules are similar to state rules in that they describe how module
 	// @import '02_base/form.scss';
 	@import '02_base/media.scss';
 	@import '02_base/typography.scss';
+
+	/**
+	* =========================
+	*    || State
+	* =========================
+	*/
+
+   @import '05_state/typography.scss';
 }
 
 
@@ -150,13 +158,6 @@ Finally, Theme rules are similar to state rules in that they describe how module
 
 // ----- Blocks ----- //
 
- /**
- * =========================
- *    || State
- * =========================
- */
-
-@import '05_state/typography.scss';
 
 /**
  * =========================
