@@ -5,7 +5,8 @@
  */
 function mytheme_register_scripts() {
 
-	wp_enqueue_script( 'mytheme-js', mytheme_asset_url( 'assets/js/customs.js' ), array(), THEME_VERSION, true );
+	wp_enqueue_script( 'mytheme-vendor-js', mytheme_asset_url( 'assets/js/vendors.js' ), array(), THEME_VERSION, true );
+	wp_enqueue_script( 'mytheme-js', mytheme_asset_url( 'assets/js/customs.js' ), array( 'mytheme-vendor-js' ), THEME_VERSION, true );
 
 }
 

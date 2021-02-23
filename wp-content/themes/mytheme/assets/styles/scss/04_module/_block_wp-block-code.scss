@@ -1,0 +1,181 @@
+/**
+ * ██╗    ██╗██████╗     ██████╗ ██╗      ██████╗  ██████╗██╗  ██╗     ██████╗ ██████╗ ██████╗ ███████╗
+ * ██║    ██║██╔══██╗    ██╔══██╗██║     ██╔═══██╗██╔════╝██║ ██╔╝    ██╔════╝██╔═══██╗██╔══██╗██╔════╝
+ * ██║ █╗ ██║██████╔╝    ██████╔╝██║     ██║   ██║██║     █████╔╝     ██║     ██║   ██║██║  ██║█████╗
+ * ██║███╗██║██╔═══╝     ██╔══██╗██║     ██║   ██║██║     ██╔═██╗     ██║     ██║   ██║██║  ██║██╔══╝
+ * ╚███╔███╔╝██║         ██████╔╝███████╗╚██████╔╝╚██████╗██║  ██╗    ╚██████╗╚██████╔╝██████╔╝███████╗
+ *  ╚══╝╚══╝ ╚═╝         ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝     ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝
+ *
+ * Monokai theme for PRISM.js
+ * ==========
+ * @author Warwick
+ * Based on Sam Clarke's Monkai Theme
+ *
+ */
+
+/**
+ * ----------
+ * 	Colors
+ * ----------
+ */
+
+$code-white: 	#f8f8f2;
+$code-black: 	#272822;
+$code-brown: 	#75715e;
+$code-red: 		#f92672;
+$code-blue: 	#66d9ef;
+$code-orange: 	#fd971f;
+$code-green: 	#a6e22e;
+$code-yellow: 	#e6db74;
+$code-purple: 	#ae81ff;
+
+.wp-block-code {
+
+	&[class*="language-"],
+	code[class*="language-"],
+	.token.tag.token {
+		color: $code-white;
+		background: none;
+		font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+		text-align: left;
+		white-space: pre;
+		word-spacing: normal;
+		word-break: normal;
+		word-wrap: normal;
+		line-height: 1.4;
+		-moz-tab-size: 4;
+		-o-tab-size: 4;
+		tab-size: 4;
+		-webkit-hyphens: none;
+		-moz-hyphens: none;
+		-ms-hyphens: none;
+		hyphens: none;
+	}
+
+	/* Code blocks */
+
+	&[class*="language-"] {
+		padding: .8em;
+		overflow: auto;
+		background: $code-black;
+	}
+
+	/* Inline code */
+
+	&:not(pre) > code[class*="language-"] {
+		padding: .1em;
+		border-radius: .3em;
+		white-space: normal;
+		background: $code-black;
+	}
+
+	.token {
+		&.comment,
+		&.blockquote {
+			color: $code-brown;
+		}
+		&.shebang {
+			color: $code-brown;
+			&.important {
+				color: $code-brown;
+			}
+		}
+
+		&.important,
+		&.keyword,
+		&.rule,
+		&.tag,
+		&.deleted,
+		&.selector,
+		&.prolog,
+		&.title .token.punctuation {
+			color: $code-red;
+		}
+
+		&.property,
+		&.entity,
+		&.class-name,
+		&.atrule,
+		&.command,
+		&.code {
+			color: $code-blue;
+		}
+
+		&.regex,
+		&.atrule .token.property,
+		&.parameter {
+			color: $code-orange;
+		}
+
+		&.pseudo-element,
+		&.id,
+		&.class,
+		&.pseudo-class,
+		&.function,
+		&.namespace,
+		&.inserted,
+		&.symbol,
+		&.url-reference .token.variable,
+		&.attr-name {
+			color: $code-green;
+		}
+
+		&.string,
+		&.url,
+		&.list,
+		&.cdata {
+			color: $code-yellow;
+		}
+
+		&.attr-value {
+		color: $code-yellow;
+
+			a.token.url-link {
+				color: $code-yellow;
+			}
+		}
+
+		&.constant,
+		&.hexcode,
+		&.builtin,
+		&.number,
+		&.boolean {
+			color: $code-purple;
+		}
+
+		&.doctype,
+		&.punctuation,
+		&.variable,
+		&.operator,
+		&.macro.property {
+			color: $code-white;
+		}
+
+		&.entity {
+			cursor: help;
+		}
+
+		&.title {
+			font-weight: bold;
+
+			.token.punctuation {
+				font-weight: bold;
+			}
+		}
+
+		&.bold {
+			font-weight: bold;
+		}
+
+		&.italic {
+			font-style: italic;
+		}
+	}
+
+	/* YAML & Bash */
+
+	.language-yaml .token.atrule,
+	.language-bash .token.function {
+		color: $code-red;
+	}
+}

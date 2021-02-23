@@ -1,7 +1,0 @@
-( function() {
-
-	/**
-	 * Any JS library
-	 */
-
-})();

@@ -27,6 +27,10 @@
 
 		?>
 
+		<div class="entry-content">
+			<?php the_content(); ?>
+		</div>
+
 		<p><?php the_category( ", " ) ?></p>
 
 		<?php if ( get_the_tags() ) : ?>
@@ -40,16 +44,6 @@
 		<?php } ?>
 
 		<hr/>
-
-		<div class="entry-content">
-				<?php
-				if ( is_search() || ! is_singular() ) {
-					the_excerpt();
-				} else {
-					the_content( __( 'Continue reading', 'mytheme' ) );
-				}
-				?>
-		</div>
 
 	</div>
 

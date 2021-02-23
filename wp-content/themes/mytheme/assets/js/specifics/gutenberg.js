@@ -12,7 +12,6 @@
 
 (function() {
 
-	console.log("hyey")
 	if (wp.blocks) {
 
 		wp.domReady( () => {
@@ -22,28 +21,28 @@
 			wp.blocks.unregisterBlockStyle("core/image", 'rounded');
 
 			//remove blocks
-			let allowedBlocks = [
-				'core/paragraph',
-				'core/heading',
-				'core/list',
-				'core/quote',
-				'core/image',
-				'core/video',
-				'warwick/image-text',
-				'warwick/section',
-			];
+			// let allowedBlocks = [
+			// 	'core/paragraph',
+			// 	'core/heading',
+			// 	'core/list',
+			// 	'core/quote',
+			// 	'core/image',
+			// 	'core/video',
+			// 	'warwick/image-text',
+			// 	'warwick/section',
+			// ];
 
-			wp.blocks.getBlockTypes().forEach( function( blockType ) {
-				if ( allowedBlocks.indexOf( blockType.name ) === -1 ) {
-					wp.blocks.unregisterBlockType( blockType.name );
-				}
-				else{
-					//remove block supports
-					const block = wp.blocks.getBlockType( blockType.name );
-					const { __experimentalSelector, className, lightBlockWrapper } = block.supports;
-					block.supports = {className, __experimentalSelector, lightBlockWrapper}
-				}
-			} );
+			// wp.blocks.getBlockTypes().forEach( function( blockType ) {
+			// 	if ( allowedBlocks.indexOf( blockType.name ) === -1 ) {
+			// 		wp.blocks.unregisterBlockType( blockType.name );
+			// 	}
+			// 	else{
+			// 		//remove block supports
+			// 		const block = wp.blocks.getBlockType( blockType.name );
+			// 		const { __experimentalSelector, className, lightBlockWrapper } = block.supports;
+			// 		block.supports = {className, __experimentalSelector, lightBlockWrapper}
+			// 	}
+			// } );
 		});
 	}
 

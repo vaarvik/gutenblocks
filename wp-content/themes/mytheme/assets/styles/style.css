@@ -596,6 +596,21 @@ ol,ul,dd,li,tr,th,caption {
 
 /**
  * =========================
+ *    || Code tag
+ * =========================
+ */
+
+code {
+  font-size: 16px;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  -moz-tab-size: 3;
+  -o-tab-size: 3;
+  tab-size: 3;
+}
+
+/**
+ * =========================
  *    || Layout
  * =========================
  */
@@ -1596,6 +1611,124 @@ ol,ul,dd,li,tr,th,caption {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+/**
+ * ██╗    ██╗██████╗     ██████╗ ██╗      ██████╗  ██████╗██╗  ██╗     ██████╗ ██████╗ ██████╗ ███████╗
+ * ██║    ██║██╔══██╗    ██╔══██╗██║     ██╔═══██╗██╔════╝██║ ██╔╝    ██╔════╝██╔═══██╗██╔══██╗██╔════╝
+ * ██║ █╗ ██║██████╔╝    ██████╔╝██║     ██║   ██║██║     █████╔╝     ██║     ██║   ██║██║  ██║█████╗
+ * ██║███╗██║██╔═══╝     ██╔══██╗██║     ██║   ██║██║     ██╔═██╗     ██║     ██║   ██║██║  ██║██╔══╝
+ * ╚███╔███╔╝██║         ██████╔╝███████╗╚██████╔╝╚██████╗██║  ██╗    ╚██████╗╚██████╔╝██████╔╝███████╗
+ *  ╚══╝╚══╝ ╚═╝         ╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝     ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝
+ *
+ * Monokai theme for PRISM.js
+ * ==========
+ * @author Warwick
+ * Based on Sam Clarke's Monkai Theme
+ *
+ */
+
+/**
+ * ----------
+ * 	Colors
+ * ----------
+ */
+
+.wp-block-code {
+  /* Code blocks */
+  /* Inline code */
+  /* YAML & Bash */
+}
+
+.wp-block-code[class*="language-"],.wp-block-code code[class*="language-"],.wp-block-code .token.tag.token {
+  color: #f8f8f2;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.wp-block-code[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  background: #272822;
+}
+
+.wp-block-code:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #272822;
+}
+
+.wp-block-code .token.comment,.wp-block-code .token.blockquote {
+  color: #75715e;
+}
+
+.wp-block-code .token.important,.wp-block-code .token.keyword,.wp-block-code .token.rule,.wp-block-code .token.tag,.wp-block-code .token.deleted,.wp-block-code .token.selector,.wp-block-code .token.prolog,.wp-block-code .token.title .token.punctuation {
+  color: #f92672;
+}
+
+.wp-block-code .token.property,.wp-block-code .token.entity,.wp-block-code .token.class-name,.wp-block-code .token.atrule,.wp-block-code .token.code {
+  color: #66d9ef;
+}
+
+.wp-block-code .token.regex,.wp-block-code .token.atrule .token.property,.wp-block-code .token.parameter {
+  color: #fd971f;
+}
+
+.wp-block-code .token.pseudo-element,.wp-block-code .token.id,.wp-block-code .token.class,.wp-block-code .token.pseudo-class,.wp-block-code .token.function,.wp-block-code .token.namespace,.wp-block-code .token.symbol,.wp-block-code .token.url-reference .token.variable,.wp-block-code .token.attr-name {
+  color: #a6e22e;
+}
+
+.wp-block-code .token.string,.wp-block-code .token.url,.wp-block-code .token.list,.wp-block-code .token.cdata {
+  color: #e6db74;
+}
+
+.wp-block-code .token.attr-value {
+  color: #e6db74;
+}
+
+.wp-block-code .token.attr-value a.token.url-link {
+  color: #e6db74;
+}
+
+.wp-block-code .token.constant,.wp-block-code .token.builtin,.wp-block-code .token.number,.wp-block-code .token.boolean {
+  color: #ae81ff;
+}
+
+.wp-block-code .token.doctype,.wp-block-code .token.punctuation,.wp-block-code .token.variable,.wp-block-code .token.operator {
+  color: #f8f8f2;
+}
+
+.wp-block-code .token.entity {
+  cursor: help;
+}
+
+.wp-block-code .token.title {
+  font-weight: bold;
+}
+
+.wp-block-code .token.title .token.punctuation {
+  font-weight: bold;
+}
+
+.wp-block-code .token.bold {
+  font-weight: bold;
+}
+
+.wp-block-code .token.italic {
+  font-style: italic;
 }
 
 /**

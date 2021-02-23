@@ -147,3 +147,14 @@ figcaption {
 dl, ol, ul, dt, dd, li, tr, th, caption {
 	font-family: inherit;
 }
+
+/**
+ * =========================
+ *    || Code tag
+ * =========================
+ */
+
+code {
+	@include font-size(16px);
+	tab-size: 3;
+}
