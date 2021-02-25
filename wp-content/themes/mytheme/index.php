@@ -93,11 +93,9 @@ get_header();
 							<div class="card__content">
 								<h3 class="card__heading"><?php the_title(); ?></h3>
 								<div class="card__body">
-								<?php if ( has_excerpt() ) : ?>
-									<?php echo mytheme_excerpt( get_the_excerpt(), 20 ); ?>
-								<?php else : ?>
-									<?php echo mytheme_excerpt( get_the_content(), 20 ); ?>
-								<?php endif; ?>
+								<p>
+									<?php echo mytheme_excerpt( has_excerpt() ? get_the_excerpt() : get_the_content(), 20 ); ?>
+								</p>
 								</div>
 								<div class="card__footer">
 									<div class="card__categories">
