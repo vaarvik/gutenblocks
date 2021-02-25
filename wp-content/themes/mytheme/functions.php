@@ -36,6 +36,9 @@ require get_template_directory() . '/classes/meta-fields.php';
 // General functions
 require get_template_directory() . '/inc/helper-functions.php';
 
+// General functions
+require get_template_directory() . '/inc/theme-functions.php';
+
 // Add theme support
 require get_template_directory() . '/inc/theme-support.php';
 

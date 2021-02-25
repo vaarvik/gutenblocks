@@ -75,3 +75,19 @@ function mytheme_get_string_from_array_prop( $array, $prop ) {
 
 	return $array_string;
 }
+
+function mytheme_excerpt( $text, $length ) {
+	$excerpt = explode( ' ', $text, $length );
+
+	if ( count($excerpt) >= $length ) {
+		array_pop( $excerpt );
+		$excerpt = implode( " ", $excerpt ) . '...';
+	} else {
+		$excerpt = implode( " ", $excerpt );
+	}
+
+	$excerpt = strip_tags( $excerpt );
+
+	return $excerpt;
+
+}

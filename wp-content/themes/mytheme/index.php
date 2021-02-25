@@ -74,6 +74,7 @@ get_header();
 					$categories = mytheme_get_string_from_array_prop( get_the_category() ?? null, "slug" );
 					$tags = mytheme_get_string_from_array_prop( get_the_tags() ?? null, "slug" );
 
+
 					?>
 					<div
 						id="card-<?php the_ID() ?>"
@@ -91,7 +92,13 @@ get_header();
 							</div>
 							<div class="card__content">
 								<h3 class="card__heading"><?php the_title(); ?></h3>
-								<div class="card__body"><?php the_content(); ?></div>
+								<div class="card__body">
+								<?php if ( has_excerpt() ) : ?>
+									<?php echo mytheme_excerpt( get_the_excerpt(), 20 ); ?>
+								<?php else : ?>
+									<?php echo mytheme_excerpt( get_the_content(), 20 ); ?>
+								<?php endif; ?>
+								</div>
 								<div class="card__footer">
 									<div class="card__categories">
 										<?php echo $categories ?>
