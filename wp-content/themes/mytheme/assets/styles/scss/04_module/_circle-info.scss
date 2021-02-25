@@ -1,0 +1,32 @@
+/**
+ *  ██████╗██╗██████╗  ██████╗██╗     ███████╗    ██╗███╗   ██╗███████╗ ██████╗
+ * ██╔════╝██║██╔══██╗██╔════╝██║     ██╔════╝    ██║████╗  ██║██╔════╝██╔═══██╗
+ * ██║     ██║██████╔╝██║     ██║     █████╗      ██║██╔██╗ ██║█████╗  ██║   ██║
+ * ██║     ██║██╔══██╗██║     ██║     ██╔══╝      ██║██║╚██╗██║██╔══╝  ██║   ██║
+ * ╚██████╗██║██║  ██║╚██████╗███████╗███████╗    ██║██║ ╚████║██║     ╚██████╔╝
+ *  ╚═════╝╚═╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚══════╝    ╚═╝╚═╝  ╚═══╝╚═╝      ╚═════╝
+ *
+ */
+
+.circle-info {
+	width: 100%;
+	max-width: 200px;
+	position: relative;
+	border: white 4px solid;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	letter-spacing: 1.2px;
+	color: white;
+	@include font("heading", 300, 18px);
+	a {
+		color: $white;
+	}
+	&::before {
+		content: "";
+		display: block;
+		padding-bottom: 100%;
+	}
+}

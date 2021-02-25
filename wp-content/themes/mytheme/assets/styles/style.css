@@ -838,6 +838,7 @@ code {
   width: 640px;
   max-width: 100vw;
   margin: 0 auto;
+  position: relative;
 }
 
 .wrapper.wide {
@@ -1619,6 +1620,84 @@ code {
 }
 
 /**
+ * ███████╗██╗██████╗ ███████╗    ██╗    ██╗██╗██████╗  ██████╗ ███████╗████████╗
+ * ██╔════╝██║██╔══██╗██╔════╝    ██║    ██║██║██╔══██╗██╔════╝ ██╔════╝╚══██╔══╝
+ * ███████╗██║██║  ██║█████╗      ██║ █╗ ██║██║██║  ██║██║  ███╗█████╗     ██║
+ * ╚════██║██║██║  ██║██╔══╝      ██║███╗██║██║██║  ██║██║   ██║██╔══╝     ██║
+ * ███████║██║██████╔╝███████╗    ╚███╔███╔╝██║██████╔╝╚██████╔╝███████╗   ██║
+ * ╚══════╝╚═╝╚═════╝ ╚══════╝     ╚══╝╚══╝ ╚═╝╚═════╝  ╚═════╝ ╚══════╝   ╚═╝
+ *
+ */
+
+.side-widget {
+  margin: 40px 0;
+}
+
+.side-widget .side-widget__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/**
+ *  ██████╗██╗██████╗  ██████╗██╗     ███████╗    ██╗███╗   ██╗███████╗ ██████╗
+ * ██╔════╝██║██╔══██╗██╔════╝██║     ██╔════╝    ██║████╗  ██║██╔════╝██╔═══██╗
+ * ██║     ██║██████╔╝██║     ██║     █████╗      ██║██╔██╗ ██║█████╗  ██║   ██║
+ * ██║     ██║██╔══██╗██║     ██║     ██╔══╝      ██║██║╚██╗██║██╔══╝  ██║   ██║
+ * ╚██████╗██║██║  ██║╚██████╗███████╗███████╗    ██║██║ ╚████║██║     ╚██████╔╝
+ *  ╚═════╝╚═╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚══════╝    ╚═╝╚═╝  ╚═══╝╚═╝      ╚═════╝
+ *
+ */
+
+.circle-info {
+  width: 100%;
+  max-width: 200px;
+  position: relative;
+  border: white 4px solid;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: white;
+  font-family: "Lato", Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.circle-info a {
+  color: #FFFFFF;
+}
+
+.circle-info::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+/**
+ * ██████╗  ██████╗ ███████╗████████╗     ██████╗██╗      █████╗ ███████╗███████╗
+ * ██╔══██╗██╔═══██╗██╔════╝╚══██╔══╝    ██╔════╝██║     ██╔══██╗██╔════╝██╔════╝
+ * ██████╔╝██║   ██║███████╗   ██║       ██║     ██║     ███████║███████╗███████╗
+ * ██╔═══╝ ██║   ██║╚════██║   ██║       ██║     ██║     ██╔══██║╚════██║╚════██║
+ * ██║     ╚██████╔╝███████║   ██║       ╚██████╗███████╗██║  ██║███████║███████║██╗
+ * ╚═╝      ╚═════╝ ╚══════╝   ╚═╝        ╚═════╝╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝
+ *
+ */
+
+/**
  * ██╗    ██╗██████╗     ██████╗ ██╗      ██████╗  ██████╗██╗  ██╗     ██████╗ ██████╗ ██████╗ ███████╗
  * ██║    ██║██╔══██╗    ██╔══██╗██║     ██╔═══██╗██╔════╝██║ ██╔╝    ██╔════╝██╔═══██╗██╔══██╗██╔════╝
  * ██║ █╗ ██║██████╔╝    ██████╔╝██║     ██║   ██║██║     █████╔╝     ██║     ██║   ██║██║  ██║█████╗
@@ -1908,6 +1987,45 @@ p.is-style-notice.wp-block::after {
 @media only screen and (min-width: 900px) {
   .card-list__item {
     width: 33.3%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .side-widget {
+    height: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .side-widget .side-widget__content {
+    width: 14vw;
+    max-width: 248px;
+    position: absolute;
+    right: auto;
+    left: calc( 50% + ( 960px / 2 ) - 64px);
+  }
+
+  .side-widget.left .side-widget__content {
+    left: auto;
+    right: calc( 50% + ( 960px / 2 ) - 64px);
+  }
+
+  .post-classifications {
+    position: absolute;
+    width: 100%;
+    top: 80px;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .side-widget .side-widget__content {
+    right: auto;
+    left: calc( 50% + ( 960px / 2 ) - 24px);
+  }
+
+  .side-widget.left .side-widget__content {
+    left: auto;
+    right: calc( 50% + ( 960px / 2 ) - 24px);
   }
 }
 

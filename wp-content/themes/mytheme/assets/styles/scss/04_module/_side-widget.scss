@@ -1,0 +1,48 @@
+/**
+ * ███████╗██╗██████╗ ███████╗    ██╗    ██╗██╗██████╗  ██████╗ ███████╗████████╗
+ * ██╔════╝██║██╔══██╗██╔════╝    ██║    ██║██║██╔══██╗██╔════╝ ██╔════╝╚══██╔══╝
+ * ███████╗██║██║  ██║█████╗      ██║ █╗ ██║██║██║  ██║██║  ███╗█████╗     ██║
+ * ╚════██║██║██║  ██║██╔══╝      ██║███╗██║██║██║  ██║██║   ██║██╔══╝     ██║
+ * ███████║██║██████╔╝███████╗    ╚███╔███╔╝██║██████╔╝╚██████╔╝███████╗   ██║
+ * ╚══════╝╚═╝╚═════╝ ╚══════╝     ╚══╝╚══╝ ╚═╝╚═════╝  ╚═════╝ ╚══════╝   ╚═╝
+ *
+ */
+
+$side-widget-width: 248px;
+
+.side-widget {
+	margin: 40px 0;
+	@include desktop-up {
+		height: 0;
+		margin: 0;
+		padding: 0;
+	}
+	.side-widget__content {
+		display: flex;
+		justify-content: center;
+		@include desktop-up {
+			width: 14vw;
+			max-width: $side-widget-width;
+			position: absolute;
+			right: auto;
+			left: calc( 50% + ( #{$wide-max-width} / 2 ) - 64px );
+		}
+		@include medium-desktop-up {
+			right: auto;
+			left: calc( 50% + ( #{$wide-max-width} / 2 ) - 24px );
+		}
+	}
+	&.left {
+		.side-widget__content {
+			@include desktop-up {
+				left: auto;
+				right: calc( 50% + ( #{$wide-max-width} / 2 ) - 64px );
+			}
+			@include medium-desktop-up {
+				left: auto;
+				right: calc( 50% + ( #{$wide-max-width} / 2 ) - 24px );
+			}
+		}
+
+	}
+}

@@ -31,8 +31,6 @@
 			<?php the_content(); ?>
 		</div>
 
-		<p><?php the_category( ", " ) ?></p>
-
 		<?php if ( get_the_tags() ) : ?>
 			<p><?php the_tags() ?></p>
 		<?php endif; ?>
@@ -43,9 +41,19 @@
 			</a></p>
 		<?php } ?>
 
-		<hr/>
+		<div class="post-classifications">
+			<div class="side-widget right">
+				<div class="side-widget__content">
+					<div class="circle-info">
+						<?php the_category( ", " ) ?>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</div>
+
+
 
 	<div class="post-handling">
 		<?php
