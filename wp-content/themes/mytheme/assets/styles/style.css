@@ -1340,8 +1340,15 @@ code {
   -ms-flex-flow: column;
   flex-flow: column;
   cursor: pointer;
-  -webkit-transition: .2s;
-  transition: .2s;
+  -webkit-transform: scale(1) translateZ(0);
+  transform: scale(1) translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-transition: -webkit-transform .1s;
+  transition: -webkit-transform .1s;
+  transition: transform .1s;
+  transition: transform .1s, -webkit-transform .1s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   margin: 8px 0;
 }
 
@@ -1365,11 +1372,9 @@ code {
 }
 
 .card:hover {
-  width: 100%;
-}
-
-.card:hover .card__title {
-  opacity: 1;
+  text-decoration: none;
+  -webkit-transform: scale(1.015) translateZ(0);
+  transform: scale(1.015) translateZ(0);
 }
 
 .card:hover .card__image {

@@ -28,7 +28,10 @@
 	display: flex;
 	flex-flow: column;
 	cursor: pointer;
-	transition: .2s;
+	transform: scale(1) translateZ(0);
+	-webkit-font-smoothing: subpixel-antialiased;
+	transition: transform .1s;
+	backface-visibility: hidden;
 	margin: 8px 0;
 	&.experimental {
 		&::after {
@@ -51,10 +54,8 @@
 		}
 	}
 	&:hover {
-		width: 100%;
-		.card__title {
-			opacity: 1;
-		}
+		text-decoration: none;
+		transform: scale(1.015) translateZ(0);
 		.card__image {
 			filter: grayscale(0);
 		}
