@@ -76,18 +76,19 @@ function mytheme_get_string_from_array_prop( $array, $prop ) {
 	return $array_string;
 }
 
+/**
+ * Excerpt
+ * ----------
+ * Trims text into an excerpt of a given length
+ *
+ * @param   string	$text    The text to be trimmed
+ * @param   int 	$length  The length of the excerpt
+ *
+ * @return  string           The excerpt
+ */
 function mytheme_excerpt( $text, $length ) {
-	$excerpt = explode( ' ', $text, $length );
-
-	if ( count($excerpt) >= $length ) {
-		array_pop( $excerpt );
-		$excerpt = implode( " ", $excerpt ) . '...';
-	} else {
-		$excerpt = implode( " ", $excerpt );
-	}
-
+	$excerpt = wp_trim_words( $text, $length );
 	$excerpt = strip_tags( $excerpt );
 
 	return $excerpt;
-
 }
