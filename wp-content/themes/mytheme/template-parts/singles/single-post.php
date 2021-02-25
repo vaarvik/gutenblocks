@@ -13,7 +13,7 @@
 
 ?>
 
-<article <?php post_class( "entry-content" ); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class( ); ?> id="post-<?php the_ID(); ?>">
 
 	<div class="wrapper">
 
