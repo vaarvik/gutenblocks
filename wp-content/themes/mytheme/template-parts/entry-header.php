@@ -23,16 +23,6 @@
 		 */
 
 		the_title( '<h1 class="entry-title">', '</h1>' );
-
-		if ( has_excerpt() ) {
-			?>
-
-			<div class="entry-header__excerpt">
-				<p class="is-style-preamble"><?php echo get_the_excerpt(); ?></p>
-			</div>
-
-			<?php
-		}
 		?>
 
 	</div>
