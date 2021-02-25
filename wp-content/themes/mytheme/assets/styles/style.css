@@ -870,7 +870,7 @@ code {
  * designed to exist as a standalone component.
  */
 
-.btn {
+.btn,.wp-block-code + .toolbar button {
   border-radius: 3px;
   padding: 5px 12px;
   padding-right: 24px;
@@ -886,17 +886,17 @@ code {
   line-height: 1.2;
 }
 
-.btn:hover {
+.btn:hover,.wp-block-code + .toolbar button:hover {
   text-decoration: none;
 }
 
-.btn.primary {
+.btn.primary,.wp-block-code + .toolbar button.primary {
   color: #ea165c;
   background-color: transparent;
   border: 1px solid #ea165c;
 }
 
-.btn.primary::after {
+.btn.primary::after,.wp-block-code + .toolbar button.primary::after {
   content: "";
   display: block;
   width: 8px;
@@ -910,16 +910,16 @@ code {
   border-bottom: 2px solid #ea165c;
 }
 
-.btn.primary:hover,.btn.primary.active {
+.btn.primary:hover,.wp-block-code + .toolbar button.primary:hover,.btn.primary.active,.wp-block-code + .toolbar button.primary.active {
   color: #FFFFFF;
   background-color: #ea165c;
 }
 
-.btn.primary:hover::after,.btn.primary.active::after {
+.btn.primary:hover::after,.wp-block-code + .toolbar button.primary:hover::after,.btn.primary.active::after,.wp-block-code + .toolbar button.primary.active::after {
   border-color: #FFFFFF;
 }
 
-.btn.secondary {
+.btn.secondary,.wp-block-code + .toolbar button {
   background-color: transparent;
   border: 1px solid #FFFFFF;
   font-size: 14px;
@@ -931,12 +931,12 @@ code {
   color: #FFFFFF;
 }
 
-.btn.secondary:hover,.btn.secondary.active {
+.btn.secondary:hover,.wp-block-code + .toolbar button:hover,.btn.secondary.active,.wp-block-code + .toolbar button.active {
   background-color: #FFFFFF;
   color: #1C1C1C;
 }
 
-.btn.tertiary {
+.btn.tertiary,.wp-block-code + .toolbar button.tertiary {
   background-color: transparent;
   padding: 4px 8px;
   font-weight: 300;
@@ -948,7 +948,7 @@ code {
   color: #FFFFFF;
 }
 
-.btn.tertiary:hover,.btn.tertiary.active {
+.btn.tertiary:hover,.wp-block-code + .toolbar button.tertiary:hover,.btn.tertiary.active,.wp-block-code + .toolbar button.tertiary.active {
   background-color: #FFFFFF;
   color: #1C1C1C;
 }
@@ -1719,9 +1719,24 @@ code {
  */
 
 .wp-block-code {
+  margin: 24px 0;
   /* Code blocks */
   /* Inline code */
   /* YAML & Bash */
+}
+
+.wp-block-code + .toolbar {
+  margin-top: -16px;
+  margin-bottom: 24px;
+}
+
+.wp-block-code + .toolbar .toolbar-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 .wp-block-code[class*="language-"],.wp-block-code code[class*="language-"],.wp-block-code .token.tag.token {

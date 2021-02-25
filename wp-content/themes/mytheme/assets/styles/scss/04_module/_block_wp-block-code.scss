@@ -30,6 +30,19 @@ $code-yellow: 	#e6db74;
 $code-purple: 	#ae81ff;
 
 .wp-block-code {
+	margin: 24px 0;
+	& + .toolbar {
+		margin-top: -16px;
+		margin-bottom: 24px;
+		.toolbar-item {
+			display: flex;
+			justify-content: flex-end;
+		}
+		button {
+
+			@extend .btn, .btn.secondary;
+		}
+	}
 
 	&[class*="language-"],
 	code[class*="language-"],
