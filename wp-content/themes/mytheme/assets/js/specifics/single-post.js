@@ -20,7 +20,7 @@
 
 	if(entryContent && entryContent.children) {
 		const theContentEls = entryContent.children;
-		if(theContentEls[0].classList.contains("is-style-preamble")) {
+		if(theContentEls[0] && theContentEls[0].classList.contains("is-style-preamble")) {
 			entryHeader.appendChild(theContentEls[0]);
 		}
 	}
