@@ -1341,45 +1341,45 @@ registerBlockType( BLOCKPATH, {
 
 
 				<PanelBody>
-					<TextControl
-						label="Additional CSS Class"
-						value={ "myemail@emails.com" }
-						onChange={ e => console.log(e) }
-						type="email"
-					/>
+<TextControl
+	label="Additional CSS Class"
+	value={ "myemail@emails.com" }
+	onChange={ e => console.log(e) }
+	type="email"
+/>
 				</PanelBody>
 
 				<PanelBody>
-					<TextHighlight
-						text="Why do we like Gutenberg? Not because the documentation is great atleast!"
-						highlight="Gutenberg"
-					/>
+<TextHighlight
+	text="Why do we like Gutenberg? Not because the documentation is great atleast!"
+	highlight="Gutenberg"
+/>
 				</PanelBody>
 
 				<PanelBody>
-					<TextareaControl
-						label="Textarea"
-						rows={2}
-						value={ "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia sem suscipit faucibus sollicitudin. Nam gravida lectus vitae elit vestibulum aliquam vitae ac nunc." }
-						onChange={ e => console.log(e) }
-					/>
+<TextareaControl
+	label="Textarea"
+	rows={2}
+	value={ "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia sem suscipit faucibus sollicitudin. Nam gravida lectus vitae elit vestibulum aliquam vitae ac nunc." }
+	onChange={ e => console.log(e) }
+/>
 				</PanelBody>
 
 
 				{/* That's not much of a component right there. But I guess it could be handy */}
 				<PanelBody>
-					<Tip>
-						<p>Here's a tip for ya. Tip tipsy.</p>
-					</Tip>
+<Tip>
+	<p>Here's a tip for ya. Tip tipsy.</p>
+</Tip>
 				</PanelBody>
 
 				<PanelBody>
-					<ToggleControl
-						label="Fixed Background"
-						help={ true ? 'Has fixed background.' : 'No fixed background.' }
-						checked={ true }
-						onChange={ (e) => console.log(e) }
-					/>
+<ToggleControl
+	label="Fixed Background"
+	help={ true ? 'Has fixed background.' : 'No fixed background.' }
+	checked={ true }
+	onChange={ (e) => console.log(e) }
+/>
 				</PanelBody>
 
 				<PanelBody>
@@ -1410,71 +1410,69 @@ registerBlockType( BLOCKPATH, {
 				</PanelBody>
 
 				<PanelBody>
-					<Toolbar label="Options">
-						{/* <ToolbarItem as={ Button }>I am a toolbar button</ToolbarItem>
-						<ToolbarItem as="button">I am another toolbar button</ToolbarItem> */}
-						<ToolbarItem>
-							{ ( toolbarItemHTMLProps ) => (
-								<DropdownMenu
-									icon={ more }
-									label="Select a direction"
-									controls={ [
-										{
-											title: 'Up',
-											icon: arrowUp,
-											onClick: () => console.log( 'up' ),
-										},
-										{
-											title: 'Right',
-											icon: arrowRight,
-											onClick: () => console.log( 'right' ),
-										},
-										{
-											title: 'Down',
-											icon: arrowDown,
-											onClick: () => console.log( 'down' ),
-										},
-										{
-											title: 'Left',
-											icon: arrowLeft,
-											onClick: () => console.log( 'left' ),
-										},
-									] }
-								/>
-							) }
-						</ToolbarItem>
-						<ToolbarGroup>
-							<ToolbarButton
-								icon={ "edit" }
-								label="Edit"
-								onClick={ () => console.log( 'Editing' ) }
-							/>
-							<ToolbarButton
-								icon={ more }
-								label="More"
-								onClick={ () => console.log( 'More!' ) }
-							/>
-						</ToolbarGroup>
-							<ToolbarButton
-								icon={ arrowDown }
-								label="More"
-								isDisabled
-								onClick={ () => console.log( 'More!' ) }
-							/>
-					</Toolbar>
+<Toolbar label="Options">
+	<ToolbarItem>
+		{ ( toolbarItemHTMLProps ) => (
+			<DropdownMenu
+				icon={ more }
+				label="Select a direction"
+				controls={ [
+					{
+						title: 'Up',
+						icon: arrowUp,
+						onClick: () => console.log( 'up' ),
+					},
+					{
+						title: 'Right',
+						icon: arrowRight,
+						onClick: () => console.log( 'right' ),
+					},
+					{
+						title: 'Down',
+						icon: arrowDown,
+						onClick: () => console.log( 'down' ),
+					},
+					{
+						title: 'Left',
+						icon: arrowLeft,
+						onClick: () => console.log( 'left' ),
+					},
+				] }
+			/>
+		) }
+	</ToolbarItem>
+	<ToolbarGroup>
+		<ToolbarButton
+			icon={ "edit" }
+			label="Edit"
+			onClick={ () => console.log( 'Editing' ) }
+		/>
+		<ToolbarButton
+			icon={ more }
+			label="More"
+			onClick={ () => console.log( 'More!' ) }
+		/>
+	</ToolbarGroup>
+		<ToolbarButton
+			icon={ arrowDown }
+			label="More"
+			isDisabled
+			onClick={ () => console.log( 'More!' ) }
+		/>
+</Toolbar>
 				</PanelBody>
 
 				{/* Position prop seems to be a bit off */}
 
 				<PanelBody>
-					<Tooltip
-						text="More information"
-						position="top left"
-					>
-						<div>
-							Hover for more information
-						</div>
-					</Tooltip>
+<Tooltip
+	text="More information"
+	position="top left"
+>
+	<div>
+		Hover for more information
+	</div>
+</Tooltip>
 				</PanelBody>
 
 				{/* TreeGrid */}
