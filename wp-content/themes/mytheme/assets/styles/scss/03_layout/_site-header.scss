@@ -19,10 +19,22 @@
  * Generally, a Layout style only has a single selector: a single ID or class name.
  */
 
-$site-header-height: 80px;
+$site-header-height: 96px;
 $site-header-height-mobile: 65px;
 
 .site-header {
+	height: $site-header-height-mobile;
+	padding: 16px;
+	display: flex;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	align-items: center;
+	@include tablet-p-up {
+		height: $site-header-height;
+		padding: 24px 40px;
+	}
 	@include phone-l-down {
 		.admin-bar & {
 			top: 46px;
@@ -34,7 +46,15 @@ $site-header-height-mobile: 65px;
 }
 
 .site-header__logo {
-	height: 100%;
+	svg {
+		display: block;
+		width: 35px;
+		height: 35px;
+		@include tablet-p-up {
+			width: 50px;
+			height: 50px;
+		}
+	}
 }
 
 .site-header__navigation{

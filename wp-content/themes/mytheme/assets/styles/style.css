@@ -669,12 +669,29 @@ code {
  * Generally, a Layout style only has a single selector: a single ID or class name.
  */
 
+.site-header {
+  height: 65px;
+  padding: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 .admin-bar .site-header {
   top: 32px;
 }
 
-.site-header__logo {
-  height: 100%;
+.site-header__logo svg {
+  display: block;
+  width: 35px;
+  height: 35px;
 }
 
 /**
@@ -1979,8 +1996,18 @@ p.is-style-notice.wp-block::after {
     line-height: 1.2;
   }
 
+  .site-header {
+    height: 96px;
+    padding: 24px 40px;
+  }
+
+  .site-header__logo svg {
+    width: 50px;
+    height: 50px;
+  }
+
   .site-content {
-    min-height: calc( 100vh - 80px - 140px);
+    min-height: calc( 100vh - 96px - 140px);
   }
 
   .archive-content {
