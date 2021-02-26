@@ -1756,7 +1756,7 @@ code {
   justify-content: flex-end;
 }
 
-.wp-block-code[class*="language-"],.wp-block-code code[class*="language-"],.wp-block-code .token.tag.token {
+.wp-block-code[class*="language-"],.wp-block-code code[class*="language-"],.wp-block-code .token * {
   color: #f8f8f2;
   background: none;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;

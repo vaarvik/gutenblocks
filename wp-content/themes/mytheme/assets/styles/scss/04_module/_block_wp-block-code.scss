@@ -46,7 +46,7 @@ $code-purple: 	#ae81ff;
 
 	&[class*="language-"],
 	code[class*="language-"],
-	.token.tag.token {
+	.token * {
 		color: $code-white;
 		background: none;
 		font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
