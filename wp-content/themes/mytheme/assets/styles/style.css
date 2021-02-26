@@ -1045,6 +1045,7 @@ code {
 
 .field.input {
   padding: 8px;
+  border-radius: 4px;
 }
 
 .field.hide {
