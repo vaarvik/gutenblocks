@@ -831,6 +831,11 @@ code {
  * Generally, a Layout style only has a single selector: a single ID or class name.
  */
 
+.entry-header {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
 /**
  *
  * ███████╗███╗   ██╗████████╗██████╗ ██╗   ██╗
@@ -1119,7 +1124,8 @@ code {
 
 .featured-media__image {
   width: 100%;
-  padding-bottom: 65.93407%;
+  padding-bottom: 46.875%;
+  overflow: hidden;
   -webkit-filter: grayscale(0.1);
   filter: grayscale(0.1);
   background-color: #FFFFFF;
@@ -2122,7 +2128,7 @@ p.is-style-notice.wp-block::after {
   .post-details {
     position: absolute;
     width: 100%;
-    top: 80px;
+    top: 48px;
   }
 }
 

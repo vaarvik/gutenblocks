@@ -11,20 +11,17 @@
 
 <header class="entry-header">
 
-	<div class="entry-header__content">
+	<?php
+	/**
+	 * Allow child themes and plugins to filter the display of the categories in the entry header.
+	 *
+	 * @since MyTheme 1.0
+	 *
+	 * @param bool   Whether to show the categories in header, Default true.
+	 */
 
-		<?php
-		/**
-		 * Allow child themes and plugins to filter the display of the categories in the entry header.
-		 *
-		 * @since MyTheme 1.0
-		 *
-		 * @param bool   Whether to show the categories in header, Default true.
-		 */
+	the_title( '<h1 class="entry-title">', '</h1>' );
 
-		the_title( '<h1 class="entry-title">', '</h1>' );
-		?>
-
-	</div>
+	?>
 
 </header>

@@ -23,7 +23,8 @@
  */
 
 .entry-header {
-
+    max-width: $normal-max-width;
+    margin: 0 auto;
 }
 
 .entry-content {
