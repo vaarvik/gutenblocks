@@ -18,7 +18,6 @@
 
   document.querySelectorAll(".code-toolbar").forEach(function (element) {
     var pre = element.querySelector(".wp-block-code");
-    console.log(pre.scrollWidth, pre.offsetWidth);
 
     if (pre.scrollWidth > pre.offsetWidth) {
       element.classList.add("has-scrollbar");
