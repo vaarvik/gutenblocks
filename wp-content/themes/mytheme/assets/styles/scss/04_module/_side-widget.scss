@@ -19,7 +19,8 @@ $side-widget-width: 248px;
 	}
 	.side-widget__content {
 		display: flex;
-		justify-content: center;
+		flex-flow: column;
+		align-items: center;
 		@include desktop-up {
 			width: 14vw;
 			max-width: $side-widget-width;

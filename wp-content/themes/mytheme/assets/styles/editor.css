@@ -407,8 +407,12 @@ html {
 
 .edit-post-visual-editor.editor-styles-wrapper h1,.edit-post-visual-editor.editor-styles-wrapper h2,.edit-post-visual-editor.editor-styles-wrapper h3,.edit-post-visual-editor.editor-styles-wrapper h4,.edit-post-visual-editor.editor-styles-wrapper h5,.edit-post-visual-editor.editor-styles-wrapper h6 {
   font-family: "Lato", Helvetica, sans-serif;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.edit-post-visual-editor.editor-styles-wrapper h1:first-child,.edit-post-visual-editor.editor-styles-wrapper h2:first-child,.edit-post-visual-editor.editor-styles-wrapper h3:first-child,.edit-post-visual-editor.editor-styles-wrapper h4:first-child,.edit-post-visual-editor.editor-styles-wrapper h5:first-child,.edit-post-visual-editor.editor-styles-wrapper h6:first-child {
+  margin-top: 0;
 }
 
 .edit-post-visual-editor.editor-styles-wrapper h1 + p,.edit-post-visual-editor.editor-styles-wrapper h2 + p,.edit-post-visual-editor.editor-styles-wrapper h3 + p,.edit-post-visual-editor.editor-styles-wrapper h4 + p,.edit-post-visual-editor.editor-styles-wrapper h5 + p,.edit-post-visual-editor.editor-styles-wrapper h6 + p {
@@ -419,7 +423,7 @@ html {
   font-weight: bold;
 }
 
-.edit-post-visual-editor.editor-styles-wrapper h2,.edit-post-visual-editor.editor-styles-wrapper h4 {
+.edit-post-visual-editor.editor-styles-wrapper h2,.edit-post-visual-editor.editor-styles-wrapper h4,.edit-post-visual-editor.editor-styles-wrapper h5 {
   letter-spacing: .5px;
   font-family: #00478C;
 }
@@ -449,8 +453,8 @@ html {
 }
 
 .edit-post-visual-editor.editor-styles-wrapper h5 {
-  font-size: 20px;
-  font-size: 1rem;
+  font-size: 16px;
+  font-size: 0.8rem;
   line-height: 1.2;
   font-weight: bold;
 }
@@ -1567,8 +1571,8 @@ html {
   }
 
   .edit-post-visual-editor.editor-styles-wrapper h5 {
-    font-size: 24px;
-    font-size: 1.2rem;
+    font-size: 18px;
+    font-size: 0.9rem;
     line-height: 1.2;
   }
 

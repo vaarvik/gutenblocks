@@ -475,8 +475,12 @@ h1,h2,h3,h4,h5,h6,p,a,blockquote,cite,pre,label,figcaption {
 
 h1,h2,h3,h4,h5,h6 {
   font-family: "Lato", Helvetica, sans-serif;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+h1:first-child,h2:first-child,h3:first-child,h4:first-child,h5:first-child,h6:first-child {
+  margin-top: 0;
 }
 
 h1 + p,h2 + p,h3 + p,h4 + p,h5 + p,h6 + p {
@@ -487,7 +491,7 @@ h1,h2,h4,h6 {
   font-weight: bold;
 }
 
-h2,h4 {
+h2,h4,h5 {
   letter-spacing: .5px;
   font-family: #00478C;
 }
@@ -517,8 +521,8 @@ h4 {
 }
 
 h5 {
-  font-size: 20px;
-  font-size: 1rem;
+  font-size: 16px;
+  font-size: 0.8rem;
   line-height: 1.2;
   font-weight: bold;
 }
@@ -1655,9 +1659,13 @@ code {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 /**
@@ -1671,8 +1679,8 @@ code {
  */
 
 .circle-info {
-  width: 100%;
-  max-width: 200px;
+  width: 160px;
+  max-width: 100%;
   position: relative;
   border: white 4px solid;
   border-radius: 50%;
@@ -1688,10 +1696,11 @@ code {
   text-transform: uppercase;
   letter-spacing: 1.2px;
   color: white;
+  overflow: hidden;
   font-family: "Lato", Helvetica, sans-serif;
   font-weight: 300;
-  font-size: 18px;
-  font-size: 0.9rem;
+  font-size: 15px;
+  font-size: 0.75rem;
   line-height: 1.2;
 }
 
@@ -1705,6 +1714,23 @@ code {
   padding-bottom: 100%;
 }
 
+.circle-info svg {
+  width: 100%;
+  height: 100%;
+}
+
+.circle-info__heading {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+  font-size: 0.5rem;
+  line-height: 1.2;
+  text-transform: none;
+  position: absolute;
+  margin-top: -12px;
+  color: #FFFFFF;
+}
+
 /**
  * ██████╗  ██████╗ ███████╗████████╗     ██████╗██╗      █████╗ ███████╗███████╗
  * ██╔══██╗██╔═══██╗██╔════╝╚══██╔══╝    ██╔════╝██║     ██╔══██╗██╔════╝██╔════╝
@@ -1714,6 +1740,24 @@ code {
  * ╚═╝      ╚═════╝ ╚══════╝   ╚═╝        ╚═════╝╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝
  *
  */
+
+.post-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.post-details__item {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin: 0 16px;
+}
 
 /**
  * ██╗    ██╗██████╗     ██████╗ ██╗      ██████╗  ██████╗██╗  ██╗     ██████╗ ██████╗ ██████╗ ███████╗
@@ -2014,8 +2058,8 @@ p.is-style-notice.wp-block::after {
   }
 
   h5 {
-    font-size: 24px;
-    font-size: 1.2rem;
+    font-size: 18px;
+    font-size: 0.9rem;
     line-height: 1.2;
   }
 

@@ -9,9 +9,17 @@
  */
 
 .post-details {
+	display: flex;
+	flex-flow: wrap;
+	justify-content: space-between;
 	@include desktop-up {
 		position: absolute;
 		width: 100%;
 		top: 80px;
 	}
+}
+
+.post-details__item {
+	flex-grow: 1;
+	margin: 0 16px;
 }
