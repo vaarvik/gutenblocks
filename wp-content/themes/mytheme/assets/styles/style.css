@@ -831,6 +831,10 @@ code {
  * Generally, a Layout style only has a single selector: a single ID or class name.
  */
 
+.entry {
+  padding: 48px 0;
+}
+
 .entry-header {
   max-width: 750px;
   margin: 0 auto;

@@ -22,6 +22,10 @@
  * Generally, a Layout style only has a single selector: a single ID or class name.
  */
 
+.entry {
+	padding: 48px 0;
+}
+
 .entry-header {
     max-width: $normal-max-width;
     margin: 0 auto;
