@@ -33,3 +33,11 @@
 		}
 	}
 }
+
+.previous-post, .next-post {
+	flex-grow: 1;
+}
+
+.next-post {
+	text-align: right;
+}

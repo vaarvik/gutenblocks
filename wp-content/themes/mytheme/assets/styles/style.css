@@ -1668,6 +1668,16 @@ code {
   opacity: 1;
 }
 
+.previous-post,.next-post {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.next-post {
+  text-align: right;
+}
+
 /**
  * ███████╗██╗██████╗ ███████╗    ██╗    ██╗██╗██████╗  ██████╗ ███████╗████████╗
  * ██╔════╝██║██╔══██╗██╔════╝    ██║    ██║██║██╔══██╗██╔════╝ ██╔════╝╚══██╔══╝
