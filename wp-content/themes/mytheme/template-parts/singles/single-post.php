@@ -41,7 +41,7 @@
 			</a></p>
 		<?php } ?>
 
-		<div class="post-classifications">
+		<div class="post-details">
 			<div class="side-widget right">
 				<div class="side-widget__content">
 					<div class="circle-info">

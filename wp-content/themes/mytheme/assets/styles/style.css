@@ -2075,7 +2075,7 @@ p.is-style-notice.wp-block::after {
     right: calc( 50% + ( 960px / 2 ) - 64px);
   }
 
-  .post-classifications {
+  .post-details {
     position: absolute;
     width: 100%;
     top: 80px;
