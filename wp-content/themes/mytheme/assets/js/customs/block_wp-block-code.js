@@ -19,7 +19,7 @@
 	//add a class that shows if the element has a scrollbar or not
 	document.querySelectorAll(".code-toolbar").forEach((element) => {
 		const pre = element.querySelector(".wp-block-code");
-		if(pre.scrollWidth > pre.offsetWidth) {
+		if(pre.scrollWidth - 1 > pre.offsetWidth) {
 			element.classList.add("has-scrollbar");
 		}
 	});

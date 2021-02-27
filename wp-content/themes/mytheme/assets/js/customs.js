@@ -19,7 +19,7 @@
   document.querySelectorAll(".code-toolbar").forEach(function (element) {
     var pre = element.querySelector(".wp-block-code");
 
-    if (pre.scrollWidth > pre.offsetWidth) {
+    if (pre.scrollWidth - 1 > pre.offsetWidth) {
       element.classList.add("has-scrollbar");
     }
   });
