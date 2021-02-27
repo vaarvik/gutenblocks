@@ -75,8 +75,6 @@
 				)
 			);
 
-			edit_post_link();
-
 			if ( post_type_supports( get_post_type( get_the_ID() ), 'author' ) && is_single() ) {
 
 				get_template_part( 'template-parts/entry-author-bio' );
