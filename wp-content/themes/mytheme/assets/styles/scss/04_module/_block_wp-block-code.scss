@@ -31,18 +31,6 @@ $code-purple: 	#ae81ff;
 
 .wp-block-code {
 	margin: 24px 0;
-	& + .toolbar {
-		margin-top: -16px;
-		margin-bottom: 24px;
-		.toolbar-item {
-			display: flex;
-			justify-content: flex-end;
-		}
-		button {
-
-			@extend .btn, .btn.secondary;
-		}
-	}
 
 	&[class*="language-"],
 	code[class*="language-"],
@@ -190,5 +178,38 @@ $code-purple: 	#ae81ff;
 	.language-yaml .token.atrule,
 	.language-bash .token.function {
 		color: $code-red;
+	}
+}
+
+.code-toolbar {
+	margin: 24px 0;
+	position: relative;
+	border-radius: .3em;
+	white-space: normal;
+	background: $code-black;
+	.wp-block-code {
+		margin: 0;
+		&:not(pre) > code[class*="language-"] {
+			border-radius: 0;
+			background: none;
+		}
+	}
+	.toolbar {
+		position: absolute;
+		right: 16px;
+		bottom: 16px;
+		.toolbar-item {
+			display: flex;
+			justify-content: flex-end;
+		}
+		button {
+
+			@extend .btn, .btn.secondary;
+		}
+	}
+	&.has-scrollbar {
+		.toolbar {
+			bottom: 32px;
+		}
 	}
 }

@@ -600,7 +600,7 @@ html {
  * designed to exist as a standalone component.
  */
 
-.btn,.wp-block-code + .toolbar button {
+.btn,.code-toolbar .toolbar button {
   border-radius: 3px;
   padding: 5px 12px;
   padding-right: 24px;
@@ -616,17 +616,17 @@ html {
   line-height: 1.2;
 }
 
-.btn:hover,.wp-block-code + .toolbar button:hover {
+.btn:hover,.code-toolbar .toolbar button:hover {
   text-decoration: none;
 }
 
-.btn.primary,.wp-block-code + .toolbar button.primary {
+.btn.primary,.code-toolbar .toolbar button.primary {
   color: #ea165c;
   background-color: transparent;
   border: 1px solid #ea165c;
 }
 
-.btn.primary::after,.wp-block-code + .toolbar button.primary::after {
+.btn.primary::after,.code-toolbar .toolbar button.primary::after {
   content: "";
   display: block;
   width: 8px;
@@ -640,16 +640,16 @@ html {
   border-bottom: 2px solid #ea165c;
 }
 
-.btn.primary:hover,.wp-block-code + .toolbar button.primary:hover,.btn.primary.active,.wp-block-code + .toolbar button.primary.active {
+.btn.primary:hover,.code-toolbar .toolbar button.primary:hover,.btn.primary.active,.code-toolbar .toolbar button.primary.active {
   color: #FFFFFF;
   background-color: #ea165c;
 }
 
-.btn.primary:hover::after,.wp-block-code + .toolbar button.primary:hover::after,.btn.primary.active::after,.wp-block-code + .toolbar button.primary.active::after {
+.btn.primary:hover::after,.code-toolbar .toolbar button.primary:hover::after,.btn.primary.active::after,.code-toolbar .toolbar button.primary.active::after {
   border-color: #FFFFFF;
 }
 
-.btn.secondary,.wp-block-code + .toolbar button {
+.btn.secondary,.code-toolbar .toolbar button {
   background-color: transparent;
   border: 1px solid #FFFFFF;
   font-size: 14px;
@@ -661,12 +661,12 @@ html {
   color: #FFFFFF;
 }
 
-.btn.secondary:hover,.wp-block-code + .toolbar button:hover,.btn.secondary.active,.wp-block-code + .toolbar button.active {
+.btn.secondary:hover,.code-toolbar .toolbar button:hover,.btn.secondary.active,.code-toolbar .toolbar button.active {
   background-color: #FFFFFF;
   color: #1C1C1C;
 }
 
-.btn.tertiary,.wp-block-code + .toolbar button.tertiary {
+.btn.tertiary,.code-toolbar .toolbar button.tertiary {
   background-color: transparent;
   padding: 4px 8px;
   font-weight: 300;
@@ -678,12 +678,12 @@ html {
   color: #FFFFFF;
 }
 
-.btn.tertiary:hover,.wp-block-code + .toolbar button.tertiary:hover,.btn.tertiary.active,.wp-block-code + .toolbar button.tertiary.active {
+.btn.tertiary:hover,.code-toolbar .toolbar button.tertiary:hover,.btn.tertiary.active,.code-toolbar .toolbar button.tertiary.active {
   background-color: #FFFFFF;
   color: #1C1C1C;
 }
 
-.btn.clean,.wp-block-code + .toolbar button.clean {
+.btn.clean,.code-toolbar .toolbar button.clean {
   background-color: initial;
   border: 0;
   -webkit-box-shadow: initial;
@@ -1359,20 +1359,6 @@ html {
   /* YAML & Bash */
 }
 
-.wp-block-code + .toolbar {
-  margin-top: -16px;
-  margin-bottom: 24px;
-}
-
-.wp-block-code + .toolbar .toolbar-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
 .wp-block-code[class*="language-"],.wp-block-code code[class*="language-"],.wp-block-code .token * {
   color: #f8f8f2;
   background: none;
@@ -1462,6 +1448,42 @@ html {
 
 .wp-block-code .token.italic {
   font-style: italic;
+}
+
+.code-toolbar {
+  margin: 24px 0;
+  position: relative;
+  border-radius: .3em;
+  white-space: normal;
+  background: #272822;
+}
+
+.code-toolbar .wp-block-code {
+  margin: 0;
+}
+
+.code-toolbar .wp-block-code:not(pre) > code[class*="language-"] {
+  border-radius: 0;
+  background: none;
+}
+
+.code-toolbar .toolbar {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+}
+
+.code-toolbar .toolbar .toolbar-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.code-toolbar.has-scrollbar .toolbar {
+  bottom: 32px;
 }
 
 .editor-styles-wrapper {

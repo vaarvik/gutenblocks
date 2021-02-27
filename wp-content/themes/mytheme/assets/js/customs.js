@@ -14,7 +14,16 @@
     var codeTag = pre.querySelector("code");
     codeTag.classList.add("language-jsx");
   });
-  Prism.highlightAll();
+  Prism.highlightAll(); //add a class that shows if the element has a scrollbar or not
+
+  document.querySelectorAll(".code-toolbar").forEach(function (element) {
+    var pre = element.querySelector(".wp-block-code");
+    console.log(pre.scrollWidth, pre.offsetWidth);
+
+    if (pre.scrollWidth > pre.offsetWidth) {
+      element.classList.add("has-scrollbar");
+    }
+  });
 })();
 /**
  *  ██████╗ █████╗ ██████╗ ██████╗
