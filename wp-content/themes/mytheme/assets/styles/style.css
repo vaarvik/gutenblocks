@@ -1638,6 +1638,11 @@ code {
  * designed to exist as a standalone component.
  */
 
+.pagination-single {
+  width: 750px;
+  margin: 0 auto;
+}
+
 .pagination-single__content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1645,6 +1650,18 @@ code {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  color: #FFFFFF;
+}
+
+.pagination-single__content a {
+  color: #FFFFFF;
+  opacity: .4;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+
+.pagination-single__content a:hover {
+  opacity: 1;
 }
 
 /**

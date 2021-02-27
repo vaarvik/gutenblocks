@@ -15,8 +15,21 @@
  * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
  * designed to exist as a standalone component.
  */
+.pagination-single {
+	width: $normal-max-width;
+	margin: 0 auto;
+}
 
 .pagination-single__content {
 	display: flex;
 	justify-content: space-between;
+	color: $white;
+	a {
+		color: $white;
+		opacity: .4;
+		transition: opacity .2s;
+		&:hover {
+			opacity: 1;
+		}
+	}
 }
