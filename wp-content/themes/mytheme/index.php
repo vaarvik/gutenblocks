@@ -17,7 +17,7 @@
 get_header();
 ?>
 
-<main id="site-content" class="site-content" role="main">
+<main id="site-content" class="site-content">
 
 	<div class="archive-content">
 		<header class="header">
@@ -51,7 +51,7 @@ get_header();
 							<?php foreach ( get_tags( array ('orderby' => 'name', 'order' => 'asc' ) ) as $key => $tag) : ?>
 								<div class="checkbox-list__item">
 									<div class="filter-checkbox" data-search-in="components-list" data-search-for="searchTags">
-										<input class="field input checkbox hide" type="checkbox" id="filter-tag" />
+										<input class="field input checkbox hide" type="checkbox" id="<?php echo "tag-" . $key ?>" />
 										<button class="btn tertiary"><?php echo $tag->name ?></button>
 									</div>
 								</div>
@@ -101,7 +101,7 @@ get_header();
 									<div class="card__categories">
 										<?php echo $categories ?>
 									</div>
-									<button class="card__btn btn primary" href="<?php echo get_the_permalink(); ?>"><?php _e( "Read more" ) ?></button>
+									<button class="card__btn btn primary"><?php _e( "Read more" ) ?></button>
 								</div>
 							</div>
 						</a>
