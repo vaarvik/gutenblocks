@@ -52,7 +52,7 @@ if ( $has_footer_menu || $has_sidebar_1 ) {
 
 			<?php if ( $has_sidebar_1 ) { ?>
 
-				<aside class="widgets-footer__side" role="complementary">
+				<aside class="widgets-footer__side">
 
 					<div class="sidebar-widget">
 
