@@ -101,7 +101,7 @@ get_header();
 									<div class="card__categories">
 										<?php echo $categories ?>
 									</div>
-									<button class="card__btn btn primary"><?php _e( "Read more" ) ?></button>
+									<div class="card__btn btn primary"><?php _e( "Read more" ) ?></div>
 								</div>
 							</div>
 						</a>
