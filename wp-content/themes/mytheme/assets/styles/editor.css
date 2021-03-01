@@ -1301,6 +1301,14 @@ html {
   flex-grow: 1;
 }
 
+.filter-section__sub-heading {
+  margin-bottom: 0;
+}
+
+.filter-section__sub-heading.tags {
+  margin-bottom: 8px;
+}
+
 /**
  *
  * ██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗

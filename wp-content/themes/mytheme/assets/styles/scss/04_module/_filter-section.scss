@@ -33,3 +33,10 @@
 		flex-grow: 1;
 	}
 }
+
+.filter-section__sub-heading {
+	&.tags {
+		margin-bottom: 8px;
+	}
+	margin-bottom: 0;
+}
