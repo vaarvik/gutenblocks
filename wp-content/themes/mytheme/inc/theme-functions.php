@@ -49,3 +49,24 @@ function mytheme_redirect_all_pages_to_home() {
 }
 
 add_action('template_redirect','mytheme_redirect_all_pages_to_home');
+
+
+/**
+ * Add the meta-tags template part into the wp_head
+ */
+add_action( 'wp_head', function(){
+    get_template_part( "template-parts/open", "graph" );
+} );
+
+/**
+ * Adds the slogan/site description in the title tag of every page. For SEO purposes.
+ *
+ * @param array $title_parts Default array with title parts
+ */
+function mytheme_title_tag( $title_parts ) {
+    $title_parts['tagline'] = get_bloginfo( 'description' );
+
+    return $title_parts;
+}
+
+add_filter( 'document_title_parts', 'mytheme_title_tag', 10, 2 );
