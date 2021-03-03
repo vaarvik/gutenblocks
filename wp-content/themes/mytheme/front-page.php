@@ -30,8 +30,8 @@ get_header();
 		<header class="header">
 			<h1 class="header__heading"><?php echo get_bloginfo( "name" ) ?></h1>
 			<h2 class="header__sub-heading"><?php echo get_the_title() ?></h2>
-			<div class="header__content"><?php the_content() ?></div>
 			<div class="header__body">
+				<?php the_content() ?>
 				<div class="filter-section">
 					<div class="filter-section__item">
 						<label for="filter-search" class="label">Search</label>
@@ -72,7 +72,7 @@ get_header();
 		<div class="card-list" id="components-list">
 			<?php
 
-			if ( $posts->have_posts() ) {
+			if ( $posts->have_posts() ) :
 
 				while ( $posts->have_posts() ) :
 
@@ -115,7 +115,7 @@ get_header();
 					</div>
 					<?php
 				endwhile; wp_reset_postdata();
-			}
+			endif;
 
 			?>
 
