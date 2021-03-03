@@ -22,13 +22,21 @@
 	margin: 24px 0;
 }
 
-.header__heading {
+.header__heading, .header__sub-heading {
 	text-align: center;
 	text-transform: uppercase;
 	letter-spacing: 1.25px;
 }
 
-.header__preamble {
+.header__sub-heading {
+	@include font-size(16px);
+	@include tablet-p-up {
+		@include font-size(18px);
+	}
+	font-weight: 300;
+}
+
+.header__content {
 	max-width: $text-max-width;
 	margin: 24px auto;
 }

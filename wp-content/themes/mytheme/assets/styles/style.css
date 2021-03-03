@@ -237,11 +237,11 @@ html {
   box-sizing: border-box;
 }
 
-body,div,main,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,big,cite,code,em,img,q,s,small,strong,sub,var,b,u,i,center,dd,ol,ul,li,form,label,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,menu,nav,output,section,time,mark,audio,video,article,aside,details,figcaption,figure,footer,header,menu,nav,section,ol,ul,blockquote,q,table,blockquote:before,blockquote:after,q:before,q:after,audio,canvas,video,a:focus,a:active,a:hover,img,figure,select,textarea,button,input,input[type="button"],input[type="reset"],input[type="submit"],button[disabled],input[disabled],input[type="checkbox"],input[type="radio"],input[type="search"] {
+body,div,main,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,big,cite,code,em,img,q,s,small,strong,sub,var,b,u,i,center,dd,ol,ul,li,form,label,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,menu,nav,output,section,summary,time,mark,audio,video,article,aside,details,figcaption,figure,footer,header,menu,nav,section,ol,ul,blockquote,q,table,blockquote:before,blockquote:after,q:before,q:after,audio,canvas,video,a:focus,a:active,a:hover,img,figure,select,textarea,button,input,input[type="button"],input[type="reset"],input[type="submit"],button[disabled],input[disabled],input[type="checkbox"],input[type="radio"],input[type="search"] {
   outline: 0;
 }
 
-body,main,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,big,cite,code,em,img,q,s,small,strong,sub,var,b,u,i,center,dd,ol,ul,li,form,label,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,menu,nav,output,section,time,mark,audio,video,article,aside,details,figcaption,figure,footer,header,menu,nav,section,ol,ul,blockquote,q,table,blockquote:before,blockquote:after,q:before,q:after,audio,canvas,video,a:focus,a:active,a:hover,img,figure,select,textarea {
+body,main,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,big,cite,code,em,img,q,s,small,strong,sub,var,b,u,i,center,dd,ol,ul,li,form,label,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,menu,nav,output,section,summary,time,mark,audio,video,article,aside,details,figcaption,figure,footer,header,menu,nav,section,ol,ul,blockquote,q,table,blockquote:before,blockquote:after,q:before,q:after,audio,canvas,video,a:focus,a:active,a:hover,img,figure,select,textarea {
   vertical-align: baseline;
 }
 
@@ -1621,13 +1621,20 @@ code {
   margin: 24px 0;
 }
 
-.header__heading {
+.header__heading,.header__sub-heading {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1.25px;
 }
 
-.header__preamble {
+.header__sub-heading {
+  font-size: 16px;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+.header__content {
   max-width: 640px;
   margin: 24px auto;
 }
@@ -1988,8 +1995,8 @@ code {
 p.is-style-preamble {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 300;
-  font-size: 24px;
-  font-size: 1.2rem;
+  font-size: 22px;
+  font-size: 1.1rem;
   line-height: 1.2;
   font-style: italic;
 }
@@ -2135,6 +2142,20 @@ p.is-style-notice.wp-block::after {
     width: 50%;
     max-width: 50%;
     padding: 16px;
+  }
+
+  .header__sub-heading {
+    font-size: 18px;
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  p.is-style-preamble {
+    font-family: "Open Sans", Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    font-size: 1.2rem;
+    line-height: 1.2;
   }
 }
 

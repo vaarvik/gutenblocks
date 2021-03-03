@@ -19,7 +19,10 @@
  */
 
 p.is-style-preamble {
-	@include font("default", 300, 24px);
+	@include font("default", 300, 22px);
+	@include tablet-p-up {
+		@include font("default", 300, 24px);
+	}
 	font-style: italic;
 }
 

@@ -534,8 +534,8 @@ html {
 .edit-post-visual-editor.editor-styles-wrapper p.is-style-preamble {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 300;
-  font-size: 24px;
-  font-size: 1.2rem;
+  font-size: 22px;
+  font-size: 1.1rem;
   line-height: 1.2;
   font-style: italic;
 }
@@ -1333,13 +1333,20 @@ html {
   margin: 24px 0;
 }
 
-.header__heading {
+.header__heading,.header__sub-heading {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1.25px;
 }
 
-.header__preamble {
+.header__sub-heading {
+  font-size: 16px;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+.header__content {
   max-width: 640px;
   margin: 24px auto;
 }
@@ -1585,6 +1592,14 @@ html {
     line-height: 1.2;
   }
 
+  .edit-post-visual-editor.editor-styles-wrapper p.is-style-preamble {
+    font-family: "Open Sans", Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+
   .card-list {
     width: calc(100% + 32px);
     margin-left: -16px;
@@ -1594,6 +1609,12 @@ html {
     width: 50%;
     max-width: 50%;
     padding: 16px;
+  }
+
+  .header__sub-heading {
+    font-size: 18px;
+    font-size: 0.9rem;
+    line-height: 1.2;
   }
 }
 
