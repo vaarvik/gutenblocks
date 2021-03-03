@@ -42,7 +42,7 @@ add_action( 'pre_get_posts', 'mytheme_modify_main_query' );
  * @return  [type]  [return description]
  */
 function mytheme_redirect_pages_to_home() {
-    if ( is_author() || is_category() || is_tag() || is_search() || is_tax() ) {
+    if ( is_author() || is_category() || is_tag() || is_search() || is_tax() || is_404() ) {
         wp_redirect( get_home_url() );
         exit;
     }
@@ -82,3 +82,4 @@ function mytheme_sitemap_content( $provider, $name ) {
 }
 
 add_filter( 'wp_sitemaps_add_provider', 'mytheme_sitemap_content', 10, 2 );
+add_filter( 'wp_sitemaps_enabled', '__return_true' );
