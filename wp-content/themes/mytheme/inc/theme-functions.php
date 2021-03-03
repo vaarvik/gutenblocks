@@ -35,20 +35,20 @@ function mytheme_modify_main_query( $query ) {
 add_action( 'pre_get_posts', 'mytheme_modify_main_query' );
 
 /**
- * Redirect all pages to home
+ * Redirect pages to home
  * ----------
- * Redirects all pages to the home page.
+ * Redirects pages to the home page.
  *
  * @return  [type]  [return description]
  */
-function mytheme_redirect_all_pages_to_home() {
-    if ( ! is_front_page() && ! is_single() ) {
+function mytheme_redirect_pages_to_home() {
+    if ( is_author() || is_category() || is_tag() || is_search() || is_home() || is_tax() || is_404() ) {
         wp_redirect( get_home_url() );
         exit;
     }
 }
 
-add_action('template_redirect','mytheme_redirect_all_pages_to_home');
+add_action('template_redirect','mytheme_redirect_pages_to_home');
 
 
 /**
