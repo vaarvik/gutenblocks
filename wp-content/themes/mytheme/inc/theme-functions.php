@@ -43,7 +43,7 @@ add_action( 'pre_get_posts', 'mytheme_modify_main_query' );
  */
 function mytheme_redirect_pages_to_home() {
     if ( is_author() || is_category() || is_tag() || is_search() || is_tax() || is_404() ) {
-        wp_redirect( get_home_url() );
+        wp_redirect( get_home_url(), 301 );
         exit;
     }
 }

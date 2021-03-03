@@ -8,6 +8,6 @@
  */
 
 global $post;
-if( $post && $post->guid ) wp_redirect( $post->guid );
-else wp_redirect( get_home_url() );
+if( $post && $post->guid ) wp_redirect( $post->guid, 301 );
+else wp_redirect( get_home_url(), 301 );
 exit;
