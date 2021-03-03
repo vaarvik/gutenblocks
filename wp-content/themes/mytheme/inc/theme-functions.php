@@ -42,7 +42,7 @@ add_action( 'pre_get_posts', 'mytheme_modify_main_query' );
  * @return  [type]  [return description]
  */
 function mytheme_redirect_pages_to_home() {
-    if ( is_author() || is_category() || is_tag() || is_search() || is_home() || is_tax() || is_404() ) {
+    if ( is_author() || is_category() || is_tag() || is_search() || is_tax() ) {
         wp_redirect( get_home_url() );
         exit;
     }
@@ -70,3 +70,15 @@ function mytheme_title_tag( $title_parts ) {
 }
 
 add_filter( 'document_title_parts', 'mytheme_title_tag', 10, 2 );
+
+function mytheme_sitemap_content( $provider, $name ) {
+    switch ($name) {
+        case 'users':
+            return;
+        case 'taxonomies':
+            return;
+    }
+    return $provider;
+}
+
+add_filter( 'wp_sitemaps_add_provider', 'mytheme_sitemap_content', 10, 2 );
