@@ -62,13 +62,13 @@ function mytheme_pretty_print( $value ) {
  *
  * @return  string         	The final string with the values
  */
-function mytheme_get_string_from_array_prop( $array, $prop ) {
+function mytheme_get_string_from_array_prop( $array, $prop, $seperator = "," ) {
 	$array_string = "";
 	if( $array ) {
 		foreach ( $array as $key => $item) {
 			$array_string .= $item->$prop;
 			if( $key < count( $array ) - 1 ) {
-				$array_string .= ",";
+				$array_string .= $seperator;
 			}
 		}
 	}

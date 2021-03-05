@@ -11,12 +11,53 @@
  * @since MyTheme 1.0
  */
 
-?>
+global $post;
 
+$tags 				= mytheme_get_string_from_array_prop( get_the_tags() ?? null, "slug", " " );
+$sizes 				= wp_get_attachment_image_src( get_post_thumbnail_id(), "full" );
+$thumbnail_width	= $sizes[1];
+$thumbnail_height	= $sizes[2];
+
+//SEO Microdata
+?>
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@type": "TechArticle",
+	"headline": "<?php echo get_the_title() ?>",
+	"dependencies": "gutenberg wordpress react programming web",
+	"proficiencyLevel": "Expert",
+	"alternativeHeadline": "Documentation about Gutenberg's <?php echo get_the_title() ?>",
+	"backstory": "This article was created in order to provide a visual documentation of the available components a developer can use when creating blocks for WordPress' editor Gutenberg.",
+	"image": {
+		"@type": "imageObject",
+		"url": "<?php echo get_the_post_thumbnail_url() ?>",
+		"height": "<?php echo $thumbnail_height ?>",
+		"width": "<?php echo $thumbnail_width ?>"
+	},
+	"author":  {
+		"@type": "Organization",
+		"name": "<?php echo get_bloginfo( "name" ) ?>"
+	},
+	"genre": "http://vocab.getty.edu/aat/300054641",
+	"keywords": "wordpress gutenberg component react <?php echo $tags ?>",
+	"wordcount": "<?php echo str_word_count( wp_strip_all_tags( get_the_content() ) ) - 1 ?>",
+	"publisher": {
+		"@type": "Organization",
+		"name": "<?php echo get_bloginfo( "name" ) ?>"
+	},
+	"url": "<?php echo get_the_permalink() ?>",
+	"datePublished": "<?php echo $post->post_date ?>",
+	"dateCreated": "<?php echo $post->post_date ?>",
+	"dateModified": "<?php echo $post->post_modified ?>",
+	"description": "Information and code snippet for the Gutenberg component <?php echo get_the_title() ?> in the category <?php echo get_the_category()[0]->name ?>.",
+	"articleBody": '<?php echo str_replace("\n", "", wp_strip_all_tags( get_the_content() ) ) ?>',
+	"abstract": "<?php echo str_replace("\n", "", wp_strip_all_tags( mytheme_excerpt( has_excerpt() ? get_the_excerpt() : get_the_content(), 20 ) ) ) ?>"
+}
+</script>
 <article <?php post_class( "entry" ); ?> id="post-<?php the_ID(); ?>">
 
 		<?php
-
 		get_template_part( 'template-parts/entry-header' );
 
 		?>
