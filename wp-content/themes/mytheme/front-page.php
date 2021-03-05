@@ -24,6 +24,76 @@ get_header();
 
 ?>
 
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@type": "Collection",
+	"headline": "<?php echo get_the_title() ?>",
+	"alternativeHeadline": "A visual documentation of Gutenberg's components",
+	"author":  {
+		"@type": "Organization",
+		"name": "<?php echo get_bloginfo( "name" ) ?>"
+	},
+	"genre": "http://vocab.getty.edu/aat/300054641",
+	"keywords": "wordpress gutenberg component react editor",
+	"collectionSize": "<?php echo count( $posts->posts ) ?>",
+	"publisher": {
+		"@type": "Organization",
+		"name": "<?php echo get_bloginfo( "name" ) ?>"
+	},
+	"url": "<?php echo get_the_permalink() ?>",
+	"datePublished": "<?php echo $post->post_date ?>",
+	"dateCreated": "<?php echo $post->post_date ?>",
+	"dateModified": "<?php echo $post->post_modified ?>",
+	"description": "A list for tech articles that provide a visual documentation of the each available component a developer can use when creating blocks for WordPress' editor, Gutenberg.",
+	"about": "A list for tech articles that provide a visual documentation of the each available component a developer can use when creating blocks for WordPress' editor, Gutenberg.",
+	"abstract": "<?php echo str_replace("\"", "\\\"", str_replace("\n", "", wp_strip_all_tags( mytheme_excerpt( has_excerpt() ? get_the_excerpt() : get_the_content(), 20 ) ) ) ) ?>",
+	"@graph": [
+		<?php if ( $posts->have_posts() ) : while ( $posts->have_posts() ) : $posts->the_post();
+		$tags 				= mytheme_get_string_from_array_prop( get_the_tags() ?? null, "slug", " " );
+		$sizes 				= wp_get_attachment_image_src( get_post_thumbnail_id(), "full" ) ?? [];
+		$thumbnail_width	= $sizes[1] ?? null;
+		$thumbnail_height	= $sizes[2] ?? null;
+		?>
+		{
+			"@id": "<?php echo get_the_permalink() ?>",
+			"@type": "schema:TechArticle",
+			"schema:headline": "<?php echo get_the_title() ?>",
+			"schema:dependencies": "gutenberg wordpress react programming web",
+			"schema:proficiencyLevel": "Expert",
+			"schema:alternativeHeadline": "A visual documentation of Gutenberg's <?php echo get_the_title() ?>",
+			"schema:backstory": "This article was created in order to provide a visual documentation of the available components a developer can use when creating blocks for WordPress' editor, Gutenberg.",
+			"schema:image": {
+				"@type": "imageObject",
+				"url": "<?php echo get_the_post_thumbnail_url() ?>",
+				"height": "<?php echo $thumbnail_height ?>",
+				"width": "<?php echo $thumbnail_width ?>"
+			},
+			"schema:mainEntityOfPage": "<?php echo get_home_url() ?>",
+			"schema:author":  {
+				"@type": "Organization",
+				"name": "<?php echo get_bloginfo( "name" ) ?>"
+			},
+			"schema:genre": "http://vocab.getty.edu/aat/300054641",
+			"schema:keywords": "wordpress gutenberg component react <?php echo $tags ?>",
+			"schema:wordcount": "<?php echo str_word_count( wp_strip_all_tags( get_the_content() ) ) - 1 ?>",
+			"schema:publisher": {
+				"@type": "Organization",
+				"name": "<?php echo get_bloginfo( "name" ) ?>"
+			},
+			"schema:url": "<?php echo get_the_permalink() ?>",
+			"schema:datePublished": "<?php echo $post->post_date ?>",
+			"schema:dateCreated": "<?php echo $post->post_date ?>",
+			"schema:dateModified": "<?php echo $post->post_modified ?>",
+			"schema:description": "Information and code snippet for the Gutenberg component <?php echo get_the_title() ?> in the category <?php echo get_the_category()[0]->name ?>.",
+			"schema:articleBody": "<?php echo str_replace("\"", "\\\"", str_replace("\n", "", wp_strip_all_tags( get_the_content() ) ) ) ?>",
+			"schema:abstract": "<?php echo str_replace("\"", "\\\"", str_replace("\n", "", wp_strip_all_tags( mytheme_excerpt( has_excerpt() ? get_the_excerpt() : get_the_content(), 20 ) ) ) ) ?>"
+		},
+		<?php endwhile; wp_reset_postdata(); endif;	?>
+	]
+}
+</script>
+
 <main id="site-content" class="site-content">
 
 	<div class="archive-content">
@@ -39,7 +109,7 @@ get_header();
 					</div>
 
 					<div class="filter-section__item">
-						<h5 class="filter-section__sub-heading label">Categories</h5>
+						<p class="filter-section__sub-heading label">Categories</p>
 						<div class="checkbox-list">
 							<?php foreach ( get_categories( array ('orderby' => 'name', 'order' => 'asc' ) ) as $key => $category) : ?>
 								<div class="checkbox-list__item">
@@ -53,7 +123,7 @@ get_header();
 					</div>
 
 					<div class="filter-section__item full">
-						<h5 class="filter-section__sub-heading tags label">Tags</h5>
+						<p class="filter-section__sub-heading tags label">Tags</p>
 						<div class="checkbox-list tight">
 							<?php foreach ( get_tags( array ('orderby' => 'name', 'order' => 'asc' ) ) as $key => $tag) : ?>
 								<div class="checkbox-list__item">
@@ -98,7 +168,7 @@ get_header();
 								<?php the_post_thumbnail() ?>
 							</div>
 							<div class="card__content">
-								<h3 class="card__heading"><?php the_title(); ?></h3>
+								<h2 class="card__heading"><?php the_title(); ?></h2>
 								<div class="card__body">
 								<p>
 									<?php echo mytheme_excerpt( has_excerpt() ? get_the_excerpt() : get_the_content(), 20 ); ?>

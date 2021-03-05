@@ -14,9 +14,9 @@
 global $post;
 
 $tags 				= mytheme_get_string_from_array_prop( get_the_tags() ?? null, "slug", " " );
-$sizes 				= wp_get_attachment_image_src( get_post_thumbnail_id(), "full" );
-$thumbnail_width	= $sizes[1];
-$thumbnail_height	= $sizes[2];
+$sizes 				= wp_get_attachment_image_src( get_post_thumbnail_id(), "full" ) ?? [];
+$thumbnail_width	= $sizes[1] ?? null;
+$thumbnail_height	= $sizes[2] ?? null;
 
 //SEO Microdata
 ?>
@@ -27,14 +27,15 @@ $thumbnail_height	= $sizes[2];
 	"headline": "<?php echo get_the_title() ?>",
 	"dependencies": "gutenberg wordpress react programming web",
 	"proficiencyLevel": "Expert",
-	"alternativeHeadline": "Documentation about Gutenberg's <?php echo get_the_title() ?>",
-	"backstory": "This article was created in order to provide a visual documentation of the available components a developer can use when creating blocks for WordPress' editor Gutenberg.",
+	"alternativeHeadline": "A visual documentation of Gutenberg's <?php echo get_the_title() ?>",
+	"backstory": "This article was created in order to provide a visual documentation of the available components a developer can use when creating blocks for WordPress' editor, Gutenberg.",
 	"image": {
 		"@type": "imageObject",
 		"url": "<?php echo get_the_post_thumbnail_url() ?>",
 		"height": "<?php echo $thumbnail_height ?>",
 		"width": "<?php echo $thumbnail_width ?>"
 	},
+	"mainEntityOfPage": "<?php echo get_home_url() ?>",
 	"author":  {
 		"@type": "Organization",
 		"name": "<?php echo get_bloginfo( "name" ) ?>"
