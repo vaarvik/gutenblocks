@@ -184,7 +184,7 @@
 
     var entryTitle = D.querySelector(".entry-title");
     var githubIcon = D.querySelector("#github-url");
-    if (githubIcon) newEvent(githubIcon, "github_url_click", entryTitle ? entryTitle : githubIcon.getAttribute("href")); //logo
+    if (githubIcon) newEvent(githubIcon, "github_url_click", entryTitle ? entryTitle.innerText : githubIcon.getAttribute("href")); //logo
 
     var siteLogo = D.querySelector(".site-header__logo");
     if (siteLogo) newEvent(siteLogo, "site_logo_click", "Back to homepage"); //privacy link

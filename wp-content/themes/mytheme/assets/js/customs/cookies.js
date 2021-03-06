@@ -129,7 +129,7 @@
     const entryTitle = D.querySelector(".entry-title");
     const githubIcon = D.querySelector("#github-url");
     if(githubIcon)
-      newEvent(githubIcon, "github_url_click", entryTitle ? entryTitle : githubIcon.getAttribute("href"));
+      newEvent(githubIcon, "github_url_click", entryTitle ? entryTitle.innerText : githubIcon.getAttribute("href"));
 
     //logo
     const siteLogo = D.querySelector(".site-header__logo");
