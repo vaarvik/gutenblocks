@@ -18,7 +18,10 @@
 .pagination-single {
 	width: $normal-max-width;
 	max-width: calc(100vw - 48px);
-	margin: 48px auto;
+	margin: 16px auto;
+	@include tablet-p-up {
+		margin: 48px auto;
+	}
 }
 
 .pagination-single__content {

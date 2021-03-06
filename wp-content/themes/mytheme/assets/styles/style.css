@@ -1773,7 +1773,7 @@ code {
 .pagination-single {
   width: 750px;
   max-width: calc(100vw - 48px);
-  margin: 48px auto;
+  margin: 16px auto;
 }
 
 .pagination-single__content {
@@ -2282,6 +2282,10 @@ p.is-style-notice.wp-block::after {
     font-size: 18px;
     font-size: 0.9rem;
     line-height: 1.2;
+  }
+
+  .pagination-single {
+    margin: 48px auto;
   }
 
   .pagination-single__content {
