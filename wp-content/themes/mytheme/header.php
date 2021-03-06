@@ -22,6 +22,7 @@
 
 		<link rel="profile" href="https://gmpg.org/xfn/11">
 
+		<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo GOOGLE_ID ?>"></script>
 		<script>
 			const GOOGLE_ID 	= "<?php echo GOOGLE_ID ?>";
   			const PRIVACY_LINK 	= "<?php echo get_privacy_policy_url() ?>";
