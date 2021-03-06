@@ -1992,6 +1992,10 @@ code {
  * base module class.
  */
 
+p.is-clear {
+  margin: 0;
+}
+
 p.is-style-preamble {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 300;

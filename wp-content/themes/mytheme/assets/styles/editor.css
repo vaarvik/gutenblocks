@@ -531,6 +531,10 @@ html {
   tab-size: 3;
 }
 
+.edit-post-visual-editor.editor-styles-wrapper p.is-clear {
+  margin: 0;
+}
+
 .edit-post-visual-editor.editor-styles-wrapper p.is-style-preamble {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 300;

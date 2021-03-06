@@ -103,7 +103,9 @@ $thumbnail_height	= $sizes[2] ?? null;
 							<h5>Classification</h5>
 							<div class="circle-info">
 								<p class="circle-info__heading">Category</p>
-								<?php the_category( ", " ) ?>
+								<?php if( get_the_category() && get_the_category()[0] ) : ?>
+									<p class="is-clear"><?php echo get_the_category()[0]->name ?></p>
+								<?php endif; ?>
 							</div>
 						</div>
 					</div>

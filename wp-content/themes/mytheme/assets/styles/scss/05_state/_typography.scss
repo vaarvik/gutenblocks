@@ -18,6 +18,10 @@
  * base module class.
  */
 
+p.is-clear {
+	margin: 0
+}
+
 p.is-style-preamble {
 	@include font("default", 300, 22px);
 	@include tablet-p-up {
