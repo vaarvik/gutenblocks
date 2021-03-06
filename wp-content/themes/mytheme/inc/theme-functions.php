@@ -82,3 +82,18 @@ function mytheme_sitemap_content( $provider, $name ) {
 }
 
 add_filter( 'wp_sitemaps_add_provider', 'mytheme_sitemap_content', 10, 2 );
+
+function mytheme_add_favicons() {
+    $favicon_folder = get_template_directory_uri() . "/assets/images/favicons";
+    echo <<<HTML
+        <link rel="apple-touch-icon" sizes="180x180" href="{$favicon_folder}/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="{$favicon_folder}/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="{$favicon_folder}/favicon-16x16.png">
+        <link rel="manifest" href="{$favicon_folder}/site.webmanifest">
+        <link rel="mask-icon" href="{$favicon_folder}/safari-pinned-tab.svg" color="#db074d">
+        <meta name="msapplication-TileColor" content="#1c1c1c">
+        <meta name="theme-color" content="#1c1c1c">
+    HTML;
+}
+
+add_action( 'wp_head', "mytheme_add_favicons" );
