@@ -22,6 +22,11 @@
 
 		<link rel="profile" href="https://gmpg.org/xfn/11">
 
+		<script>
+			const GOOGLE_ID 	= "<?php echo GOOGLE_ID ?>";
+  			const PRIVACY_LINK 	= "<?php echo get_privacy_policy_url() ?>";
+		</script>
+
 		<?php wp_head(); ?>
 
 	</head>

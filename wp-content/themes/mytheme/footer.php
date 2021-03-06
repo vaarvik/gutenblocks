@@ -29,7 +29,7 @@
 
 					</div>
 
-					<a href="<?php echo get_privacy_policy_url() ?>">
+					<a href="<?php echo get_privacy_policy_url() ?>" id="privacy-link">
 						<?php _e( "Privacy policy" ) ?>
 					</a>
 				</div>
