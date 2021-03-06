@@ -75,6 +75,7 @@
 
   function searchInList(checkbox, list, filterType, notActive) {
     var filter = checkbox.innerText.toLowerCase().replace(" ", "-");
+    filter = filter[0] === "-" ? filter.substring(1) : filter;
     var items = list.querySelectorAll(".search-item");
     var currentFilters = list.dataset["".concat(filterType, "Filters")] ? list.dataset["".concat(filterType, "Filters")].split(",") : [];
     updateFiltersArray();
@@ -121,7 +122,7 @@
   function arraysHasMatch(array1, array2) {
     for (var i in array1) {
       for (var j in array2) {
-        if (array1[i].toLowerCase() === array2[j].toLowerCase()) return true;
+        if (array1[i].toLowerCase().replace(" ", "") == array2[j].toLowerCase().replace(" ", "")) return true;
       }
     }
 
@@ -133,7 +134,7 @@
     if (!document.querySelector("#".concat(filterType, "-style"))) {
       var styleEl = document.createElement("style");
       styleEl.id = "".concat(filterType, "-style");
-      styleEl.innerText = ".".concat(filterType, "-filter {\n\t\t\t\tdisplay: none;\n\t\t\t}").replace(/(\r\n|\n|\r)/gm, "");
+      styleEl.innerText = ".".concat(filterType, "-filter { display: none; }").replace(/(\r\n|\n|\r)/gm, "");
       document.getElementsByTagName('head')[0].appendChild(styleEl);
     }
   }

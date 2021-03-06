@@ -22,7 +22,8 @@
 	});
 
 	function searchInList(checkbox, list, filterType, notActive) {
-		const filter = checkbox.innerText.toLowerCase().replace(" ", "-");
+		let filter = checkbox.innerText.toLowerCase().replace(" ", "-");
+		filter = filter[0] === "-" ? filter.substring(1) : filter;
 		const items = list.querySelectorAll(".search-item");
 		let currentFilters = list.dataset[`${filterType}Filters`] ? list.dataset[`${filterType}Filters`].split(",") : [];
 
@@ -67,9 +68,10 @@
 	}
 
 	function arraysHasMatch(array1, array2) {
+
 		for(let i in array1) {
 			for(let j in array2) {
-				if(array1[i].toLowerCase() === array2[j].toLowerCase())
+				if(array1[i].toLowerCase().replace(" ", "") == array2[j].toLowerCase().replace(" ", ""))
 					return true;
 			}
 		};
@@ -81,9 +83,7 @@
 			const styleEl = document.createElement("style");
 			styleEl.id = `${filterType}-style`;
 
-			styleEl.innerText = `.${filterType}-filter {
-				display: none;
-			}`.replace(/(\r\n|\n|\r)/gm, "");
+			styleEl.innerText = `.${filterType}-filter { display: none; }`.replace(/(\r\n|\n|\r)/gm, "");
 
 			document.getElementsByTagName('head')[0].appendChild(styleEl);
 		}
