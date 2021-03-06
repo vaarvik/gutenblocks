@@ -4,7 +4,7 @@
  * Add the meta-tags template part into the wp_head
  */
 add_action( 'wp_head', function(){
-	<<<HTML
+	echo <<<HTML
 		<script>
 			// Polyfill to make forEach available for NodeLists
 			if (window.NodeList && !NodeList.prototype.forEach)
