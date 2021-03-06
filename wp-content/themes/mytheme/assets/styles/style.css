@@ -862,7 +862,7 @@ code {
   margin: 0 auto;
   max-width: 1440px;
   width: 100%;
-  padding: 0 16px;
+  padding: 56px 16px 0;
 }
 
 /**
@@ -888,11 +888,6 @@ code {
  * or a navigation item sit within the scope of major components such as a header or footer.
  * Generally, a Layout style only has a single selector: a single ID or class name.
  */
-
-.entry {
-  padding-top: 48px;
-  padding-bottom: 48px;
-}
 
 .entry-header {
   max-width: 750px;
@@ -2196,12 +2191,6 @@ p.is-style-notice.wp-block::after {
  * Used for alternate themes.
  */
 
-@media only screen and (min-width: 376px) {
-  .content {
-    padding: 16px;
-  }
-}
-
 @media only screen and (min-width: 600px) {
   html {
     font-size: 20px;
@@ -2264,7 +2253,7 @@ p.is-style-notice.wp-block::after {
   }
 
   .content {
-    padding: 24px;
+    padding: 80px 24px 24px;
   }
 
   .card-list {
@@ -2313,6 +2302,10 @@ p.is-style-notice.wp-block::after {
 }
 
 @media only screen and (min-width: 900px) {
+  .content {
+    padding: 24px;
+  }
+
   .card-list__item {
     width: 33.3%;
   }

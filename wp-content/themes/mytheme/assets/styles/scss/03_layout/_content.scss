@@ -2,11 +2,11 @@
 	margin: 0 auto;
 	max-width: 1440px;
 	width: 100%;
-	padding: 0 16px;
-	@include phone-p-up {
-		padding: 16px;
-	}
+	padding: 56px 16px 0;
 	@include tablet-p-up {
+		padding: 80px 24px 24px;
+	}
+	@include tablet-l-up {
 		padding: 24px;
 	}
 }
