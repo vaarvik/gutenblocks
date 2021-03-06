@@ -730,12 +730,12 @@ code {
 
 .site-footer {
   height: 120px;
+  background-color: #8a183e;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #ea165c;
   color: #FFFFFF;
-  padding: 16px 0;
+  padding: 16px;
 }
 
 .site-footer a {
@@ -750,6 +750,10 @@ code {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
+  flex-flow: column;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -2235,8 +2239,15 @@ p.is-style-notice.wp-block::after {
   }
 
   .site-footer {
-    padding: 24px 0;
+    padding: 24px;
     height: 140px;
+  }
+
+  .site-footer__content {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row;
+    flex-flow: row;
   }
 
   .site-content {
