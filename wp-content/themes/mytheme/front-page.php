@@ -112,7 +112,7 @@ get_header();
 
 <main id="site-content" class="site-content">
 
-	<div class="archive-content">
+	<div class="archive-content content">
 		<header class="header">
 			<h1 class="header__heading"><?php echo get_bloginfo( "name" ) ?></h1>
 			<h2 class="header__sub-heading"><?php echo get_the_title() ?></h2>

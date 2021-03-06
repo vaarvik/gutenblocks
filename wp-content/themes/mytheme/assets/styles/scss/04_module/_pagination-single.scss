@@ -17,12 +17,17 @@
  */
 .pagination-single {
 	width: $normal-max-width;
+	max-width: calc(100vw - 48px);
 	margin: 48px auto;
 }
 
 .pagination-single__content {
 	display: flex;
-	justify-content: space-between;
+	flex-flow: wrap;
+	justify-content: center;
+	@include tablet-p-up {
+		justify-content: space-between;
+	}
 	color: $white;
 	a {
 		color: $white;
@@ -35,9 +40,17 @@
 }
 
 .previous-post, .next-post {
+	margin: 8px 0;
+	text-align: center;
 	flex-grow: 1;
+	@include tablet-p-up {
+		margin: 0;
+		text-align: left;
+	}
 }
 
 .next-post {
-	text-align: right;
+	@include tablet-p-up {
+		text-align: right;
+	}
 }

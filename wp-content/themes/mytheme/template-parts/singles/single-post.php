@@ -64,7 +64,7 @@ $thumbnail_height	= $sizes[2] ?? null;
 	"abstract": "<?php echo mytheme_create_json_string( mytheme_excerpt( has_excerpt() ? get_the_excerpt() : get_the_content(), 20 ) ) ?>"
 }
 </script>
-<article <?php post_class( "entry" ); ?> id="post-<?php the_ID(); ?>">
+<article <?php post_class( "entry content" ); ?> id="post-<?php the_ID(); ?>">
 
 		<?php
 		get_template_part( 'template-parts/entry-header' );
