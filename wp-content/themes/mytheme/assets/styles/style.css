@@ -1027,7 +1027,7 @@ code {
   font-size: 14px;
   font-size: 0.7rem;
   line-height: 1.2;
-  text-transform: initial;
+  text-transform: none;
   border: 1px solid #FFFFFF;
   color: #FFFFFF;
 }
