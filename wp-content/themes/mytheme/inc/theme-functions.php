@@ -71,6 +71,16 @@ function mytheme_title_tag( $title_parts ) {
 
 add_filter( 'document_title_parts', 'mytheme_title_tag', 10, 2 );
 
+/**
+ * Sitemap content
+ * ----------
+ * Controls which links should be in the sitemap
+ *
+ * @param   [type]  $provider  [$provider description]
+ * @param   [type]  $name      [$name description]
+ *
+ * @return  [type]             [return description]
+ */
 function mytheme_sitemap_content( $provider, $name ) {
     switch ($name) {
         case 'users':

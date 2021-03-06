@@ -1,0 +1,49 @@
+/**
+ * ██╗███╗   ███╗ ██████╗      ██████╗ ██████╗ ███╗   ██╗████████╗ █████╗ ██╗███╗   ██╗███████╗██████╗
+ * ██║████╗ ████║██╔════╝     ██╔════╝██╔═══██╗████╗  ██║╚══██╔══╝██╔══██╗██║████╗  ██║██╔════╝██╔══██╗
+ * ██║██╔████╔██║██║  ███╗    ██║     ██║   ██║██╔██╗ ██║   ██║   ███████║██║██╔██╗ ██║█████╗  ██████╔╝
+ * ██║██║╚██╔╝██║██║   ██║    ██║     ██║   ██║██║╚██╗██║   ██║   ██╔══██║██║██║╚██╗██║██╔══╝  ██╔══██╗
+ * ██║██║ ╚═╝ ██║╚██████╔╝    ╚██████╗╚██████╔╝██║ ╚████║   ██║   ██║  ██║██║██║ ╚████║███████╗██║  ██║
+ * ╚═╝╚═╝     ╚═╝ ╚═════╝      ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝
+ *
+ */
+
+.img-container {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+
+	img {
+		height: 100%;
+		left: 0;
+		object-fit: cover;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	&.contain {
+		background-size: contain;
+
+		img {
+			object-fit: contain;
+		}
+	}
+
+	&.top {
+		background-position: top;
+
+		img {
+			object-position: top;
+		}
+	}
+
+	&.bottom {
+		background-position: bottom;
+
+		img {
+			object-position: bottom;
+		}
+	}
+}

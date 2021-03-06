@@ -178,3 +178,52 @@
     });
   }
 })();
+/**
+ * ██╗███╗   ███╗ ██████╗      ██████╗ ██████╗ ███╗   ██╗████████╗ █████╗ ██╗███╗   ██╗███████╗██████╗
+ * ██║████╗ ████║██╔════╝     ██╔════╝██╔═══██╗████╗  ██║╚══██╔══╝██╔══██╗██║████╗  ██║██╔════╝██╔══██╗
+ * ██║██╔████╔██║██║  ███╗    ██║     ██║   ██║██╔██╗ ██║   ██║   ███████║██║██╔██╗ ██║█████╗  ██████╔╝
+ * ██║██║╚██╔╝██║██║   ██║    ██║     ██║   ██║██║╚██╗██║   ██║   ██╔══██║██║██║╚██╗██║██╔══╝  ██╔══██╗
+ * ██║██║ ╚═╝ ██║╚██████╔╝    ╚██████╗╚██████╔╝██║ ╚████║   ██║   ██║  ██║██║██║ ╚████║███████╗██║  ██║
+ * ╚═╝╚═╝     ╚═╝ ╚═════╝      ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝
+ *
+ */
+
+
+(function () {
+  // Add fixes to object-fit image elements in IE
+  var imgContainers = document.querySelectorAll(".img-container");
+
+  if (imgContainers && isIE()) {
+    for (var i = 0; i < imgContainers.length; i++) {
+      var image = imgContainers[i].querySelector("img");
+      if (!image) continue;
+      var src = image.src;
+      image.style.opacity = 0;
+      imgContainers[i].style.backgroundImage = "url(" + src + ")";
+    }
+  }
+})();
+/**
+ * ██╗  ██╗███████╗██╗     ██████╗ ███████╗██████╗ ███████╗
+ * ██║  ██║██╔════╝██║     ██╔══██╗██╔════╝██╔══██╗██╔════╝
+ * ███████║█████╗  ██║     ██████╔╝█████╗  ██████╔╝███████╗
+ * ██╔══██║██╔══╝  ██║     ██╔═══╝ ██╔══╝  ██╔══██╗╚════██║
+ * ██║  ██║███████╗███████╗██║     ███████╗██║  ██║███████║
+ * ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝
+ *
+ */
+
+/**
+ * Check if current browser is Internet Explorer
+ *
+ * @return  {Boolean}
+ */
+
+
+function isIE() {
+  var ua = window.navigator.userAgent;
+  var msie = ua.indexOf("MSIE ") > 0;
+  var trident = ua.indexOf("Trident/") > 0;
+  var edge = ua.indexOf("Edge/") > 0;
+  return msie || trident || edge;
+}

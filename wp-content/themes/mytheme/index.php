@@ -87,7 +87,7 @@ get_header();
 							href="<?php echo get_the_permalink(); ?>"
 							class="card <?php echo has_tag( "experimental" ) ? "experimental" : "" ?>"
 						>
-							<div class="card__image">
+							<div class="card__image img-container">
 								<?php the_post_thumbnail() ?>
 							</div>
 							<div class="card__content">
