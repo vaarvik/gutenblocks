@@ -729,7 +729,7 @@ code {
  */
 
 .site-footer {
-  height: 120px;
+  min-height: 40px;
   background-color: #8a183e;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -740,10 +740,19 @@ code {
 
 .site-footer a {
   color: #FFFFFF;
+  text-decoration: underline;
+  opacity: .75;
+  -webkit-transition: .15s;
+  transition: .15s;
+  margin: 0 40px;
+}
+
+.site-footer a:hover {
+  opacity: 1;
 }
 
 .site-footer p {
-  margin: 24px 0;
+  margin: 0 40px;
 }
 
 .site-footer__content {
@@ -754,9 +763,9 @@ code {
   -webkit-box-direction: normal;
   -ms-flex-flow: column;
   flex-flow: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -787,7 +796,7 @@ code {
  */
 
 .site-content {
-  min-height: calc( 100vh - 65px - 120px);
+  min-height: calc( 100vh - 65px - 40px);
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
@@ -2239,8 +2248,8 @@ p.is-style-notice.wp-block::after {
   }
 
   .site-footer {
-    padding: 24px;
-    height: 140px;
+    padding: 16px 24px;
+    min-height: 60px;
   }
 
   .site-footer__content {
@@ -2251,7 +2260,7 @@ p.is-style-notice.wp-block::after {
   }
 
   .site-content {
-    min-height: calc( 100vh - 96px - 140px);
+    min-height: calc( 100vh - 96px - 60px);
   }
 
   .content {

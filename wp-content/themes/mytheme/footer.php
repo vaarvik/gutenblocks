@@ -24,7 +24,7 @@
 								_x( 'Y', 'copyright date format', 'mytheme' )
 							);
 							?>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+							<?php bloginfo( 'name' ); ?>
 						</p>
 
 					</div>

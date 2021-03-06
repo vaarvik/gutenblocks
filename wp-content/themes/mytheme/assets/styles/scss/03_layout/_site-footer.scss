@@ -21,31 +21,38 @@
  */
 
 //footer
-$site-footer-height: 140px;
-$site-footer-height-mobile: 120px;
+$site-footer-height: 60px;
+$site-footer-height-mobile: 40px;
 
 .site-footer {
-	height: $site-footer-height-mobile;
+	min-height: $site-footer-height-mobile;
 	background-color: $red-1;
 	display: flex;
 	color: $white;
 	padding: 16px;
 	@include tablet-p-up {
-		padding: 24px;
-		height: $site-footer-height;
+		padding: 16px 24px;
+		min-height: $site-footer-height;
 	}
 	a {
 		color: $white;
+		text-decoration: underline;
+		opacity: .75;
+		transition: .15s;
+		margin: 0 40px;
+		&:hover {
+			opacity: 1;
+		}
 	}
 	p {
-		margin: 24px 0;
+		margin: 0 40px;
 	}
 }
 
 .site-footer__content {
 	display: flex;
 	flex-flow: column;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	@include tablet-p-up {
 		flex-flow: row;
