@@ -38,14 +38,22 @@ $thumbnail_height	= $sizes[2] ?? null;
 	"mainEntityOfPage": "<?php echo get_home_url() ?>",
 	"author":  {
 		"@type": "Organization",
-		"name": "<?php echo get_bloginfo( "name" ) ?>"
+		"name": "<?php echo get_bloginfo( "name" ) ?>",
+		"logo": {
+			"@type": "imageObject",
+			"url": "<?php echo get_template_directory_uri() . "/assets/images/logo.png" ?>"
+		}
 	},
 	"genre": "http://vocab.getty.edu/aat/300054641",
 	"keywords": "wordpress gutenberg component react <?php echo $tags ?>",
 	"wordcount": "<?php echo str_word_count( wp_strip_all_tags( get_the_content() ) ) - 1 ?>",
 	"publisher": {
 		"@type": "Organization",
-		"name": "<?php echo get_bloginfo( "name" ) ?>"
+		"name": "<?php echo get_bloginfo( "name" ) ?>",
+		"logo": {
+			"@type": "imageObject",
+			"url": "<?php echo get_template_directory_uri() . "/assets/images/logo.png" ?>"
+		}
 	},
 	"url": "<?php echo get_the_permalink() ?>",
 	"datePublished": "<?php echo $post->post_date ?>",

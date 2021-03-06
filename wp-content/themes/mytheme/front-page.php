@@ -32,14 +32,22 @@ get_header();
 	"alternativeHeadline": "A visual documentation of Gutenberg's components",
 	"author":  {
 		"@type": "Organization",
-		"name": "<?php echo get_bloginfo( "name" ) ?>"
+		"name": "<?php echo get_bloginfo( "name" ) ?>",
+		"logo": {
+			"@type": "imageObject",
+			"url": "<?php echo get_template_directory_uri() . "/assets/images/logo.png" ?>"
+		}
 	},
 	"genre": "http://vocab.getty.edu/aat/300054641",
 	"keywords": "wordpress gutenberg component react editor",
 	"collectionSize": "<?php echo count( $posts->posts ) ?>",
 	"publisher": {
 		"@type": "Organization",
-		"name": "<?php echo get_bloginfo( "name" ) ?>"
+		"name": "<?php echo get_bloginfo( "name" ) ?>",
+		"logo": {
+			"@type": "imageObject",
+			"url": "<?php echo get_template_directory_uri() . "/assets/images/logo.png" ?>"
+		}
 	},
 	"url": "<?php echo get_the_permalink() ?>",
 	"datePublished": "<?php echo $post->post_date ?>",
@@ -72,14 +80,22 @@ get_header();
 			"schema:mainEntityOfPage": "<?php echo get_home_url() ?>",
 			"schema:author":  {
 				"@type": "Organization",
-				"name": "<?php echo get_bloginfo( "name" ) ?>"
+				"name": "<?php echo get_bloginfo( "name" ) ?>",
+				"logo": {
+					"@type": "imageObject",
+					"url": "<?php echo get_template_directory_uri() . "/assets/images/logo.png" ?>"
+				}
 			},
 			"schema:genre": "http://vocab.getty.edu/aat/300054641",
 			"schema:keywords": "wordpress gutenberg component react <?php echo $tags ?>",
 			"schema:wordcount": "<?php echo str_word_count( wp_strip_all_tags( get_the_content() ) ) - 1 ?>",
 			"schema:publisher": {
 				"@type": "Organization",
-				"name": "<?php echo get_bloginfo( "name" ) ?>"
+				"name": "<?php echo get_bloginfo( "name" ) ?>",
+				"logo": {
+					"@type": "imageObject",
+					"url": "<?php echo get_template_directory_uri() . "/assets/images/logo.png" ?>"
+				}
 			},
 			"schema:url": "<?php echo get_the_permalink() ?>",
 			"schema:datePublished": "<?php echo $post->post_date ?>",
