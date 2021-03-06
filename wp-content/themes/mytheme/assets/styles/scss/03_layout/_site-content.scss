@@ -21,6 +21,7 @@
 
 .site-content {
 	min-height: calc( 100vh - #{$site-header-height-mobile} - #{$site-footer-height-mobile} );
+	flex-grow: 1;
 	@include tablet-p-up {
 		min-height: calc( 100vh - #{$site-header-height} - #{$site-footer-height});
 	}

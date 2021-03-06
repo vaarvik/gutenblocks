@@ -11,9 +11,9 @@
  * @since MyTheme 1.0
  */
 
-/*
 ?>
-			<footer id="site-footer" class="site-footer" role="contentinfo">
+			<footer id="site-footer" class="site-footer">
+				<div class="site-footer__content">
 
 					<div class="credits">
 
@@ -29,18 +29,11 @@
 
 					</div>
 
-					<a class="to-top-navigation" href="#site-header">
-						<span class="to-top-navigation__text">
-							<?php
-							// translators: %s: HTML character for up arrow.
-							printf( __( 'To the top %s', 'mytheme' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span>
+					<a href="<?php echo get_privacy_policy_url() ?>">
+						<?php _e( "Privacy policy" ) ?>
 					</a>
-
+				</div>
 			</footer>
-
-			*/?>
 		<?php wp_footer(); ?>
 
 	</body>

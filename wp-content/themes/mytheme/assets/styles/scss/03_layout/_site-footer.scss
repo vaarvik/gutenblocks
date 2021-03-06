@@ -25,5 +25,28 @@ $site-footer-height: 140px;
 $site-footer-height-mobile: 120px;
 
 .site-footer {
+	height: $site-footer-height-mobile;
+	display: flex;
+	background-color: $red;
+	color: $white;
+	padding: 16px 0;
+	@include tablet-p-up {
+		padding: 24px 0;
+		height: $site-footer-height;
+	}
+	a {
+		color: $white;
+	}
+	p {
+		margin: 24px 0;
+	}
+}
 
+.site-footer__content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	width: $normal-max-width;
+	max-width: 100%;
 }

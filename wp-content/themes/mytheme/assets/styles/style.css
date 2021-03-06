@@ -274,11 +274,20 @@ body,main,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,big,ci
 
 html {
   overflow-x: hidden;
+  height: 100%;
 }
 
 body {
   background-color: #1C1C1C;
   margin: 0;
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 /**
@@ -719,6 +728,39 @@ code {
  * Generally, a Layout style only has a single selector: a single ID or class name.
  */
 
+.site-footer {
+  height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #ea165c;
+  color: #FFFFFF;
+  padding: 16px 0;
+}
+
+.site-footer a {
+  color: #FFFFFF;
+}
+
+.site-footer p {
+  margin: 24px 0;
+}
+
+.site-footer__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 750px;
+  max-width: 100%;
+}
+
 /**
  *
  * ███████╗██╗████████╗███████╗     ██████╗ ██████╗ ███╗   ██╗████████╗███████╗███╗   ██╗████████╗
@@ -742,6 +784,9 @@ code {
 
 .site-content {
   min-height: calc( 100vh - 65px - 120px);
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 /**
@@ -2187,6 +2232,11 @@ p.is-style-notice.wp-block::after {
   .site-header__logo svg {
     width: 50px;
     height: 50px;
+  }
+
+  .site-footer {
+    padding: 24px 0;
+    height: 140px;
   }
 
   .site-content {
