@@ -82,4 +82,3 @@ function mytheme_sitemap_content( $provider, $name ) {
 }
 
 add_filter( 'wp_sitemaps_add_provider', 'mytheme_sitemap_content', 10, 2 );
-add_filter( 'wp_sitemaps_enabled', '__return_true' );
