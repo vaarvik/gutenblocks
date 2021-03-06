@@ -52,8 +52,8 @@ $thumbnail_height	= $sizes[2] ?? null;
 	"dateCreated": "<?php echo $post->post_date ?>",
 	"dateModified": "<?php echo $post->post_modified ?>",
 	"description": "Information and code snippet for the Gutenberg component <?php echo get_the_title() ?> in the category <?php echo get_the_category()[0]->name ?>.",
-	"articleBody": "<?php echo str_replace("\"", "\\\"", str_replace("\n", "", wp_strip_all_tags( get_the_content() ) ) ) ?>",
-	"abstract": "<?php echo str_replace("\"", "\\\"", str_replace("\n", "", wp_strip_all_tags( mytheme_excerpt( has_excerpt() ? get_the_excerpt() : get_the_content(), 20 ) ) ) ) ?>"
+	"articleBody": "<?php echo mytheme_create_json_string( get_the_content() ) ?>",
+	"abstract": "<?php echo mytheme_create_json_string( mytheme_excerpt( has_excerpt() ? get_the_excerpt() : get_the_content(), 20 ) ) ?>"
 }
 </script>
 <article <?php post_class( "entry" ); ?> id="post-<?php the_ID(); ?>">

@@ -92,3 +92,19 @@ function mytheme_excerpt( $text, $length ) {
 
 	return $excerpt;
 }
+/**
+ * Create JSON string
+ * ----------
+ * Converts text so that it can be used as a JSON string.
+ *
+ * @param   string  $text  	The text to be handled
+ * @param   bool 	$strip  If text should be stripped for tags or not.
+ *
+ * @return  string         	The new string
+ */
+function mytheme_create_json_string( $text, $strip = true ) {
+	$text = str_replace( "\"", "\\\"", $text );
+	$text = str_replace( "\n", "", $text );
+	if($strip) $text = wp_strip_all_tags( $text );
+	return $text;
+}
