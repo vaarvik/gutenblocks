@@ -40,6 +40,9 @@
 	@include font("default", 600, 10px);
 	text-transform: none;
 	position: absolute;
-	margin-top: -12px;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-top: -24px;
+	margin-bottom: 16px;
 	color: $white;
 }

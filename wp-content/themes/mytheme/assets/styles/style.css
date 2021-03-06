@@ -1833,7 +1833,11 @@ code {
   line-height: 1.2;
   text-transform: none;
   position: absolute;
-  margin-top: -12px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  margin-top: -24px;
+  margin-bottom: 16px;
   color: #FFFFFF;
 }
 
