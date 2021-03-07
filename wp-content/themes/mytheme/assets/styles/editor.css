@@ -122,7 +122,7 @@ html {
 */
 
 html {
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Open Sans", Helvetica, sans-serif;
   color: #FFFFFF;
 }
@@ -439,39 +439,39 @@ html {
 
 .edit-post-visual-editor.editor-styles-wrapper h1 {
   font-size: 48px;
-  font-size: 2.4rem;
-  line-height: 1.2;
+  font-size: 2.66667rem;
+  line-height: 1.333;
 }
 
 .edit-post-visual-editor.editor-styles-wrapper h2 {
   font-size: 32px;
-  font-size: 1.6rem;
-  line-height: 1.2;
+  font-size: 1.77778rem;
+  line-height: 1.333;
 }
 
 .edit-post-visual-editor.editor-styles-wrapper h3 {
   font-size: 24px;
-  font-size: 1.2rem;
-  line-height: 1.2;
+  font-size: 1.33333rem;
+  line-height: 1.333;
 }
 
 .edit-post-visual-editor.editor-styles-wrapper h4 {
   font-size: 20px;
-  font-size: 1rem;
-  line-height: 1.2;
+  font-size: 1.11111rem;
+  line-height: 1.333;
 }
 
 .edit-post-visual-editor.editor-styles-wrapper h5 {
   font-size: 16px;
-  font-size: 0.8rem;
-  line-height: 1.2;
+  font-size: 0.88889rem;
+  line-height: 1.333;
   font-weight: bold;
 }
 
 .edit-post-visual-editor.editor-styles-wrapper h6 {
   font-size: 16px;
-  font-size: 0.8rem;
-  line-height: 1.2;
+  font-size: 0.88889rem;
+  line-height: 1.333;
   margin-bottom: 4px;
 }
 
@@ -508,8 +508,8 @@ html {
 
 .edit-post-visual-editor.editor-styles-wrapper small,.edit-post-visual-editor.editor-styles-wrapper sub,.edit-post-visual-editor.editor-styles-wrapper sup {
   font-size: 12px;
-  font-size: 0.6rem;
-  line-height: 1.2;
+  font-size: 0.66667rem;
+  line-height: 1.333;
 }
 
 .edit-post-visual-editor.editor-styles-wrapper sup {
@@ -523,8 +523,8 @@ html {
 
 .edit-post-visual-editor.editor-styles-wrapper figcaption {
   font-size: 14px;
-  font-size: 0.7rem;
-  line-height: 1.2;
+  font-size: 0.77778rem;
+  line-height: 1.333;
 }
 
 .edit-post-visual-editor.editor-styles-wrapper dl,.edit-post-visual-editor.editor-styles-wrapper ol,.edit-post-visual-editor.editor-styles-wrapper ul,.edit-post-visual-editor.editor-styles-wrapper dt,.edit-post-visual-editor.editor-styles-wrapper dd,.edit-post-visual-editor.editor-styles-wrapper li,.edit-post-visual-editor.editor-styles-wrapper tr,.edit-post-visual-editor.editor-styles-wrapper th,.edit-post-visual-editor.editor-styles-wrapper caption {
@@ -533,8 +533,8 @@ html {
 
 .edit-post-visual-editor.editor-styles-wrapper code {
   font-size: 16px;
-  font-size: 0.8rem;
-  line-height: 1.2;
+  font-size: 0.88889rem;
+  line-height: 1.333;
   -moz-tab-size: 3;
   -o-tab-size: 3;
   tab-size: 3;
@@ -548,8 +548,8 @@ html {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 300;
   font-size: 22px;
-  font-size: 1.1rem;
-  line-height: 1.2;
+  font-size: 1.22222rem;
+  line-height: 1.333;
   font-style: italic;
 }
 
@@ -557,8 +557,8 @@ html {
   font-family: "Lato", Helvetica, sans-serif;
   font-weight: 300;
   font-size: 16px;
-  font-size: 0.8rem;
-  line-height: 1.2;
+  font-size: 0.88889rem;
+  line-height: 1.333;
   font-style: italic;
   position: relative;
 }
@@ -629,8 +629,8 @@ html {
   font-family: "Lato", Helvetica, sans-serif;
   font-weight: 600;
   font-size: 12px;
-  font-size: 0.6rem;
-  line-height: 1.2;
+  font-size: 0.66667rem;
+  line-height: 1.333;
 }
 
 .btn:hover,.code-toolbar .toolbar button:hover {
@@ -670,8 +670,8 @@ html {
   background-color: transparent;
   border: 1px solid #FFFFFF;
   font-size: 14px;
-  font-size: 0.7rem;
-  line-height: 1.2;
+  font-size: 0.77778rem;
+  line-height: 1.333;
   font-weight: normal;
   padding: 5px 16px;
   letter-spacing: .5px;
@@ -688,8 +688,8 @@ html {
   padding: 4px 8px;
   font-weight: 300;
   font-size: 14px;
-  font-size: 0.7rem;
-  line-height: 1.2;
+  font-size: 0.77778rem;
+  line-height: 1.333;
   text-transform: none;
   border: 1px solid #FFFFFF;
   color: #FFFFFF;
@@ -777,8 +777,8 @@ html {
   max-width: 200px;
   margin: 8px 0;
   font-size: 16px;
-  font-size: 0.8rem;
-  line-height: 1.2;
+  font-size: 0.88889rem;
+  line-height: 1.333;
 }
 
 .field.input {
@@ -823,8 +823,8 @@ html {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 600;
   font-size: 20px;
-  font-size: 1rem;
-  line-height: 1.2;
+  font-size: 1.11111rem;
+  line-height: 1.333;
   text-transform: uppercase;
   letter-spacing: 1.25px;
 }
@@ -999,8 +999,8 @@ html {
 
 .quote {
   font-size: 24px;
-  font-size: 1.2rem;
-  line-height: 1.2;
+  font-size: 1.33333rem;
+  line-height: 1.333;
   background-color: #2A2F3E;
   color: #FFFFFF;
   padding: 4px;
@@ -1010,8 +1010,8 @@ html {
 .quote:before {
   content: "\"";
   font-size: 160px;
-  font-size: 8rem;
-  line-height: 1.2;
+  font-size: 8.88889rem;
+  line-height: 1.333;
   float: right;
   vertical-align: text-top;
   margin-top: calc( 32px * -1);
@@ -1020,8 +1020,8 @@ html {
 
 .quote__cite {
   font-size: 16px;
-  font-size: 0.8rem;
-  line-height: 1.2;
+  font-size: 0.88889rem;
+  line-height: 1.333;
 }
 
 /**
@@ -1159,13 +1159,13 @@ html {
 
 .card__heading {
   font-size: 22px;
-  font-size: 1.1rem;
-  line-height: 1.2;
+  font-size: 1.22222rem;
+  line-height: 1.333;
   font-family: "Lato", Helvetica, sans-serif;
   font-weight: 600;
   font-size: 22px;
-  font-size: 1.1rem;
-  line-height: 1.2;
+  font-size: 1.22222rem;
+  line-height: 1.333;
   color: #1C1C1C;
 }
 
@@ -1173,8 +1173,8 @@ html {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 300;
   font-size: 18px;
-  font-size: 0.9rem;
-  line-height: 1.2;
+  font-size: 1rem;
+  line-height: 1.333;
   color: #535353;
 }
 
@@ -1197,8 +1197,8 @@ html {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 700;
   font-size: 14px;
-  font-size: 0.7rem;
-  line-height: 1.2;
+  font-size: 0.77778rem;
+  line-height: 1.333;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #1C1C1C;
@@ -1354,8 +1354,8 @@ html {
 
 .header__sub-heading {
   font-size: 16px;
-  font-size: 0.8rem;
-  line-height: 1.2;
+  font-size: 0.88889rem;
+  line-height: 1.333;
   font-weight: 300;
 }
 
@@ -1572,45 +1572,45 @@ html {
 
 @media only screen and (min-width: 600px) {
   html {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .edit-post-visual-editor.editor-styles-wrapper h1 {
     font-size: 56px;
-    font-size: 2.8rem;
-    line-height: 1.2;
+    font-size: 3.11111rem;
+    line-height: 1.333;
   }
 
   .edit-post-visual-editor.editor-styles-wrapper h2 {
     font-size: 40px;
-    font-size: 2rem;
-    line-height: 1.2;
+    font-size: 2.22222rem;
+    line-height: 1.333;
   }
 
   .edit-post-visual-editor.editor-styles-wrapper h3 {
     font-size: 32px;
-    font-size: 1.6rem;
-    line-height: 1.2;
+    font-size: 1.77778rem;
+    line-height: 1.333;
   }
 
   .edit-post-visual-editor.editor-styles-wrapper h4 {
     font-size: 24px;
-    font-size: 1.2rem;
-    line-height: 1.2;
+    font-size: 1.33333rem;
+    line-height: 1.333;
   }
 
   .edit-post-visual-editor.editor-styles-wrapper h5 {
     font-size: 18px;
-    font-size: 0.9rem;
-    line-height: 1.2;
+    font-size: 1rem;
+    line-height: 1.333;
   }
 
   .edit-post-visual-editor.editor-styles-wrapper p.is-style-preamble {
     font-family: "Open Sans", Helvetica, sans-serif;
     font-weight: 300;
     font-size: 24px;
-    font-size: 1.2rem;
-    line-height: 1.2;
+    font-size: 1.33333rem;
+    line-height: 1.333;
   }
 
   .card-list {
@@ -1626,8 +1626,8 @@ html {
 
   .header__sub-heading {
     font-size: 18px;
-    font-size: 0.9rem;
-    line-height: 1.2;
+    font-size: 1rem;
+    line-height: 1.333;
   }
 }
 

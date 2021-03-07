@@ -123,7 +123,7 @@ html {
 */
 
 html {
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Open Sans", Helvetica, sans-serif;
   color: #FFFFFF;
 }
@@ -376,8 +376,8 @@ hr {
 input,option,select,textarea,button {
   font-family: inherit;
   font-size: 14px;
-  font-size: 0.7rem;
-  line-height: 1.2;
+  font-size: 0.77778rem;
+  line-height: 1.333;
 }
 
 /**
@@ -507,39 +507,39 @@ h2,h4,h5 {
 
 h1 {
   font-size: 48px;
-  font-size: 2.4rem;
-  line-height: 1.2;
+  font-size: 2.66667rem;
+  line-height: 1.333;
 }
 
 h2 {
   font-size: 32px;
-  font-size: 1.6rem;
-  line-height: 1.2;
+  font-size: 1.77778rem;
+  line-height: 1.333;
 }
 
 h3 {
   font-size: 24px;
-  font-size: 1.2rem;
-  line-height: 1.2;
+  font-size: 1.33333rem;
+  line-height: 1.333;
 }
 
 h4 {
   font-size: 20px;
-  font-size: 1rem;
-  line-height: 1.2;
+  font-size: 1.11111rem;
+  line-height: 1.333;
 }
 
 h5 {
   font-size: 16px;
-  font-size: 0.8rem;
-  line-height: 1.2;
+  font-size: 0.88889rem;
+  line-height: 1.333;
   font-weight: bold;
 }
 
 h6 {
   font-size: 16px;
-  font-size: 0.8rem;
-  line-height: 1.2;
+  font-size: 0.88889rem;
+  line-height: 1.333;
   margin-bottom: 4px;
 }
 
@@ -576,8 +576,8 @@ a svg:hover {
 
 small,sub {
   font-size: 12px;
-  font-size: 0.6rem;
-  line-height: 1.2;
+  font-size: 0.66667rem;
+  line-height: 1.333;
 }
 
 mark {
@@ -593,8 +593,8 @@ mark {
 
 figcaption {
   font-size: 14px;
-  font-size: 0.7rem;
-  line-height: 1.2;
+  font-size: 0.77778rem;
+  line-height: 1.333;
 }
 
 /**
@@ -615,8 +615,8 @@ ol,ul,dd,li,tr,th,caption {
 
 code {
   font-size: 16px;
-  font-size: 0.8rem;
-  line-height: 1.2;
+  font-size: 0.88889rem;
+  line-height: 1.333;
   -moz-tab-size: 3;
   -o-tab-size: 3;
   tab-size: 3;
@@ -1020,8 +1020,8 @@ code {
   font-family: "Lato", Helvetica, sans-serif;
   font-weight: 600;
   font-size: 12px;
-  font-size: 0.6rem;
-  line-height: 1.2;
+  font-size: 0.66667rem;
+  line-height: 1.333;
 }
 
 .btn:hover,.code-toolbar .toolbar button:hover {
@@ -1061,8 +1061,8 @@ code {
   background-color: transparent;
   border: 1px solid #FFFFFF;
   font-size: 14px;
-  font-size: 0.7rem;
-  line-height: 1.2;
+  font-size: 0.77778rem;
+  line-height: 1.333;
   font-weight: normal;
   padding: 5px 16px;
   letter-spacing: .5px;
@@ -1079,8 +1079,8 @@ code {
   padding: 4px 8px;
   font-weight: 300;
   font-size: 14px;
-  font-size: 0.7rem;
-  line-height: 1.2;
+  font-size: 0.77778rem;
+  line-height: 1.333;
   text-transform: none;
   border: 1px solid #FFFFFF;
   color: #FFFFFF;
@@ -1160,8 +1160,8 @@ code {
   max-width: 200px;
   margin: 8px 0;
   font-size: 16px;
-  font-size: 0.8rem;
-  line-height: 1.2;
+  font-size: 0.88889rem;
+  line-height: 1.333;
 }
 
 .field.input {
@@ -1206,8 +1206,8 @@ code {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 600;
   font-size: 20px;
-  font-size: 1rem;
-  line-height: 1.2;
+  font-size: 1.11111rem;
+  line-height: 1.333;
   text-transform: uppercase;
   letter-spacing: 1.25px;
 }
@@ -1382,8 +1382,8 @@ code {
 
 .quote {
   font-size: 24px;
-  font-size: 1.2rem;
-  line-height: 1.2;
+  font-size: 1.33333rem;
+  line-height: 1.333;
   background-color: #2A2F3E;
   color: #FFFFFF;
   padding: 4px;
@@ -1393,8 +1393,8 @@ code {
 .quote:before {
   content: "\"";
   font-size: 160px;
-  font-size: 8rem;
-  line-height: 1.2;
+  font-size: 8.88889rem;
+  line-height: 1.333;
   float: right;
   vertical-align: text-top;
   margin-top: calc( 32px * -1);
@@ -1403,8 +1403,8 @@ code {
 
 .quote__cite {
   font-size: 16px;
-  font-size: 0.8rem;
-  line-height: 1.2;
+  font-size: 0.88889rem;
+  line-height: 1.333;
 }
 
 /**
@@ -1542,13 +1542,13 @@ code {
 
 .card__heading {
   font-size: 22px;
-  font-size: 1.1rem;
-  line-height: 1.2;
+  font-size: 1.22222rem;
+  line-height: 1.333;
   font-family: "Lato", Helvetica, sans-serif;
   font-weight: 600;
   font-size: 22px;
-  font-size: 1.1rem;
-  line-height: 1.2;
+  font-size: 1.22222rem;
+  line-height: 1.333;
   color: #1C1C1C;
 }
 
@@ -1556,8 +1556,8 @@ code {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 300;
   font-size: 18px;
-  font-size: 0.9rem;
-  line-height: 1.2;
+  font-size: 1rem;
+  line-height: 1.333;
   color: #535353;
 }
 
@@ -1580,8 +1580,8 @@ code {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 700;
   font-size: 14px;
-  font-size: 0.7rem;
-  line-height: 1.2;
+  font-size: 0.77778rem;
+  line-height: 1.333;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #1C1C1C;
@@ -1737,8 +1737,8 @@ code {
 
 .header__sub-heading {
   font-size: 16px;
-  font-size: 0.8rem;
-  line-height: 1.2;
+  font-size: 0.88889rem;
+  line-height: 1.333;
   font-weight: 300;
 }
 
@@ -1861,8 +1861,8 @@ code {
   font-family: "Lato", Helvetica, sans-serif;
   font-weight: 300;
   font-size: 15px;
-  font-size: 0.75rem;
-  line-height: 1.2;
+  font-size: 0.83333rem;
+  line-height: 1.333;
 }
 
 .circle-info a {
@@ -1884,8 +1884,8 @@ code {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 600;
   font-size: 10px;
-  font-size: 0.5rem;
-  line-height: 1.2;
+  font-size: 0.55556rem;
+  line-height: 1.333;
   text-transform: none;
   position: absolute;
   left: 50%;
@@ -2113,8 +2113,8 @@ p.is-style-preamble {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: 300;
   font-size: 22px;
-  font-size: 1.1rem;
-  line-height: 1.2;
+  font-size: 1.22222rem;
+  line-height: 1.333;
   font-style: italic;
 }
 
@@ -2122,8 +2122,8 @@ p.is-style-notice {
   font-family: "Lato", Helvetica, sans-serif;
   font-weight: 300;
   font-size: 16px;
-  font-size: 0.8rem;
-  line-height: 1.2;
+  font-size: 0.88889rem;
+  line-height: 1.333;
   font-style: italic;
   position: relative;
 }
@@ -2193,37 +2193,37 @@ p.is-style-notice.wp-block::after {
 
 @media only screen and (min-width: 600px) {
   html {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   h1 {
     font-size: 56px;
-    font-size: 2.8rem;
-    line-height: 1.2;
+    font-size: 3.11111rem;
+    line-height: 1.333;
   }
 
   h2 {
     font-size: 40px;
-    font-size: 2rem;
-    line-height: 1.2;
+    font-size: 2.22222rem;
+    line-height: 1.333;
   }
 
   h3 {
     font-size: 32px;
-    font-size: 1.6rem;
-    line-height: 1.2;
+    font-size: 1.77778rem;
+    line-height: 1.333;
   }
 
   h4 {
     font-size: 24px;
-    font-size: 1.2rem;
-    line-height: 1.2;
+    font-size: 1.33333rem;
+    line-height: 1.333;
   }
 
   h5 {
     font-size: 18px;
-    font-size: 0.9rem;
-    line-height: 1.2;
+    font-size: 1rem;
+    line-height: 1.333;
   }
 
   .site-header {
@@ -2269,8 +2269,8 @@ p.is-style-notice.wp-block::after {
 
   .header__sub-heading {
     font-size: 18px;
-    font-size: 0.9rem;
-    line-height: 1.2;
+    font-size: 1rem;
+    line-height: 1.333;
   }
 
   .pagination-single {
@@ -2296,8 +2296,8 @@ p.is-style-notice.wp-block::after {
     font-family: "Open Sans", Helvetica, sans-serif;
     font-weight: 300;
     font-size: 24px;
-    font-size: 1.2rem;
-    line-height: 1.2;
+    font-size: 1.33333rem;
+    line-height: 1.333;
   }
 }
 
