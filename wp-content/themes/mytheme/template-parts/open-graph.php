@@ -14,8 +14,8 @@
 	$post_category	= get_the_category() ? get_the_category()[0]->name : null;
 	$title			= wp_get_document_title();
 	$image			= has_post_thumbnail() ? get_the_post_thumbnail_url() : get_background_image();
-	$excerpt		= has_excerpt() ? mytheme_excerpt( get_the_excerpt(), 14 ) : mytheme_excerpt( get_the_content(), 14 );
-	$description 	= is_single() ? ( "A Gutenberg Wordpress Component from the \"" . $post_category . "\" category. Component description: " . $excerpt ) : $excerpt;
+	$excerpt		= has_excerpt() ? mytheme_excerpt( get_the_excerpt(), 27 ) : mytheme_excerpt( get_the_content(), 27 );
+	$description 	= is_single() ? ( "A Gutenberg Wordpress Component from the \"" . $post_category . "\" category. Component description: " . mytheme_excerpt( $excerpt, 12) ) : $excerpt;
 ?>
 
 <!-- Primary Meta Tags -->
