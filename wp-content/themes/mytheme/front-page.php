@@ -68,7 +68,7 @@ get_header();
 			"@type": "schema:TechArticle",
 			"schema:headline": "<?php echo get_the_title() ?>",
 			"schema:dependencies": "gutenberg wordpress react programming web",
-			"schema:proficiencyLevel": "Expert",
+			"schema:proficiencyLevel": "Beginner",
 			"schema:alternativeHeadline": "A visual documentation of Gutenberg's <?php echo get_the_title() ?>",
 			"schema:backstory": "This article was created in order to provide a visual documentation of the available components a developer can use when creating blocks for WordPress' editor, Gutenberg.",
 			"schema:image": {

@@ -26,7 +26,7 @@ $thumbnail_height	= $sizes[2] ?? null;
 	"@type": "TechArticle",
 	"headline": "<?php echo get_the_title() ?>",
 	"dependencies": "gutenberg wordpress react programming web",
-	"proficiencyLevel": "Expert",
+	"proficiencyLevel": "Beginner",
 	"alternativeHeadline": "A visual documentation of Gutenberg's <?php echo get_the_title() ?>",
 	"backstory": "This article was created in order to provide a visual documentation of the available components a developer can use when creating blocks for WordPress' editor, Gutenberg.",
 	"image": {
