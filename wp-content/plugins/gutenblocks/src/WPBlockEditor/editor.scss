@@ -3,8 +3,9 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-wp-gb-inner-blocks .block-editor-inner-blocks {
-  width: 100%;
-}
 
-/*# sourceMappingURL=index.css.map*/
+.wp-block-wp-gb-inner-blocks {
+	.block-editor-inner-blocks {
+		width: 100%;
+	}
+}

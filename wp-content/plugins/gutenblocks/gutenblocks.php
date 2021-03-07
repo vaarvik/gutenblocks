@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name:     Gutenblocks
+ * Plugin Name:     WP-GB
  * Description:     A plugin with great blocks.
  * Version:         1.0.0
  * Author:          Warwick
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:     gutenblocks
+ * Text Domain:     wp-gb
  *
- * @package         gutenblocks
+ * @package         wp-gb
  */
 
 /**
@@ -17,56 +17,56 @@
  *
  * @see https://developer.wordpress.org/block-editor/tutorials/block-tutorial/applying-styles-with-stylesheets/
  */
-function gutenblocks_block_init() {
+function wpgb_block_init() {
 	$dir = __DIR__;
 
 	$script_asset_path = "$dir/build/index.asset.php";
 	if ( ! file_exists( $script_asset_path ) ) {
 		throw new Error(
-			'You need to run `npm start` or `npm run build` for the "gutenblocks/gutenblocks" block first.'
+			'You need to run `npm start` or `npm run build` for the "wp-gb/wp-gb" block first.'
 		);
 	}
 	$index_js     = 'build/index.js';
 	$script_asset = require( $script_asset_path );
 	wp_register_script(
-		'gutenblocks-block-editor',
+		'wp-gb-block-editor',
 		plugins_url( $index_js, __FILE__ ),
 		$script_asset['dependencies'],
 		$script_asset['version']
 	);
-	wp_set_script_translations( 'gutenblocks-block-editor', 'gutenblocks' );
+	wp_set_script_translations( 'wp-gb-block-editor', 'wp-gb' );
 
 	$editor_css = 'build/index.css';
 	wp_register_style(
-		'gutenblocks-block-editor',
+		'wp-gb-block-editor',
 		plugins_url( $editor_css, __FILE__ ),
 		array(),
 		filemtime( "$dir/$editor_css" )
 	);
 
 	register_block_type(
-		'gutenblocks/gutenblocks',
+		'wp-gb/wp-gb',
 		array(
-			'editor_script' => 'gutenblocks-block-editor',
-			'editor_style'  => 'gutenblocks-block-editor',
-			'style'         => 'gutenblocks-block',
+			'editor_script' => 'wp-gb-block-editor',
+			'editor_style'  => 'wp-gb-block-editor',
+			'style'         => 'wp-gb-block',
 		)
 	);
 }
-add_action( 'init', 'gutenblocks_block_init' );
+add_action( 'init', 'wpgb_block_init' );
 
 /**
- * Add Gutenblocks as its own category
+ * Add WP-GB as its own category
  */
-function gutenblocks_block_category( $categories, $post ) {
+function wpgb_block_category( $categories, $post ) {
 	return array_merge(
 		array(
 			array(
-				'slug' => 'gutenblocks',
-				'title' => __( 'Gutenblcks', 'gutenblocks' ),
+				'slug' => 'wp-gb',
+				'title' => __( 'WP-GB', 'wp-gb' ),
 			),
 		),
 		$categories
 	);
 }
-add_filter( 'block_categories', 'gutenblocks_block_category', 10, 2);
+add_filter( 'block_categories', 'wpgb_block_category', 10, 2);

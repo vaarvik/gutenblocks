@@ -154,7 +154,7 @@ import { useBlockProps, RichText, InspectorControls } from '@wordpress/block-edi
 import './editor.scss';
 
 const BLOCKNAME = "components";
-const BLOCKPATH = "gutenblocks/components";
+const BLOCKPATH = "wp-gb/components";
 
 registerBlockType( BLOCKPATH, {
 
@@ -163,9 +163,9 @@ registerBlockType( BLOCKPATH, {
 	 */
 
 	apiVersion: 2,
-	title: __( 'Components', 'gutenblocks' ),
+	title: __( 'Components', 'wp-gb' ),
 	description: __('A big block with all the components created by WordPress'),
-	category: 'gutenblocks',
+	category: 'wp-gb',
 	icon: 'smiley',
 	supports: {
 		html: false,
