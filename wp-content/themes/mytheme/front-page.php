@@ -103,7 +103,7 @@ get_header();
 			"schema:dateModified": "<?php echo $post->post_modified ?>",
 			"schema:description": "Information and code snippet for the Gutenberg component <?php echo get_the_title() ?> in the category <?php echo get_the_category()[0]->name ?>.",
 			"schema:articleBody": "<?php echo mytheme_create_json_string( get_the_content() ) ?>",
-			"schema:abstract": "<?php echo mytheme_create_json_string( mytheme_excerpt( has_excerpt() ? get_the_excerpt() : get_the_content(), 20 ) ) ?>"
+			"schema:abstract": "<?php echo mytheme_create_json_string(  has_excerpt() ? get_the_excerpt() : mytheme_excerpt( get_the_content(), 20 ) ) ?>"
 		}<?php echo ($posts->current_post +1 != $posts->post_count ? "," : "") ?>
 		<?php endwhile; wp_reset_postdata(); endif;	?>
 	]
