@@ -29,6 +29,10 @@
 
 					</div>
 
+					<a href="<?php echo get_sitemap_url('index') ?>" id="sitemap-link">
+						<?php _e( "Sitemap" ) ?>
+					</a>
+
 					<a href="<?php echo get_privacy_policy_url() ?>" id="privacy-link">
 						<?php _e( "Privacy policy" ) ?>
 					</a>
