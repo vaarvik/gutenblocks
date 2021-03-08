@@ -74,6 +74,10 @@ function mytheme_title_tag( $title_parts ) {
 
 add_filter( 'document_title_parts', 'mytheme_title_tag', 10, 2 );
 
+add_filter( 'document_title_separator', function(){
+    return "|";
+} );
+
 /**
  * Sitemap content
  * ----------
