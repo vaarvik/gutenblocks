@@ -114,8 +114,7 @@ get_header();
 
 	<div class="archive-content content">
 		<header class="header">
-			<h1 class="header__heading"><?php echo get_bloginfo( "name" ) ?></h1>
-			<h2 class="header__sub-heading"><?php echo get_the_title() ?></h2>
+			<h1 class="header__heading"><?php echo get_the_title() ?></h1>
 			<div class="header__body">
 				<?php the_content() ?>
 				<div class="filter-section">
