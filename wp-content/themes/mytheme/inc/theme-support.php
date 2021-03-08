@@ -81,6 +81,8 @@ function mytheme_theme_support() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+	add_post_type_support( 'page', 'excerpt' );
+
 }
 
 add_action( 'after_setup_theme', 'mytheme_theme_support' );
