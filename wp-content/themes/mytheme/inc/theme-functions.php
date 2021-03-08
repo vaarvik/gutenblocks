@@ -65,7 +65,10 @@ add_action( 'wp_head', function(){
  */
 function mytheme_title_tag( $title_parts ) {
     $title_parts['tagline'] = get_bloginfo( 'description' );
-
+    $title_key = $title_parts['title'] === get_bloginfo( 'name' ) ? 'title' : 'site';
+    if( empty( $title_parts['site'] ) ) $title_parts['slogan'] = "Create Editor Blocks";
+    $site_title = array_splice( $title_parts, array_search( $title_key, array_keys( $title_parts ) ), 1 );
+    $title_parts[$title_key] = $site_title[$title_key];
     return $title_parts;
 }
 
