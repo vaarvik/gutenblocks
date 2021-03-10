@@ -86,6 +86,93 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/@babel/runtime/helpers/extends.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/extends.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _extends() {
+  module.exports = _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+module.exports = _extends;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/objectWithoutProperties.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/objectWithoutProperties.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var objectWithoutPropertiesLoose = __webpack_require__(/*! ./objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js");
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+  var target = objectWithoutPropertiesLoose(source, excluded);
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+module.exports = _objectWithoutProperties;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+module.exports = _objectWithoutPropertiesLoose;
+
+/***/ }),
+
 /***/ "./src/WPBlockEditor/AlignmentToolbar.js":
 /*!***********************************************!*\
   !*** ./src/WPBlockEditor/AlignmentToolbar.js ***!
@@ -289,6 +376,269 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])(BLOC
 
 /***/ }),
 
+/***/ "./src/WPComponents/Autocomplete.js":
+/*!******************************************!*\
+  !*** ./src/WPComponents/Autocomplete.js ***!
+  \******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/WPComponents/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+ //styles that make it look good in the editor
+
+
+var BLOCKNAME = "autocomplete";
+var BLOCKPATH = "wp-gb/".concat(BLOCKNAME);
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])(BLOCKPATH, {
+  apiVersion: 2,
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])(BLOCKNAME.replace("-", " ").toUpperCase(), 'wp-gb'),
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('The description'),
+  category: 'wp-gb',
+  icon: 'smiley',
+  attributes: {
+    value: {
+      type: "string"
+    }
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    var autoConfigs = [{
+      name: "Autocomplete",
+      // The prefix that triggers this completer
+      triggerPrefix: "/",
+      // The option data
+      options: [{
+        value: '🍎',
+        label: 'Apple',
+        id: 1
+      }, {
+        value: '🍊',
+        label: 'Orange',
+        id: 2
+      }, {
+        value: '🍇',
+        label: 'Grapes',
+        id: 3
+      }],
+      // Returns a label for an option like "🍊 Orange"
+      getOptionLabel: function getOptionLabel(option) {
+        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("span", {
+          className: "icon"
+        }, option.value), " ", option.label);
+      },
+      // Declares that options should be matched by their name or value
+      getOptionKeywords: function getOptionKeywords(option) {
+        return [option.label, option.value];
+      },
+      // Declares that the Grapes option is disabled
+      getOptionCompletion: function getOptionCompletion(option) {
+        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("abbr", {
+          title: option.label
+        }, option.value);
+      }
+    }];
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["useBlockProps"])(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["RichText"], {
+      autocompleters: autoConfigs,
+      value: attributes.value,
+      onChange: function onChange(newValue) {
+        setAttributes({
+          value: newValue
+        });
+      },
+      placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])("Type ".concat(autoConfigs[0].triggerPrefix, " to choose a ").concat(autoConfigs[0].name))
+    }));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/WPComponents/AutocompleteComponentBased.js":
+/*!********************************************************!*\
+  !*** ./src/WPComponents/AutocompleteComponentBased.js ***!
+  \********************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_Autocomplete_Autocomplete__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Autocomplete/Autocomplete */ "./src/components/Autocomplete/Autocomplete.js");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/WPComponents/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+ //styles that make it look good in the editor
+
+
+var BLOCKNAME = "autocomplete-component-based";
+var BLOCKPATH = "wp-gb/".concat(BLOCKNAME);
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])(BLOCKPATH, {
+  apiVersion: 2,
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])(BLOCKNAME.replace("-", " ").toUpperCase(), 'wp-gb'),
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('The description'),
+  category: 'wp-gb',
+  icon: 'smiley',
+  attributes: {
+    value: {
+      type: "string"
+    }
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__["useBlockProps"])(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_components_Autocomplete_Autocomplete__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      name: "Autocomplete",
+      options: [{
+        value: '🍎',
+        label: 'Apple',
+        id: 1
+      }, {
+        value: '🍊',
+        label: 'Orange',
+        id: 2
+      }, {
+        value: '🍇',
+        label: 'Grapes',
+        id: 3
+      }],
+      value: attributes.value,
+      onChange: function onChange(newValue) {
+        setAttributes({
+          value: newValue
+        });
+      }
+    }));
+  },
+  save: function save(_ref2) {
+    var attributes = _ref2.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__["useBlockProps"].save(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__["RichText"].Content, {
+      value: attributes.value
+    }));
+  }
+});
+
+/***/ }),
+
+/***/ "./src/WPComponents/editor.scss":
+/*!**************************************!*\
+  !*** ./src/WPComponents/editor.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/components/Autocomplete/Autocomplete.js":
+/*!*****************************************************!*\
+  !*** ./src/components/Autocomplete/Autocomplete.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/objectWithoutProperties.js");
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+
+/**
+ * An Autocomplete component
+ * ----------
+ * Based on a RichText component. Autocompletes when typing a prefix and gives a list with options that a user can select from.
+ * Show text front end by using RichText.Content. If so, remember to include RichText from '@wordpress/block-editor'.
+ *
+ * @param   {String}  	value          The value of the RichText
+ * @param   {Function}  onChange       The function that updates the value
+ * @param   {Array}  	options        An array with options to be chosen between
+ * @param   {String} 	name           The title of the component
+ * @param   {String}  	triggerPrefix  The prefix to be used to show the options list
+ *
+ * @return  {Component}                 The component.
+ */
+
+var Autocomplete = function Autocomplete(_ref) {
+  var value = _ref.value,
+      onChange = _ref.onChange,
+      options = _ref.options,
+      name = _ref.name,
+      _ref$triggerPrefix = _ref.triggerPrefix,
+      triggerPrefix = _ref$triggerPrefix === void 0 ? "/" : _ref$triggerPrefix,
+      props = _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1___default()(_ref, ["value", "onChange", "options", "name", "triggerPrefix"]);
+
+  // Function to handle the onChange event.
+  var autoConfigs = [{
+    name: name,
+    // The prefix that triggers this completer
+    triggerPrefix: triggerPrefix,
+    // The option data
+    options: options,
+    // Returns a label for an option like "🍊 Orange"
+    getOptionLabel: function getOptionLabel(option) {
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("span", {
+        className: "icon"
+      }, option.value), " ", option.label);
+    },
+    // Declares that options should be matched by their name or value
+    getOptionKeywords: function getOptionKeywords(option) {
+      return [option.label, option.value];
+    },
+    // Declares that the Grapes option is disabled
+    getOptionCompletion: function getOptionCompletion(option) {
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])("abbr", {
+        title: option.label
+      }, option.value);
+    }
+  }];
+  return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["Fragment"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__["RichText"], _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({}, props, {
+    autocompleters: autoConfigs,
+    value: value,
+    onChange: onChange,
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])("Type ".concat(autoConfigs[0].triggerPrefix, " to choose a ").concat(autoConfigs[0].name))
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Autocomplete);
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -298,10 +648,14 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])(BLOC
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _WPBlockEditor_InnerBlocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./WPBlockEditor/InnerBlocks */ "./src/WPBlockEditor/InnerBlocks.js");
-/* harmony import */ var _WPBlockEditor_InnerBlocksWithAppender__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./WPBlockEditor/InnerBlocksWithAppender */ "./src/WPBlockEditor/InnerBlocksWithAppender.js");
-/* harmony import */ var _WPBlockEditor_AlignmentToolbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./WPBlockEditor/AlignmentToolbar */ "./src/WPBlockEditor/AlignmentToolbar.js");
+/* harmony import */ var _WPComponents_Autocomplete__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./WPComponents/Autocomplete */ "./src/WPComponents/Autocomplete.js");
+/* harmony import */ var _WPComponents_AutocompleteComponentBased__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./WPComponents/AutocompleteComponentBased */ "./src/WPComponents/AutocompleteComponentBased.js");
+/* harmony import */ var _WPBlockEditor_InnerBlocks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./WPBlockEditor/InnerBlocks */ "./src/WPBlockEditor/InnerBlocks.js");
+/* harmony import */ var _WPBlockEditor_InnerBlocksWithAppender__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./WPBlockEditor/InnerBlocksWithAppender */ "./src/WPBlockEditor/InnerBlocksWithAppender.js");
+/* harmony import */ var _WPBlockEditor_AlignmentToolbar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./WPBlockEditor/AlignmentToolbar */ "./src/WPBlockEditor/AlignmentToolbar.js");
 // import './WPComponents/WPComponents';
+
+
 
 
 

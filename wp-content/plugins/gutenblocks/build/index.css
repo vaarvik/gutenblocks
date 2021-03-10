@@ -3,6 +3,19 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+.wp-block-gutenblocks-components .components-panel__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  flex-flow: column;
+  padding: 80px;
+}
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
 .wp-block-wp-gb-inner-blocks .block-editor-inner-blocks {
   width: 100%;
 }

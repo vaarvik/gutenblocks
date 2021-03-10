@@ -1,19 +1,14 @@
 import { __ } from '@wordpress/i18n';
 
-import {
-	RichText,
-	InspectorControls
-} from '@wordpress/block-editor';
+import { RichText } from '@wordpress/block-editor';
 
-import {
-	Fragment
-} from '@wordpress/element'
+import { Fragment } from '@wordpress/element'
 
 /**
  * An Autocomplete component
  * ----------
- * Based on a RichText component. Auto completes when typing a prefix and gives a list with options that a user can select from.
- * Show text front end by using RichText.Content. Remember to include RichText from '@wordpress/block-editor'
+ * Based on a RichText component. Autocompletes when typing a prefix and gives a list with options that a user can select from.
+ * Show text front end by using RichText.Content. If so, remember to include RichText from '@wordpress/block-editor'.
  *
  * @param   {String}  	value          The value of the RichText
  * @param   {Function}  onChange       The function that updates the value
