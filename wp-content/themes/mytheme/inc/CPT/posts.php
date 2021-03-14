@@ -34,29 +34,9 @@ new mt_meta_field( array(
 		),
 		array(
 			'type'		=> 'input',
-			'slug'		=> 'url',
+			'slug'		=> 'popover',
 			'class'		=> 'field input',
 			'title'		=> __( 'Popover' ),
 		),
-		array(
-			'type'		=> 'repeater',
-			'slug'		=> 'props',
-			'class'		=> 'field input',
-			'title'		=> __( 'Props' ),
-			'fields'	=> array(
-				array(
-					'type'		=> 'input',
-					'slug'		=> 'text',
-					'class'		=> 'field input',
-					'title'		=> __( 'Text' ),
-				),
-				array(
-					'type'		=> 'input',
-					'slug'		=> 'url',
-					'class'		=> 'field input',
-					'title'		=> __( 'Popover' ),
-				),
-			),
-		)
 	),
 ) );

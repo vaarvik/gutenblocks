@@ -50,7 +50,7 @@ class mt_meta_field {
 	public function save_repeater_field( $post_id, $args = null ) {
 		if( !$args ) $args = $this->args;
 		foreach ( $args['fields'] as $key => $field ) {
-			$repeater_json 	= get_post_meta( $post_id, $args['full-slug'], true ) ? get_post_meta( get_the_ID(), $args['full-slug'], true ) : '[0]';
+			$repeater_json 	= isset( $_POST[$args['full-slug']] ) ? $_POST[$args['full-slug']] : '[0]';
 			$repeater_ids	= json_decode( $repeater_json );
 			foreach ( $repeater_ids as $id ) {
 				$field['full-slug'] = $args['full-slug'] . "_" . $id . "__" . $field['slug'];
@@ -65,7 +65,6 @@ class mt_meta_field {
 				}
 			}
 		}
-		// die;
 	}
 
 	public function create_field( $post_type ) {
@@ -121,7 +120,7 @@ class mt_meta_field {
 				echo "</select>";
 				break;
 			case "group" :
-				echo '<div class="group ' . $class_name . '" name="' . $slug . '" id="' . $slug . '" data-slug="' . $mini_slug . '">';
+				echo '<div class="group ' . $class_name . '" id="' . $slug . '" data-slug="' . $mini_slug . '">';
 					foreach ($this->args['fields'] as $key => $field) {
 						$field_object = new mt_meta_field( $field, true );
 						$field_object->args['full-slug'] = $this->args['full-slug'] . "__" . $field['slug'];
@@ -135,7 +134,7 @@ class mt_meta_field {
 					echo '<div class="repeater ' . $class_name . '" id="' . $slug . '" data-slug="' . $mini_slug . '">';
 
 						foreach ( $repeater_ids as $key => $id ) {
-							echo '<div class="repeater__item" id="' . $slug . "_" . $id . '">';
+							echo '<div class="repeater__item" id="' . $slug . "_" . $id . '" data-slug="' . $mini_slug . "_" . $id . '">';
 								foreach ( $this->args['fields'] as $key => $field ) {
 									$field_object = new mt_meta_field( $field, true );
 									$field_object->args['full-slug'] = $this->args['full-slug'] . "_" . $id . "__" . $field['slug'];
@@ -144,10 +143,19 @@ class mt_meta_field {
 							echo "</div>";
 						}
 
-						echo '<input type="hidden" name="' . $slug . '" id="' . $slug . '-info" value="' . $repeater_json . '"/>';
-						echo '<button class="repeater__btn btn" id="' . $slug . '-add-btn">Add</button>';
-						echo '<button class="repeater__btn btn" id="' . $slug . '-remove-btn">Remove</button>';
+						echo '<input type="hidden" class="repeater__info" name="' . $slug . '" id="' . $slug . '-info" value="' . $repeater_json . '" data-slug="info" data-start-value="' . $repeater_json . '"/>';
+						echo '<button class="repeater__btn btn" id="' . $slug . '-add-btn" data-slug="add-btn">Add</button>';
+						echo '<button class="repeater__btn btn" id="' . $slug . '-remove-btn" data-slug="remove-btn">Remove</button>';
+
+						echo '<div class="repeater__item reference" id="' . $slug . "_" . $id . '-reference" data-slug="' . $mini_slug . "_" . $id . '">';
+							foreach ( $this->args['fields'] as $key => $field ) {
+								$field_object = new mt_meta_field( $field, true );
+								$field_object->args['full-slug'] = $this->args['full-slug'] . "_" . $id . "__" . $field['slug'] . "-reference";
+								$field_object->create_field_html();
+							}
+						echo "</div>";
 					echo "</div>";
+
 				break;
 		}
 	}

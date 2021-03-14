@@ -19,13 +19,14 @@ add_action( 'wp_enqueue_scripts', 'mytheme_register_scripts' );
 /**
  * Register and Enqueue Scripts in editor.
  */
-function headspin_editor_scripts() {
+function mytheme_editor_scripts() {
 
 	wp_enqueue_script( "mytheme-gutenberg-js", mytheme_asset_url( 'assets/js/gutenberg.js' ), array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ), THEME_VERSION );
+	wp_enqueue_script( "mytheme-mt-meta-fields-js", mytheme_asset_url( 'assets/js/mt-meta-fields.js' ), array( ), THEME_VERSION, true );
 
 }
 
-add_action( "enqueue_block_editor_assets", "headspin_editor_scripts" );
+add_action( "enqueue_block_editor_assets", "mytheme_editor_scripts" );
 
 /**
  * Fix skip link focus in IE11.

@@ -33,6 +33,7 @@ function mytheme_register_editor_styles() {
 	wp_enqueue_style( 'gf-lato', 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap', array(), THEME_VERSION );
 
 	wp_enqueue_style( 'mytheme-editor-style', mytheme_asset_url( "assets/styles/editor.css" ), array( 'gf-open-sans', 'gf-lato' ), THEME_VERSION );
+	wp_enqueue_style( 'mytheme-meta-fields', mytheme_asset_url( "assets/styles/meta-fields.css" ), array( 'gf-open-sans', 'gf-lato' ), THEME_VERSION );
 
 }
 add_action( 'enqueue_block_editor_assets', 'mytheme_register_editor_styles' );

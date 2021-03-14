@@ -2035,14 +2035,6 @@ code {
   font-weight: bold;
 }
 
-.wp-block-code .token.bold {
-  font-weight: bold;
-}
-
-.wp-block-code .token.italic {
-  font-style: italic;
-}
-
 .code-toolbar {
   margin: 24px 0;
   position: relative;

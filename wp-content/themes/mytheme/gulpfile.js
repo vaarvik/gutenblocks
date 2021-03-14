@@ -197,6 +197,46 @@ gulp.task('styles', function( done ) {
         //set the location for where the minimized file should be stored
         .pipe(gulp.dest(`${assetsUri}/styles`));
 
+    gulp.src(`${assetsUri}/styles/scss/meta-fields.scss`)
+        //convert to sass
+        .pipe(sass.sync().on('error', sass.logError))
+        //group css media queries
+        .pipe(gcmq())
+        //prefix css
+        .pipe(autoprefixer('last 2 versions'))
+        //remove unused css from the final css
+        //scan these files to see if css is used
+        .pipe(purify([
+            //the WP block block js
+            `../../../wp-includes/js/dist/block-library.js`,
+            //the WP block editor js
+            `../../../wp-includes/js/dist/block-editor.js`,
+            //all js files in js the gutenberg blocks plugin src folder
+            `../../plugins/${gutenBlocksName}/src/**/*.js`,
+            //all js files in js the gutenberg blocks plugin dist folder
+            `../../plugins/${gutenBlocksName}/dist/**/*.js`,
+            //all js files in js the gutenberg blocks plugin build folder
+            `../../plugins/${gutenBlocksName}/build/**/*.js`,
+            //all js files in js assets folder
+            `${assetsUri}/js/*/**/*.js`,
+            //all html files from root
+            ...to("./$dir/**/*.html"),
+            //all html files at root
+            './*.html',
+            //all php files from root
+            ...to("./$dir/**/*.php"),
+            //all php files at root
+            './*.php',
+        ]))
+        //set the location for where the unminimized file should be stored
+        .pipe(gulp.dest(`${assetsUri}/styles`))
+        //compress css and mesh equal rules
+        .pipe(cleanCSS({ level: { 2: { restructureRules: true } } }))
+        //add .min to the file name
+        .pipe(rename({ suffix: '.min' }))
+        //set the location for where the minimized file should be stored
+        .pipe(gulp.dest(`${assetsUri}/styles`));
+
     done();
 } );
 
