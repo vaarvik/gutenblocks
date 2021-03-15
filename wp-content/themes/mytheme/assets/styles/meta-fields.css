@@ -2,16 +2,16 @@
 
 /**
  *
- * ███████╗██████╗ ██╗████████╗ ██████╗ ██████╗
- * ██╔════╝██╔══██╗██║╚══██╔══╝██╔═══██╗██╔══██╗
- * █████╗  ██║  ██║██║   ██║   ██║   ██║██████╔╝
- * ██╔══╝  ██║  ██║██║   ██║   ██║   ██║██╔══██╗
- * ███████╗██████╔╝██║   ██║   ╚██████╔╝██║  ██║
- * ╚══════╝╚═════╝ ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝
+ * ███╗   ███╗███████╗████████╗ █████╗     ███████╗██╗███████╗██╗     ██████╗ ███████╗
+ * ████╗ ████║██╔════╝╚══██╔══╝██╔══██╗    ██╔════╝██║██╔════╝██║     ██╔══██╗██╔════╝
+ * ██╔████╔██║█████╗     ██║   ███████║    █████╗  ██║█████╗  ██║     ██║  ██║███████╗
+ * ██║╚██╔╝██║██╔══╝     ██║   ██╔══██║    ██╔══╝  ██║██╔══╝  ██║     ██║  ██║╚════██║
+ * ██║ ╚═╝ ██║███████╗   ██║   ██║  ██║    ██║     ██║███████╗███████╗██████╔╝███████║
+ * ╚═╝     ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝    ╚═╝     ╚═╝╚══════╝╚══════╝╚═════╝ ╚══════╝
  *
  *
  * This sheet contains:
- * * All the SASS files that should be included in the editor view
+ * * All the SASS files that should be included in the editor view for the meta fields
  *
  * The file/folder structure follows the basic guidelines of SMACSS. In addition to the default categories there has also been added Global (storing SCSS variables) and Utilities (storing general helper classes).
 
@@ -213,7 +213,7 @@ html {
  * =========================
  */
 
-.repeater__item.reference {
+.mt-repeater__item.mt-reference {
   display: none;
 }
 

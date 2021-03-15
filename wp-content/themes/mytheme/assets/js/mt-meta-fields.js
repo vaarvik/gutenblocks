@@ -27,11 +27,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   function addRepeaterEvents() {
     var repeaterParent = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
     if (!repeaterParent) repeaterParent = document;
-    var repeaters = repeaterParent.querySelectorAll(".repeater");
+    var repeaters = repeaterParent.querySelectorAll(".mt-repeater");
     repeaters.forEach(function (repeater) {
       var addBtn = repeater.querySelector("#".concat(repeater.id, "-add-btn"));
       var info = repeater.querySelector("#".concat(repeater.id, "-info"));
-      var item = repeater.querySelector("#".concat(repeater.id, "_0-reference"));
+      console.log("#".concat(repeater.id, "-reference"));
+      var item = repeater.querySelector("#".concat(repeater.id, "-reference"));
       info.value = info.dataset.startValue;
       addBtn.addEventListener("click", function (e) {
         addField(info, item, repeater);
@@ -43,9 +44,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     var fields = element.children;
 
     for (var i = 0; i < fields.length; i++) {
-      callback(element, fields[i]);
+      callback(element, fields[i]); //prevent a change of the name or id of a reference element
 
-      if (fields[i].children) {
+      if (fields[i].children && !fields[i].classList.contains('mt-reference')) {
         updateChildrenInfo(fields[i], function (parent, field) {
           callback(parent, field);
         });
@@ -60,35 +61,46 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   function addField(info, item, repeater) {
     //get the ids of the repeater items that should exist and generate a new ID for the new field
     var repeaterIds = JSON.parse(info.value);
-    var thisId = parseInt(Math.max.apply(Math, _toConsumableArray(repeaterIds)) + 1); //clone an item based on a ghost reference, remove the reference class and make adds the generated ID to it
+    var thisId = parseInt(Math.max.apply(Math, _toConsumableArray(repeaterIds)) + 1);
+    var thisKey = repeaterIds.length + 1; //clone an item based on a ghost reference, remove the reference class and make adds the generated ID to it
 
     var itemClone = item.cloneNode(true);
-    itemClone.classList.remove("reference");
-    itemClone.id = "".concat(repeater.id, "_").concat(thisId); //updates the value, name and ID of each childs of repeaters that is imported
+    itemClone.id = "".concat(repeater.id, "_").concat(thisId);
+    itemClone.dataset.slug = "".concat(repeater.id, "_").concat(thisId);
+    itemClone.dataset.itemId = "".concat(thisId);
+    itemClone.dataset.itemKey = "".concat(thisKey);
+    itemClone.classList.remove("mt-reference"); //updates the value, name and ID of each childs of repeaters that is imported
 
     updateChildrenInfo(itemClone, function (parent, field) {
-      field.value = ""; //prevent a change of the name or id of a reference element
+      field.value = "";
 
-      if (field.classList.contains('reference')) return;
+      if (field.classList.contains('mt-reference')) {
+        field.id = "".concat(parent.id, "-reference");
+        return;
+      }
 
-      if (field.classList.contains('repeater__item')) {
+      ;
+
+      if (field.classList.contains('mt-repeater__item')) {
         field.id = "".concat(parent.id, "_0");
         field.name = "".concat(parent.id, "_0");
-      } else if (field.classList.contains('repeater__btn')) {
+      } else if (field.classList.contains('mt-repeater__btn')) {
         field.id = "".concat(parent.id, "-").concat(field.dataset.slug);
         field.name = "".concat(parent.id, "-").concat(field.dataset.slug);
-      } else if (field.classList.contains('repeater__info')) {
+      } else if (field.classList.contains('mt-repeater__info')) {
         field.id = "".concat(parent.id, "-").concat(field.dataset.slug);
         field.name = "".concat(parent.id);
         field.value = "[0]"; //set the default array size of the new repeater info
+      } else if (field.classList.contains('mt-label')) {
+        field.htmlFor = "".concat(parent.id, "__").concat(field.dataset.slug);
       } else {
         field.id = "".concat(parent.id, "__").concat(field.dataset.slug);
         field.name = "".concat(parent.id, "__").concat(field.dataset.slug);
       }
     }); //add events for the buttons nested repeaters in the cloned repeater
 
-    if (itemClone.querySelector(".repeater")) {
-      var cloneRepeaters = itemClone.querySelectorAll(".repeater");
+    if (itemClone.querySelector(".mt-repeater")) {
+      var cloneRepeaters = itemClone.querySelectorAll(".mt-repeater");
       cloneRepeaters.forEach(function (element) {
         addRepeaterEvents(itemClone);
       });
