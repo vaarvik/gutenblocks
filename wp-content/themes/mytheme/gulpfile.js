@@ -150,12 +150,16 @@ gulp.task('styles', function( done ) {
         ]))
         //set the location for where the unminimized file should be stored
         .pipe(gulp.dest(`${assetsUri}/styles`))
+        //sends a stream so that the browsersync can inject css without refresh
+        .pipe(browserSync.stream())
         //compress css and mesh equal rules
         .pipe(cleanCSS({ level: { 2: { restructureRules: true } } }))
         //add .min to the file name
         .pipe(rename({ suffix: '.min' }))
         //set the location for where the minimized file should be stored
-        .pipe(gulp.dest(`${assetsUri}/styles`));
+        .pipe(gulp.dest(`${assetsUri}/styles`))
+        //sends a stream so that the browsersync can inject css without refresh
+        .pipe(browserSync.stream());;
 
     gulp.src(`${assetsUri}/styles/scss/editor.scss`)
         //convert to sass
@@ -190,12 +194,16 @@ gulp.task('styles', function( done ) {
         ]))
         //set the location for where the unminimized file should be stored
         .pipe(gulp.dest(`${assetsUri}/styles`))
+        //sends a stream so that the browsersync can inject css without refresh
+        .pipe(browserSync.stream())
         //compress css and mesh equal rules
         .pipe(cleanCSS({ level: { 2: { restructureRules: true } } }))
         //add .min to the file name
         .pipe(rename({ suffix: '.min' }))
         //set the location for where the minimized file should be stored
-        .pipe(gulp.dest(`${assetsUri}/styles`));
+        .pipe(gulp.dest(`${assetsUri}/styles`))
+        //sends a stream so that the browsersync can inject css without refresh
+        .pipe(browserSync.stream());
 
     gulp.src(`${assetsUri}/styles/scss/meta-fields.scss`)
         //convert to sass
@@ -230,12 +238,16 @@ gulp.task('styles', function( done ) {
         ]))
         //set the location for where the unminimized file should be stored
         .pipe(gulp.dest(`${assetsUri}/styles`))
+        //sends a stream so that the browsersync can inject css without refresh
+        .pipe(browserSync.stream())
         //compress css and mesh equal rules
         .pipe(cleanCSS({ level: { 2: { restructureRules: true } } }))
         //add .min to the file name
         .pipe(rename({ suffix: '.min' }))
         //set the location for where the minimized file should be stored
-        .pipe(gulp.dest(`${assetsUri}/styles`));
+        .pipe(gulp.dest(`${assetsUri}/styles`))
+        //sends a stream so that the browsersync can inject css without refresh
+        .pipe(browserSync.stream());
 
     done();
 } );
@@ -244,11 +256,11 @@ gulp.task('styles', function( done ) {
 gulp.task('browser-sync', function( done ) {
     browserSync.init(
         config.proxy ? config :
-        { server:
-            {
+        {
+            server: {
                 baseDir: "./"
             },
-            port: config.port
+            port: config.port,
         }
     );
 
@@ -260,15 +272,13 @@ gulp.task('reload', function( done ) {
     browserSync.reload();
 
     done();
-} )
+} );
 
 //watch tasks
 gulp.task( "watch", function( done ) {
 	gulp.watch( [
         //all js files in js assets folder
         `${assetsUri}/js/*/**/*.js`,
-        //all scss files in styles assets folder
-        `${assetsUri}/styles/**/*.scss`,
         //all html files from root
         ...to("./$dir/**/*.html"),
         //all html files at root
@@ -277,8 +287,13 @@ gulp.task( "watch", function( done ) {
         ...to("./$dir/**/*.php"),
         //all php files at root
         './*.php',
-    ],
-    gulp.series( fileHandling, "reload" ) );
+    ], gulp.series( 'scripts', "reload" ) );
+
+    //don't refresh if it is scss files cause this is injected
+	gulp.watch( [
+        //all scss files in styles assets folder
+        `${assetsUri}/styles/**/*.scss`,
+    ], gulp.series( 'styles' ) );
 
     process.stdout.write(`
     Gutenberg blocks plugin name: "${gutenBlocksName}"
