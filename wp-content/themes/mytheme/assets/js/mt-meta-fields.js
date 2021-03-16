@@ -31,7 +31,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     repeaters.forEach(function (repeater) {
       var addBtn = repeater.querySelector("#".concat(repeater.id, "-add-btn"));
       var info = repeater.querySelector("#".concat(repeater.id, "-info"));
-      console.log("#".concat(repeater.id, "-reference"));
       var item = repeater.querySelector("#".concat(repeater.id, "-reference"));
       info.value = info.dataset.startValue;
       addBtn.addEventListener("click", function (e) {
@@ -100,10 +99,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     }); //add events for the buttons nested repeaters in the cloned repeater
 
     if (itemClone.querySelector(".mt-repeater")) {
-      var cloneRepeaters = itemClone.querySelectorAll(".mt-repeater");
-      cloneRepeaters.forEach(function (element) {
-        addRepeaterEvents(itemClone);
-      });
+      addRepeaterEvents(itemClone);
     } //add the clone to the DOM after the last repeater
 
 

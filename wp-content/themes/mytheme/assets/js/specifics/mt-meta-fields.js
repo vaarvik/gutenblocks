@@ -17,7 +17,6 @@
 		repeaters.forEach(repeater => {
 			const addBtn = repeater.querySelector(`#${repeater.id}-add-btn`);
 			const info = repeater.querySelector(`#${repeater.id}-info`);
-			console.log(`#${repeater.id}-reference`);
 			let item = repeater.querySelector(`#${repeater.id}-reference`);
 			info.value = info.dataset.startValue;
 			addBtn.addEventListener("click", function(e) {
@@ -90,10 +89,7 @@
 
 		//add events for the buttons nested repeaters in the cloned repeater
 		if (itemClone.querySelector(".mt-repeater")) {
-			const cloneRepeaters = itemClone.querySelectorAll(".mt-repeater");
-			cloneRepeaters.forEach(element => {
-				addRepeaterEvents(itemClone);
-			});
+			addRepeaterEvents(itemClone);
 		}
 
 		//add the clone to the DOM after the last repeater
