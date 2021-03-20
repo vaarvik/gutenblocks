@@ -98,7 +98,7 @@ class mt_meta_field {
 		if( is_string( $field_classes ) ) {
 			$field_classes = explode( " ", $field_classes );
 		}
-		array_push( $field_classes, "mt-field" );
+		array_push( $field_classes, $this->args['type'] !== "repeater" && $this->args['type'] !== "group" ? "mt-field" : "" );
 		$field_classes = implode( " ", $field_classes );
 
 		if( is_string( $label_classes ) ) {
@@ -111,7 +111,7 @@ class mt_meta_field {
 			case "input" :
 				echo <<<HTML
 					<label for="{$slug}" class="{$label_classes}" data-slug="{$mini_slug}">{$title}</label>
-					<input id="{$slug}" class="{$field_classes}" name="{$slug}" value="{$meta_value}" data-slug="{$mini_slug}" />
+					<input id="{$slug}" class="{$field_classes}" name="{$slug}" value="{$meta_value}" type="text" data-slug="{$mini_slug}" />
 				HTML;
 				break;
 			case "url" :

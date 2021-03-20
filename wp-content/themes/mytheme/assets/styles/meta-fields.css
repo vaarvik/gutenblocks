@@ -76,32 +76,37 @@ Finally, Theme rules are similar to state rules in that they describe how module
   display: none;
 }
 
-.mt-field input.mt-field {
-  font-family: 'Lato', sans-serif;
-  color: #333;
-  font-size: 14px;
-  margin: 4px 0 8px;
-  padding: 8px;
-  border-radius: 2px;
+.inside .mt-field {
   background-color: white;
   border: 1px solid #8d8d8d;
+  border-radius: 2px;
+  color: #333;
   display: block;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  line-height: 2;
+  margin: 4px 0 8px;
+  min-height: 30px;
+  padding: 3px 8px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  width: 200px;
 }
 
-.mt-field input.mt-field:focus {
-  outline: none;
-  border-color: #505050;
+.inside .mt-field:focus {
+  border-color: #007cba;
+  -webkit-box-shadow: 0 0 0 1px #007cba;
+  box-shadow: 0 0 0 1px #007cba;
+  outline: 2px solid transparent;
 }
 
 .mt-label {
   display: block;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
+  font-weight: 600;
   margin: 0;
   text-transform: uppercase;
-  font-weight: 600;
 }
 
 .mt-title {
