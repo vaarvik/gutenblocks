@@ -15,6 +15,7 @@
 		if(!repeaterParent) repeaterParent = document;
 		const repeaters = repeaterParent.querySelectorAll(".mt-repeater");
 		repeaters.forEach(repeater => {
+			console.log(`#${repeater.id}-add-btn`)
 			const addBtn = repeater.querySelector(`#${repeater.id}-add-btn`);
 			const info = repeater.querySelector(`#${repeater.id}-info`);
 			let item = repeater.querySelector(`#${repeater.id}-reference`);
@@ -60,6 +61,8 @@
 		updateChildrenInfo(itemClone, function (parent, field) {
 			field.value = "";
 
+			if (field.classList.contains('mt-btn-group')) return;
+
 			if (field.classList.contains('mt-reference')) {
 				field.id 				= `${parent.id}-reference`;
 				return;
@@ -72,6 +75,10 @@
 			else if (field.classList.contains('mt-repeater__btn')) {
 				field.id 	= `${parent.id}-${field.dataset.slug}`;
 				field.name 	= `${parent.id}-${field.dataset.slug}`;
+				if (parent.classList.contains('mt-btn-group')) {
+					field.id 	= `${parent.parentNode.id}-${field.dataset.slug}`;
+					field.name 	= `${parent.parentNode.id}-${field.dataset.slug}`;
+				}
 			}
 			else if (field.classList.contains('mt-repeater__info')) {
 				field.id 	= `${parent.id}-${field.dataset.slug}`;

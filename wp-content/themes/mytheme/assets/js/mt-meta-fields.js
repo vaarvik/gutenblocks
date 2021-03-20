@@ -29,6 +29,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     if (!repeaterParent) repeaterParent = document;
     var repeaters = repeaterParent.querySelectorAll(".mt-repeater");
     repeaters.forEach(function (repeater) {
+      console.log("#".concat(repeater.id, "-add-btn"));
       var addBtn = repeater.querySelector("#".concat(repeater.id, "-add-btn"));
       var info = repeater.querySelector("#".concat(repeater.id, "-info"));
       var item = repeater.querySelector("#".concat(repeater.id, "-reference"));
@@ -72,6 +73,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
     updateChildrenInfo(itemClone, function (parent, field) {
       field.value = "";
+      if (field.classList.contains('mt-btn-group')) return;
 
       if (field.classList.contains('mt-reference')) {
         field.id = "".concat(parent.id, "-reference");
@@ -86,6 +88,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       } else if (field.classList.contains('mt-repeater__btn')) {
         field.id = "".concat(parent.id, "-").concat(field.dataset.slug);
         field.name = "".concat(parent.id, "-").concat(field.dataset.slug);
+
+        if (parent.classList.contains('mt-btn-group')) {
+          field.id = "".concat(parent.parentNode.id, "-").concat(field.dataset.slug);
+          field.name = "".concat(parent.parentNode.id, "-").concat(field.dataset.slug);
+        }
       } else if (field.classList.contains('mt-repeater__info')) {
         field.id = "".concat(parent.id, "-").concat(field.dataset.slug);
         field.name = "".concat(parent.id);
