@@ -67,147 +67,6 @@ Finally, Theme rules are similar to state rules in that they describe how module
  */
 
 /**
- *
- *  ██████╗ ██████╗ ██╗      ██████╗ ██████╗ ███████╗
- * ██╔════╝██╔═══██╗██║     ██╔═══██╗██╔══██╗██╔════╝
- * ██║     ██║   ██║██║     ██║   ██║██████╔╝███████╗
- * ██║     ██║   ██║██║     ██║   ██║██╔══██╗╚════██║
- * ╚██████╗╚██████╔╝███████╗╚██████╔╝██║  ██║███████║
- *  ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
- *
- *
- * This sheet contains:
- * * Global color variables
- *
- * This sheet is a part of the Global folder which is not really a part of SMACSS:
- * Global stores variables that can be used all over the document and create a consistency in the style.
-*/
-
-/**
- *
- * ███████╗██╗███████╗███████╗███████╗
- * ██╔════╝██║╚══███╔╝██╔════╝██╔════╝
- * ███████╗██║  ███╔╝ █████╗  ███████╗
- * ╚════██║██║ ███╔╝  ██╔══╝  ╚════██║
- * ███████║██║███████╗███████╗███████║
- * ╚══════╝╚═╝╚══════╝╚══════╝╚══════╝
- *
- *
- * This sheet contains:
- * * Global size variables
- *
- * This sheet is a part of the Global folder which is not really a part of SMACSS:
- * Global stores variables that can be used all over the document and create a consistency in the style.
-*/
-
-html {
-  height: 100%;
-}
-
-/**
- *
- * ████████╗███████╗██╗  ██╗████████╗
- * ╚══██╔══╝██╔════╝╚██╗██╔╝╚══██╔══╝
- *    ██║   █████╗   ╚███╔╝    ██║
- *    ██║   ██╔══╝   ██╔██╗    ██║
- *    ██║   ███████╗██╔╝ ██╗   ██║
- *    ╚═╝   ╚══════╝╚═╝  ╚═╝   ╚═╝
- *
- *
- * This sheet contains:
- * * Global text/font variables
- *
- * This sheet is a part of the Global folder which is not really a part of SMACSS:
- * Global stores variables that can be used all over the document and create a consistency in the style.
-*/
-
-html {
-  font-size: 16px;
-  font-family: "Open Sans", Helvetica, sans-serif;
-  color: #FFFFFF;
-}
-
-/**
- *
- * ███████╗██╗   ██╗███╗   ██╗ ██████╗████████╗██╗ ██████╗ ███╗   ██╗███████╗
- * ██╔════╝██║   ██║████╗  ██║██╔════╝╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝
- * █████╗  ██║   ██║██╔██╗ ██║██║        ██║   ██║██║   ██║██╔██╗ ██║███████╗
- * ██╔══╝  ██║   ██║██║╚██╗██║██║        ██║   ██║██║   ██║██║╚██╗██║╚════██║
- * ██║     ╚██████╔╝██║ ╚████║╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║███████║
- * ╚═╝      ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
- *
- *
- * This sheet contains:
- * * Handy SCSS functions
- *
- * This sheet is a part of the Global folder which is not really a part of SMACSS:
- * Global stores variables that can be used all over the document and create a consistency in the style.
-*/
-
-/**
- * String Replace
- *
- * @param   {string}  $string   The string/character to find
- * @param   {string}  $search   The string that should be searched
- * @param   {string}  $replace  The string to replace the string/character that is found
- *
- * @return  {string}            The new string with the replaced string/character.
- */
-
-/**
- *
- * ███╗   ███╗███████╗██████╗ ██╗ █████╗     ███╗   ███╗██╗██╗  ██╗██╗███╗   ██╗███████╗
- * ████╗ ████║██╔════╝██╔══██╗██║██╔══██╗    ████╗ ████║██║╚██╗██╔╝██║████╗  ██║██╔════╝
- * ██╔████╔██║█████╗  ██║  ██║██║███████║    ██╔████╔██║██║ ╚███╔╝ ██║██╔██╗ ██║███████╗
- * ██║╚██╔╝██║██╔══╝  ██║  ██║██║██╔══██║    ██║╚██╔╝██║██║ ██╔██╗ ██║██║╚██╗██║╚════██║
- * ██║ ╚═╝ ██║███████╗██████╔╝██║██║  ██║    ██║ ╚═╝ ██║██║██╔╝ ██╗██║██║ ╚████║███████║
- * ╚═╝     ╚═╝╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝    ╚═╝     ╚═╝╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝
- *
- *
- * This sheet contains:
- * * Mediaqueries for different media.
- *
- * This sheet is a part of the Utilities folder which is not really a part of SMACSS:
- * General classes/helpers that can be used to extend other classes. Often general styles that can be applied wherever.
- */
-
-/**
- * Check for IE
- */
-
-/**
- * Media queries
- */
-
-/**
- * =========================
- *    || Tablets (landscape)
- * =========================
- * Tablets in landscape mode and less
- */
-
-/**
- * =========================
- *    || Tablets (portrait )
- * =========================
- * Tablets in portrait mode and less, large display smartphones landscape mode and less
- */
-
-/**
- * =========================
- *    || Phones (landscape)
- * =========================
- * Smartphones in landscape mode and less
- */
-
-/**
- * =========================
- *    || Phones (portrait)
- * =========================
- * Smartphones in portrait mode and less
- */
-
-/**
  * =========================
  *    || Base
  * =========================
@@ -217,8 +76,71 @@ html {
   display: none;
 }
 
-@media only screen and (min-width: 600px) {
-  html {
-    font-size: 18px;
-  }
+.mt-field input.mt-field {
+  font-family: 'Lato', sans-serif;
+  color: #333;
+  font-size: 14px;
+  margin: 4px 0 8px;
+  padding: 8px;
+  border-radius: 2px;
+  background-color: white;
+  border: 1px solid #8d8d8d;
+  display: block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.mt-field input.mt-field:focus {
+  outline: none;
+  border-color: #505050;
+}
+
+.mt-label {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.mt-title {
+  font-size: 18px;
+}
+
+.mt-repeater__item {
+  border-bottom: 1px solid #bbbbbb;
+  padding: 16px 0 8px 48px;
+  position: relative;
+}
+
+.mt-repeater__item:last-child {
+  border: 0;
+}
+
+.mt-repeater__item::after {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #d8d8d8;
+  content: attr(data-item-key);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 36px;
+}
+
+.mt-repeater__item .mt-field:first-child {
+  margin-top: 0;
+}
+
+.mt-btn-group {
+  margin-top: 8px;
 }

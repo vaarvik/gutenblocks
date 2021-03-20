@@ -110,21 +110,21 @@ class mt_meta_field {
 		switch ( $this->args['type'] ) {
 			case "input" :
 				echo <<<HTML
-					<input id="{$slug}" class="{$field_classes}" name="{$slug}" value="{$meta_value}" data-slug="{$mini_slug}" />
 					<label for="{$slug}" class="{$label_classes}" data-slug="{$mini_slug}">{$title}</label>
+					<input id="{$slug}" class="{$field_classes}" name="{$slug}" value="{$meta_value}" data-slug="{$mini_slug}" />
 				HTML;
 				break;
 			case "url" :
 				$meta_value = esc_url( $meta_value );
 				echo <<<HTML
-					<input id="mt-field-{$slug}" class="{$field_classes}" name="{$slug}" value="{$meta_value}" type="url" data-slug="{$mini_slug}" />
 					<label for="{$slug}" class="{$label_classes}" data-slug="{$mini_slug}">{$title}</label>
+					<input id="{$slug}" class="{$field_classes}" name="{$slug}" value="{$meta_value}" type="url" data-slug="{$mini_slug}" />
 				HTML;
 				break;
 			case "textarea" :
 				echo <<<HTML
-					<textarea id="{$slug}" class="{$field_classes}" name="{$slug}" data-slug="{$mini_slug}">{$meta_value}</textarea>
 					<label for="{$slug}" class="{$label_classes}" data-slug="{$mini_slug}">{$title}</label>
+					<textarea id="{$slug}" class="{$field_classes}" name="{$slug}" data-slug="{$mini_slug}">{$meta_value}</textarea>
 				HTML;
 				break;
 			case "select" :
@@ -152,7 +152,7 @@ class mt_meta_field {
 				$repeater_json 	= get_post_meta( get_the_ID(), $slug, true ) ? get_post_meta( get_the_ID(), $slug, true ) : '[0]';
 				$repeater_ids	= json_decode( $repeater_json );
 				echo "<div class='mt-repeater {$field_classes}' id='{$slug}' data-slug='{$mini_slug}'>";
-					echo "<p for='{$slug}' class='mt-label {$label_classes}' data-slug='{$mini_slug}'>{$title}</p>";
+					echo "<p for='{$slug}' class='mt-title' data-slug='{$mini_slug}'>{$title}</p>";
 					foreach ( $repeater_ids as $i => $id ) {
 						$repeater_slug = !$is_reference ? "{$slug}_{$id}" : "{$this->args['full-slug']}_{$id}-reference";
 						$i = $i + 1; //make $i start at 1 instead of 0
@@ -167,8 +167,10 @@ class mt_meta_field {
 
 					echo <<<HTML
 						<input type='hidden' class='mt-repeater__info' name='{$slug}' id='{$slug}-info' value='{$repeater_json}' data-slug='info' data-start-value='{$repeater_json}'/>
-						<button class="mt-repeater__btn btn" id="{$slug}-add-btn" data-slug="add-btn">Add</button>
-						<button class="mt-repeater__btn btn" id="{$slug}-remove-btn" data-slug="remove-btn">Remove</button>
+						<div class="mt-btn-group">
+							<button class="mt-repeater__btn btn components-button is-primary" id="{$slug}-add-btn" data-slug="add-btn">Add</button>
+							<button class="mt-repeater__btn btn components-button is-tertiary" id="{$slug}-remove-btn" data-slug="remove-btn">Remove</button>
+						</div>
 					HTML;
 
 					$repeater_slug = !$is_reference ? "{$slug}-reference" : "{$this->args['full-slug']}-reference";

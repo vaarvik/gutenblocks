@@ -64,11 +64,14 @@ Finally, Theme rules are similar to state rules in that they describe how module
  * =========================
  */
 
-@import '01_global/colors.scss';
-@import '01_global/sizes.scss';
-@import '01_global/text.scss';
-@import '01_global/functions.scss';
-@import '01_global/mixins.scss';
+$base-font-size: 16px;
+$base-line-height: 24px;
+
+$font-base: 'Open Sans', Helvetica, sans-serif;
+$font-headings: 'Lato', Helvetica, sans-serif;
+$font-mono: Monaco, Consolas, monospace;
+
+$black: #1c1c1c;
 
 /**
  * =========================
@@ -81,7 +84,63 @@ Finally, Theme rules are similar to state rules in that they describe how module
 }
 
 .mt-field {
- 	#{&}input {
-
+	input#{&} {
+		font-family: 'Lato', sans-serif;
+		color: #333;
+		font-size: 14px;
+		margin: 4px 0 8px;
+		padding: 8px;
+		border-radius: 2px;
+		background-color: rgb(255, 255, 255);
+		border: 1px solid rgb(141, 141, 141);
+		display: block;
+		transition: all 0.3s;
+		&:focus {
+			outline: none;
+			border-color: rgb(80, 80, 80);
+		}
 	}
+}
+
+.mt-label {
+	display: block;
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	margin: 0;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.mt-title {
+	font-size: 18px;
+}
+
+.mt-repeater__item {
+	border-bottom: 1px solid rgb(187, 187, 187);
+	padding: 16px 0 8px 48px;
+	position: relative;
+	&:last-child {
+		border: 0;
+	}
+
+	&::after {
+		align-items: center;
+		background-color: rgb(216, 216, 216);
+		content: attr(data-item-key);
+		display: flex;
+		height: 100%;
+		justify-content: center;
+		left: 0;
+		top: 0;
+		position: absolute;
+		width: 36px;
+	}
+
+	.mt-field:first-child {
+		margin-top: 0;
+	}
+}
+
+.mt-btn-group {
+	margin-top: 8px;
 }
