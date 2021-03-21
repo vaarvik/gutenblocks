@@ -15,6 +15,7 @@ class mt_meta_field {
 	public function __construct( $args, $is_inner_field = false ) {
 		$args['full-slug'] = $args['slug'];
 		$this->args = $args;
+		$this->is_inner_field = $is_inner_field;
 
 		//saving values for repeaters and groups
 		if( !empty( $this->args['fields'] ) ) {
@@ -93,7 +94,7 @@ class mt_meta_field {
 		$mini_slug		= $this->args['slug'];
 		$slug			= !$is_reference ? $this->args['full-slug'] : $this->args['full-slug'] . "-reference";
 		$options		= $this->args['options'] ?? [];
-		$title			= $this->args['title'] ?? null;
+		$title			= !$this->is_inner_field ? false : $this->args['title'];
 
 		if( is_string( $field_classes ) ) {
 			$field_classes = explode( " ", $field_classes );
