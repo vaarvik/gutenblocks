@@ -142,6 +142,9 @@ class mt_meta_field {
 				break;
 			case "group" :
 				echo "<div class='mt-group {$field_classes}' id='{$slug}' data-slug='{$mini_slug}'>";
+					if( $title ) {
+						echo "<p for='{$slug}' class='mt-title' data-slug='{$mini_slug}'>{$title}</p>";
+					}
 					foreach ($this->args['fields'] as $key => $field) {
 						$field_object = new mt_meta_field( $field, true );
 						$field_object->args['full-slug'] = $this->args['full-slug'] . "__" . $field['slug'];
@@ -153,7 +156,9 @@ class mt_meta_field {
 				$repeater_json 	= get_post_meta( get_the_ID(), $slug, true ) ? get_post_meta( get_the_ID(), $slug, true ) : '[0]';
 				$repeater_ids	= json_decode( $repeater_json );
 				echo "<div class='mt-repeater {$field_classes}' id='{$slug}' data-slug='{$mini_slug}'>";
-					echo "<p for='{$slug}' class='mt-title' data-slug='{$mini_slug}'>{$title}</p>";
+					if( $title ) {
+						echo "<p for='{$slug}' class='mt-title' data-slug='{$mini_slug}'>{$title}</p>";
+					}
 					foreach ( $repeater_ids as $i => $id ) {
 						$repeater_slug = !$is_reference ? "{$slug}_{$id}" : "{$this->args['full-slug']}_{$id}-reference";
 						$i = $i + 1; //make $i start at 1 instead of 0

@@ -114,7 +114,18 @@ $black: #1c1c1c;
 }
 
 .mt-title {
+	font-family: $font-headings;
 	font-size: 18px;
+	font-weight: 600;
+	margin-top: 0;
+
+}
+
+.mt-group, .mt-repeater {
+	border: 1px solid rgb(120, 120, 120);
+	margin-right: 16px;
+	padding: 16px 0 16px 16px;
+	border-radius: 2px;
 }
 
 .mt-repeater__item {
@@ -144,5 +155,5 @@ $black: #1c1c1c;
 }
 
 .mt-btn-group {
-	margin-top: 8px;
+	margin-top: 16px;
 }

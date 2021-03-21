@@ -35,7 +35,7 @@ new mt_meta_field( array(
 			'title'		=> __( 'Popover' ),
 		),
 		array(
-			'type'		=> 'repeater',
+			'type'		=> 'group',
 			'slug'		=> 'props',
 			'title'		=> __( 'Props' ),
 			'location'	=> array( 'post' ),
