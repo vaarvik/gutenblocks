@@ -99,7 +99,7 @@ class mt_meta_field {
 		if( is_string( $field_classes ) ) {
 			$field_classes = explode( " ", $field_classes );
 		}
-		array_push( $field_classes, $this->args['type'] !== "repeater" && $this->args['type'] !== "group" ? "mt-field" : "" );
+		array_push( $field_classes, $this->args['type'] !== "repeater" && $this->args['type'] !== "group" ? "mt-field" : "", $this->is_inner_field ? "mt-inner" : "" );
 		$field_classes = implode( " ", $field_classes );
 
 		if( is_string( $label_classes ) ) {

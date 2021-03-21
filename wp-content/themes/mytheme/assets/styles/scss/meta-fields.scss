@@ -121,11 +121,13 @@ $black: #1c1c1c;
 
 }
 
-.mt-group, .mt-repeater {
-	border: 1px solid rgb(120, 120, 120);
-	margin-right: 16px;
-	padding: 16px 0 16px 16px;
-	border-radius: 2px;
+.mt-inner {
+	&.mt-group,
+	&.mt-repeater {
+		border: 1px solid rgb(120, 120, 120);
+		border-radius: 2px;
+		padding: 16px;
+	}
 }
 
 .mt-repeater__item {

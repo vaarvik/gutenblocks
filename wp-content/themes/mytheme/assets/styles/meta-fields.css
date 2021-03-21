@@ -116,11 +116,10 @@ Finally, Theme rules are similar to state rules in that they describe how module
   margin-top: 0;
 }
 
-.mt-group,.mt-repeater {
+.mt-inner.mt-group,.mt-inner.mt-repeater {
   border: 1px solid #787878;
-  margin-right: 16px;
-  padding: 16px 0 16px 16px;
   border-radius: 2px;
+  padding: 16px;
 }
 
 .mt-repeater__item {
