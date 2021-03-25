@@ -1636,3 +1636,9 @@ html {
     width: 33.3%;
   }
 }
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  .code-toolbar.has-scrollbar .toolbar {
+    bottom: 16px;
+  }
+}

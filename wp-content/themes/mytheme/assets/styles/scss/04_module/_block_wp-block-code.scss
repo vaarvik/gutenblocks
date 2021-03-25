@@ -210,6 +210,10 @@ $code-purple: 	#ae81ff;
 	&.has-scrollbar {
 		.toolbar {
 			bottom: 32px;
+
+			@include mobile {
+				bottom: 16px;
+			}
 		}
 	}
 }

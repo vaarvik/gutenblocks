@@ -2347,3 +2347,9 @@ p.is-style-notice.wp-block::after {
     top: 46px;
   }
 }
+
+@media only screen and (hover: none) and (pointer: coarse) {
+  .code-toolbar.has-scrollbar .toolbar {
+    bottom: 16px;
+  }
+}

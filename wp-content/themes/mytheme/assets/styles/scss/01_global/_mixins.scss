@@ -64,6 +64,11 @@
 	}
 }
 
+@mixin mobile {
+	@media only screen and (hover: none) and (pointer: coarse){
+		@content;
+	}
+}
 /**
  * Media queries
  */
