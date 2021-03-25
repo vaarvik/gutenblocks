@@ -626,6 +626,7 @@ html {
   text-transform: uppercase;
   letter-spacing: .3px;
   position: relative;
+  cursor: pointer;
   font-family: "Lato", Helvetica, sans-serif;
   font-weight: 600;
   font-size: 12px;
@@ -706,6 +707,40 @@ html {
   -webkit-box-shadow: initial;
   box-shadow: initial;
   padding: 0;
+}
+
+.btn.popover,.code-toolbar .toolbar button.popover {
+  background-color: #FFFFFF;
+  color: #1C1C1C;
+  cursor: default;
+  font-size: 14px;
+  font-size: 0.77778rem;
+  line-height: 1.333;
+  position: relative;
+  text-transform: none;
+}
+
+.btn.popover::after,.code-toolbar .toolbar button.popover::after {
+  background-color: #0D0D0D;
+  border-radius: 3px;
+  bottom: 50%;
+  color: #FFFFFF;
+  content: attr(data-tooltip);
+  right: 16px;
+  opacity: 0;
+  padding: 8px 12px;
+  pointer-events: none;
+  position: absolute;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition: .15s opacity;
+  transition: .15s opacity;
+  width: 180px;
+  z-index: 1;
+}
+
+.btn.popover:hover::after,.code-toolbar .toolbar button.popover:hover::after {
+  opacity: 1;
 }
 
 .btn__icon {

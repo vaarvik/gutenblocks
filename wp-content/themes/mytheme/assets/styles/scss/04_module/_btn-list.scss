@@ -1,0 +1,42 @@
+/**
+ *
+ * ██████╗ ████████╗███╗   ██╗    ██╗     ██╗███████╗████████╗
+ * ██╔══██╗╚══██╔══╝████╗  ██║    ██║     ██║██╔════╝╚══██╔══╝
+ * ██████╔╝   ██║   ██╔██╗ ██║    ██║     ██║███████╗   ██║
+ * ██╔══██╗   ██║   ██║╚██╗██║    ██║     ██║╚════██║   ██║
+ * ██████╔╝   ██║   ██║ ╚████║    ███████╗██║███████║   ██║
+ * ╚═════╝    ╚═╝   ╚═╝  ╚═══╝    ╚══════╝╚═╝╚══════╝   ╚═╝
+ *
+ *
+ * This sheet contains:
+ * * The btn-list (button list) module
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+.btn-list {
+	align-items: center;
+	display: flex;
+	flex-flow: wrap;
+	margin-bottom: 24px;
+	margin-top: 0;
+
+	@include desktop-up {
+		align-items: flex-start;
+	}
+
+	&.vertical {
+		flex-direction: column;
+
+		.btn-list__item {
+			margin-bottom: 8px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

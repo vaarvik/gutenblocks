@@ -25,6 +25,7 @@
 	text-transform: uppercase;
 	letter-spacing: .3px;
 	position: relative;
+	cursor: pointer;
 	@include font("heading", 600, 12px);
 	&:hover {
 		text-decoration: none;
@@ -87,6 +88,38 @@
 		border: 0;
 		box-shadow: initial;
 		padding: 0;
+	}
+
+	&.popover {
+		background-color: $btn-color;
+		color: $black1;
+		cursor: default;
+		@include font-size(14px);
+		position: relative;
+		text-transform: none;
+
+		&::after {
+			background-color: $black;
+			border-radius: 3px;
+			bottom: 50%;
+			color: $white;
+			content: attr(data-tooltip);
+			right: 16px;
+			opacity: 0;
+			padding: 8px 12px;
+			pointer-events: none;
+			position: absolute;
+			transform: translateX(100%);
+			transition: .15s opacity;
+			width: 180px;
+			z-index: 1;
+		}
+
+		&:hover {
+			&::after {
+				opacity: 1;
+			}
+		}
 	}
 }
 

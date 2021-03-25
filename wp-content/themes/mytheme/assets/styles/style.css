@@ -1017,6 +1017,7 @@ code {
   text-transform: uppercase;
   letter-spacing: .3px;
   position: relative;
+  cursor: pointer;
   font-family: "Lato", Helvetica, sans-serif;
   font-weight: 600;
   font-size: 12px;
@@ -1091,6 +1092,40 @@ code {
   color: #1C1C1C;
 }
 
+.btn.popover,.code-toolbar .toolbar button.popover {
+  background-color: #FFFFFF;
+  color: #1C1C1C;
+  cursor: default;
+  font-size: 14px;
+  font-size: 0.77778rem;
+  line-height: 1.333;
+  position: relative;
+  text-transform: none;
+}
+
+.btn.popover::after,.code-toolbar .toolbar button.popover::after {
+  background-color: #0D0D0D;
+  border-radius: 3px;
+  bottom: 50%;
+  color: #FFFFFF;
+  content: attr(data-tooltip);
+  right: 16px;
+  opacity: 0;
+  padding: 8px 12px;
+  pointer-events: none;
+  position: absolute;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition: .15s opacity;
+  transition: .15s opacity;
+  width: 180px;
+  z-index: 1;
+}
+
+.btn.popover:hover::after,.code-toolbar .toolbar button.popover:hover::after {
+  opacity: 1;
+}
+
 .btn__icon {
   display: block;
   height: 100%;
@@ -1098,6 +1133,53 @@ code {
 
 .btn__icon svg {
   height: 100%;
+}
+
+/**
+ *
+ * ██████╗ ████████╗███╗   ██╗    ██╗     ██╗███████╗████████╗
+ * ██╔══██╗╚══██╔══╝████╗  ██║    ██║     ██║██╔════╝╚══██╔══╝
+ * ██████╔╝   ██║   ██╔██╗ ██║    ██║     ██║███████╗   ██║
+ * ██╔══██╗   ██║   ██║╚██╗██║    ██║     ██║╚════██║   ██║
+ * ██████╔╝   ██║   ██║ ╚████║    ███████╗██║███████║   ██║
+ * ╚═════╝    ╚═╝   ╚═╝  ╚═══╝    ╚══════╝╚═╝╚══════╝   ╚═╝
+ *
+ *
+ * This sheet contains:
+ * * The btn-list (button list) module
+ *
+ * This sheet is a part of the Module folder and follow the Module rules:
+ * A Module is a more discrete component of the page. Modules sit inside Layout components or other Module components.
+ * It is your navigation bars and your carousels and your dialogs and your widgets and so on. Each Module should be
+ * designed to exist as a standalone component.
+ */
+
+.btn-list {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  margin-bottom: 24px;
+  margin-top: 0;
+}
+
+.btn-list.vertical {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.btn-list.vertical .btn-list__item {
+  margin-bottom: 8px;
+}
+
+.btn-list.vertical .btn-list__item:last-child {
+  margin-bottom: 0;
 }
 
 /**
@@ -2304,6 +2386,12 @@ p.is-style-notice.wp-block::after {
 }
 
 @media only screen and (min-width: 1200px) {
+  .btn-list {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+
   .side-widget {
     height: 0;
     margin: 0;
