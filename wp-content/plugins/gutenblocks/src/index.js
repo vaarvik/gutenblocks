@@ -2,7 +2,9 @@
 import './WPComponents/Autocomplete';
 import './WPComponents/AutocompleteComponentBased';
 import './WPBlockEditor/InnerBlocks';
+import './WPBlockEditor/InnerBlocksPassingProps';
 import './WPBlockEditor/InnerBlocksWithAppender';
 import './WPBlockEditor/AlignmentToolbar';
 import './WPBlockEditor/BlockAlignmentControl';
 import './WPBlockEditor/BlockAlignmentMatrixToolbar';
+import './WPBlockEditor/BlockBreadcrumb';
