@@ -12,13 +12,15 @@
 class mt_meta_field {
 	private $args = [];
 
-	public function __construct( $args, $is_inner_field = false ) {
+	public function __construct( $args, $is_inner_field = false, $is_reference = false ) {
 		$args['full-slug'] = $args['slug'];
 		$this->args = $args;
 		$this->is_inner_field = $is_inner_field;
 
 		//saving values for repeaters and groups
-		if( !empty( $this->args['fields'] ) ) {
+		if( !empty( $this->args['fields'] ) && !$is_reference ) {
+			$field_slugs = array_column( $this->args['fields'], "slug" );
+			update_option( $this->is_inner_field ? $this->args['parent-slug'] . "__" . $this->args['slug'] : $this->args['slug'], json_encode( $field_slugs ) );
 			if( $this->args['type'] === "repeater" ) {
 				add_action( 'save_post', [ $this, 'save_repeater_field' ] );
 			} elseif( $this->args['type'] === "group" ) {
@@ -146,7 +148,8 @@ class mt_meta_field {
 						echo "<p for='{$slug}' class='mt-title' data-slug='{$mini_slug}'>{$title}</p>";
 					}
 					foreach ($this->args['fields'] as $key => $field) {
-						$field_object = new mt_meta_field( $field, true );
+						$field['parent-slug'] = $this->is_inner_field ? $mini_slug . "__" . $this->args['parent-slug'] : $mini_slug;
+						$field_object = new mt_meta_field( $field, true, $is_reference );
 						$field_object->args['full-slug'] = $this->args['full-slug'] . "__" . $field['slug'];
 						$field_object->create_field_html( false, false, $is_reference );
 					}
@@ -163,8 +166,9 @@ class mt_meta_field {
 						$repeater_slug = !$is_reference ? "{$slug}_{$id}" : "{$this->args['full-slug']}_{$id}-reference";
 						$i = $i + 1; //make $i start at 1 instead of 0
 						echo "<div class='mt-repeater__item' id='{$slug}_{$id}' data-slug='{$mini_slug}_{$id}' data-item-id='{$id}' data-item-key='{$i}'>";
-						foreach ( $this->args['fields'] as $j => $field ) {
-								$field_object = new mt_meta_field( $field, true );
+							foreach ( $this->args['fields'] as $j => $field ) {
+								$field['parent-slug'] = $this->is_inner_field ? $mini_slug . "__" . $this->args['parent-slug'] : $mini_slug;
+								$field_object = new mt_meta_field( $field, true, $is_reference );
 								$field_object->args['full-slug'] = $this->args['full-slug'] . "_" . $id . "__" . $field['slug'];
 								$field_object->create_field_html( false, false, $is_reference );
 							}
@@ -182,7 +186,8 @@ class mt_meta_field {
 					$repeater_slug = !$is_reference ? "{$slug}-reference" : "{$this->args['full-slug']}-reference";
 					echo "<div class='mt-repeater__item mt-reference' id='{$repeater_slug}' data-slug='{$mini_slug}'>";
 						foreach ( $this->args['fields'] as $key => $field ) {
-							$field_object = new mt_meta_field( $field, true );
+							$field['parent-slug'] = $this->is_inner_field ? $mini_slug . "__" . $this->args['parent-slug'] : $mini_slug;
+							$field_object = new mt_meta_field( $field, true, true );
 							$field_object->args['full-slug'] = $this->args['full-slug'] . "_" . $id . "__" . $field['slug'];
 							$field_object->create_field_html( false, false, true );
 						}
@@ -198,4 +203,33 @@ class mt_meta_field {
 function mt_get_field( $meta_key, $post_id = false ) {
 	if( !$post_id ) $post_id = get_the_ID();
 	return get_post_meta( $post_id, $meta_key, true );
+}
+
+
+function mt_get_fields( $meta_key, $post_id = false ) {
+	if( !$post_id ) $post_id = get_the_ID();
+	$fields_indexes = json_decode( mt_get_field( $meta_key, $post_id ) );
+	$fields			= json_decode( get_option( $meta_key ) );
+	$data 			= array();
+
+	//create the array to be returned based on the fields that are stored in the database
+	foreach ($fields_indexes as $i => $index) {
+		foreach ($fields as $j => $value) {
+			$data[$i][$value] = mt_get_field( $meta_key . "_" . $index . "__" . $value );
+		}
+	}
+
+	//check if the elements in the array has valid values
+	$is_values = false;
+	foreach ( $data as $field ) {
+		foreach ( $field as $key => $value ) {
+			if( $value !== "" ) {
+				$is_values = true;
+				break;
+			}
+		}
+	}
+
+	if( $is_values ) return $data;
+	else return false;
 }

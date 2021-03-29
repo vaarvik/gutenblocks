@@ -95,8 +95,17 @@
 		color: $black1;
 		cursor: default;
 		@include font-size(14px);
+		padding: 5px 12px;
 		position: relative;
 		text-transform: none;
+
+		&.empty {
+			cursor: text;
+
+			&::after {
+				visibility: hidden;
+			}
+		}
 
 		&::after {
 			background-color: $black;

@@ -716,8 +716,17 @@ html {
   font-size: 14px;
   font-size: 0.77778rem;
   line-height: 1.333;
+  padding: 5px 12px;
   position: relative;
   text-transform: none;
+}
+
+.btn.popover.empty,.code-toolbar .toolbar button.popover.empty {
+  cursor: text;
+}
+
+.btn.popover.empty::after,.code-toolbar .toolbar button.popover.empty::after {
+  visibility: hidden;
 }
 
 .btn.popover::after,.code-toolbar .toolbar button.popover::after {
