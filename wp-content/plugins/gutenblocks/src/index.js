@@ -9,3 +9,4 @@ import './WPBlockEditor/BlockAlignmentControl';
 import './WPBlockEditor/BlockAlignmentMatrixToolbar';
 import './WPBlockEditor/BlockBreadcrumb';
 import './WPBlockEditor/BlockControls';
+import './WPBlockEditor/BlockColorsStyleSelector';

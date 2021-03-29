@@ -390,6 +390,70 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])(BLOC
 
 /***/ }),
 
+/***/ "./src/WPBlockEditor/BlockColorsStyleSelector.js":
+/*!*******************************************************!*\
+  !*** ./src/WPBlockEditor/BlockColorsStyleSelector.js ***!
+  \*******************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/WPBlockEditor/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+ //styles that make it look good in the editor
+
+
+var BLOCKNAME = "block-colors-style-selector";
+var BLOCKPATH = "wp-gb/".concat(BLOCKNAME);
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])(BLOCKPATH, {
+  apiVersion: 2,
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])(BLOCKNAME.replace("-", " ").toUpperCase(), 'wp-gb'),
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('The description'),
+  category: 'wp-gb',
+  icon: 'smiley',
+  attributes: {
+    align: {
+      type: "string",
+      default: "center center"
+    }
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["useBlockProps"])(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["BlockColorsStyleSelector"], {
+      BackgroundColor: function BackgroundColor(_ref2) {
+        var children = _ref2.children;
+        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+          style: {
+            backgroundColor: "crimson"
+          }
+        }, children);
+      },
+      TextColor: function TextColor(_ref3) {
+        var children = _ref3.children;
+        return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+          style: {
+            color: "#fff"
+          }
+        }, children);
+      }
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, "The content")));
+  }
+});
+
+/***/ }),
+
 /***/ "./src/WPBlockEditor/BlockControls.js":
 /*!********************************************!*\
   !*** ./src/WPBlockEditor/BlockControls.js ***!
@@ -958,7 +1022,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _WPBlockEditor_BlockAlignmentMatrixToolbar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./WPBlockEditor/BlockAlignmentMatrixToolbar */ "./src/WPBlockEditor/BlockAlignmentMatrixToolbar.js");
 /* harmony import */ var _WPBlockEditor_BlockBreadcrumb__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./WPBlockEditor/BlockBreadcrumb */ "./src/WPBlockEditor/BlockBreadcrumb.js");
 /* harmony import */ var _WPBlockEditor_BlockControls__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./WPBlockEditor/BlockControls */ "./src/WPBlockEditor/BlockControls.js");
+/* harmony import */ var _WPBlockEditor_BlockColorsStyleSelector__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./WPBlockEditor/BlockColorsStyleSelector */ "./src/WPBlockEditor/BlockColorsStyleSelector.js");
 // import './WPComponents/WPComponents';
+
 
 
 
