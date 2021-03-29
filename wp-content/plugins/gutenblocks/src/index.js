@@ -8,3 +8,4 @@ import './WPBlockEditor/AlignmentToolbar';
 import './WPBlockEditor/BlockAlignmentControl';
 import './WPBlockEditor/BlockAlignmentMatrixToolbar';
 import './WPBlockEditor/BlockBreadcrumb';
+import './WPBlockEditor/BlockControls';
