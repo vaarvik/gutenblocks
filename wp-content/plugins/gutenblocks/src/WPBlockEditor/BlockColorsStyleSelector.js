@@ -17,12 +17,6 @@ registerBlockType( BLOCKPATH, {
 	description: __( 'The description' ),
 	category: 'wp-gb',
 	icon: 'smiley',
-	attributes: {
-		align: {
-			type: "string",
-			default: "center center"
-		}
-	},
 
 	edit: ( {attributes} ) => {
 
