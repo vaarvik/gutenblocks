@@ -11,3 +11,4 @@ import './WPBlockEditor/BlockBreadcrumb';
 import './WPBlockEditor/BlockControls';
 import './WPBlockEditor/BlockColorsStyleSelector';
 import './WPBlockEditor/BlockEdit';
+import './WPBlockEditor/BlockIcon';
