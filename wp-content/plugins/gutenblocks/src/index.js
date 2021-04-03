@@ -12,3 +12,5 @@ import './WPBlockEditor/BlockControls';
 import './WPBlockEditor/BlockColorsStyleSelector';
 import './WPBlockEditor/BlockEdit';
 import './WPBlockEditor/BlockIcon';
+import './WPBlockEditor/BlockNavigationDropdown';
+import './WPBlockEditor/BlockVariationPicker';
