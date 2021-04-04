@@ -14,3 +14,5 @@ import './WPBlockEditor/BlockEdit';
 import './WPBlockEditor/BlockIcon';
 import './WPBlockEditor/BlockNavigationDropdown';
 import './WPBlockEditor/BlockVariationPicker';
+import './WPBlockEditor/BlockVerticalAlignmentToolbar';
+import './WPBlockEditor/ColorPaletteControl';
