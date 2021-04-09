@@ -17,3 +17,5 @@ import './WPBlockEditor/BlockVariationPicker';
 import './WPBlockEditor/BlockVerticalAlignmentToolbar';
 import './WPBlockEditor/ColorPaletteControl';
 import './WPBlockEditor/ContrastChecker';
+import './WPBlockEditor/GradientPicker';
+import './WPBlockEditor/ColorGradientControl';
