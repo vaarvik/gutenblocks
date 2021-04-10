@@ -1328,6 +1328,143 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])(BLOC
 
 /***/ }),
 
+/***/ "./src/WPBlockEditor/PanelColorGradientSettings.js":
+/*!*********************************************************!*\
+  !*** ./src/WPBlockEditor/PanelColorGradientSettings.js ***!
+  \*********************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/WPBlockEditor/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+ //styles that make it look good in the editor
+
+
+var BLOCKNAME = "panel-color-gradient-settings";
+var BLOCKPATH = "wp-gb/".concat(BLOCKNAME);
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])(BLOCKPATH, {
+  apiVersion: 2,
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])(BLOCKNAME.replace("-", " ").toUpperCase(), 'wp-gb'),
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('The description'),
+  category: 'wp-gb',
+  icon: 'smiley',
+  attributes: {
+    colorValue1: {
+      type: "string",
+      default: '#00f'
+    },
+    gradientValue1: {
+      type: "string",
+      default: 'linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%)'
+    },
+    colorValue2: {
+      type: "string",
+      default: '#f00'
+    },
+    gradientValue2: {
+      type: "string",
+      default: 'linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%)'
+    }
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["useBlockProps"])(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["__experimentalPanelColorGradientSettings"], {
+      title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])("All ColorGradientControls"),
+      settings: [{
+        colorValue: attributes.colorValue1,
+        gradientValue: attributes.gradientValue1,
+        colors: [{
+          name: 'red',
+          color: '#f00'
+        }, {
+          name: 'white',
+          color: '#fff'
+        }, {
+          name: 'blue',
+          color: '#00f'
+        }],
+        gradients: [{
+          name: 'Vivid cyan blue to vivid purple',
+          gradient: 'linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%)',
+          slug: 'vivid-cyan-blue-to-vivid-purple'
+        }, {
+          name: 'Light green cyan to vivid green cyan',
+          gradient: 'linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%)',
+          slug: 'light-green-cyan-to-vivid-green-cyan'
+        }, {
+          name: 'Luminous vivid amber to luminous vivid orange',
+          gradient: 'linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%)',
+          slug: 'luminous-vivid-amber-to-luminous-vivid-orange'
+        }],
+        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])("Choose a color or a gradient"),
+        onColorChange: function onColorChange(newValue) {
+          return setAttributes({
+            colorValue1: newValue
+          });
+        },
+        onGradientChange: function onGradientChange(newValue) {
+          return setAttributes({
+            gradientValue1: newValue
+          });
+        }
+      }, {
+        colorValue: attributes.colorValue2,
+        gradientValue: attributes.gradientValue2,
+        colors: [{
+          name: 'red',
+          color: '#f00'
+        }, {
+          name: 'white',
+          color: '#fff'
+        }, {
+          name: 'blue',
+          color: '#00f'
+        }],
+        gradients: [{
+          name: 'Vivid cyan blue to vivid purple',
+          gradient: 'linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%)',
+          slug: 'vivid-cyan-blue-to-vivid-purple'
+        }, {
+          name: 'Light green cyan to vivid green cyan',
+          gradient: 'linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%)',
+          slug: 'light-green-cyan-to-vivid-green-cyan'
+        }, {
+          name: 'Luminous vivid amber to luminous vivid orange',
+          gradient: 'linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%)',
+          slug: 'luminous-vivid-amber-to-luminous-vivid-orange'
+        }],
+        label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])("Choose a color or a gradient"),
+        onColorChange: function onColorChange(newValue) {
+          return setAttributes({
+            colorValue2: newValue
+          });
+        },
+        onGradientChange: function onGradientChange(newValue) {
+          return setAttributes({
+            gradientValue2: newValue
+          });
+        }
+      }]
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "...Any child in the bottom of the component")));
+  }
+});
+
+/***/ }),
+
 /***/ "./src/WPBlockEditor/editor.scss":
 /*!***************************************!*\
   !*** ./src/WPBlockEditor/editor.scss ***!
@@ -1631,7 +1768,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _WPBlockEditor_ContrastChecker__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./WPBlockEditor/ContrastChecker */ "./src/WPBlockEditor/ContrastChecker.js");
 /* harmony import */ var _WPBlockEditor_GradientPicker__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./WPBlockEditor/GradientPicker */ "./src/WPBlockEditor/GradientPicker.js");
 /* harmony import */ var _WPBlockEditor_ColorGradientControl__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./WPBlockEditor/ColorGradientControl */ "./src/WPBlockEditor/ColorGradientControl.js");
+/* harmony import */ var _WPBlockEditor_PanelColorGradientSettings__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./WPBlockEditor/PanelColorGradientSettings */ "./src/WPBlockEditor/PanelColorGradientSettings.js");
 // import './WPComponents/WPComponents';
+
 
 
 

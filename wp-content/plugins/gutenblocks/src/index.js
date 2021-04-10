@@ -19,3 +19,4 @@ import './WPBlockEditor/ColorPaletteControl';
 import './WPBlockEditor/ContrastChecker';
 import './WPBlockEditor/GradientPicker';
 import './WPBlockEditor/ColorGradientControl';
+import './WPBlockEditor/PanelColorGradientSettings';
