@@ -1423,6 +1423,72 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])(BLOC
 
 /***/ }),
 
+/***/ "./src/WPBlockEditor/InnerBlocksWithInnerBlockProps.js":
+/*!*************************************************************!*\
+  !*** ./src/WPBlockEditor/InnerBlocksWithInnerBlockProps.js ***!
+  \*************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/WPBlockEditor/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+ //styles that make it look good in the editor
+
+
+var BLOCKNAME = "inner-blocks-with-inner-block-props";
+var BLOCKPATH = "wp-gb/".concat(BLOCKNAME);
+var STYLES = {
+  minHeight: 100,
+  padding: "48px 48px 0 48px",
+  color: "black"
+};
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])(BLOCKPATH, {
+  apiVersion: 2,
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Inner Blocks With Inner Block Props', 'wp-gb'),
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('The description'),
+  category: 'wp-gb',
+  icon: 'smiley',
+  edit: function edit(props) {
+    var ALLOWED_BLOCKS = ['core/paragraph', 'core/image'];
+    var TEMPLATE = [['core/paragraph', {
+      placeholder: 'Enter side content...'
+    }], ['core/image', {}]];
+    var blockProps = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["useBlockProps"])({
+      style: STYLES
+    });
+    var innerBlockProps = Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["__experimentalUseInnerBlocksProps"])({
+      ref: blockProps.ref,
+      className: "unique-class"
+    }, {
+      allowedBlocks: ALLOWED_BLOCKS,
+      template: TEMPLATE
+    });
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", blockProps, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", innerBlockProps, innerBlockProps.children));
+  },
+  save: function save(props) {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["useBlockProps"].save({
+      style: STYLES
+    }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
+      className: "unique-class"
+    }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__["InnerBlocks"].Content, null)));
+  }
+});
+
+/***/ }),
+
 /***/ "./src/WPBlockEditor/PanelColorGradientSettings.js":
 /*!*********************************************************!*\
   !*** ./src/WPBlockEditor/PanelColorGradientSettings.js ***!
@@ -1848,24 +1914,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _WPBlockEditor_InnerBlocks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./WPBlockEditor/InnerBlocks */ "./src/WPBlockEditor/InnerBlocks.js");
 /* harmony import */ var _WPBlockEditor_InnerBlocksPassingProps__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./WPBlockEditor/InnerBlocksPassingProps */ "./src/WPBlockEditor/InnerBlocksPassingProps.js");
 /* harmony import */ var _WPBlockEditor_InnerBlocksWithAppender__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./WPBlockEditor/InnerBlocksWithAppender */ "./src/WPBlockEditor/InnerBlocksWithAppender.js");
-/* harmony import */ var _WPBlockEditor_AlignmentToolbar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./WPBlockEditor/AlignmentToolbar */ "./src/WPBlockEditor/AlignmentToolbar.js");
-/* harmony import */ var _WPBlockEditor_BlockAlignmentControl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./WPBlockEditor/BlockAlignmentControl */ "./src/WPBlockEditor/BlockAlignmentControl.js");
-/* harmony import */ var _WPBlockEditor_BlockAlignmentMatrixToolbar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./WPBlockEditor/BlockAlignmentMatrixToolbar */ "./src/WPBlockEditor/BlockAlignmentMatrixToolbar.js");
-/* harmony import */ var _WPBlockEditor_BlockBreadcrumb__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./WPBlockEditor/BlockBreadcrumb */ "./src/WPBlockEditor/BlockBreadcrumb.js");
-/* harmony import */ var _WPBlockEditor_BlockControls__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./WPBlockEditor/BlockControls */ "./src/WPBlockEditor/BlockControls.js");
-/* harmony import */ var _WPBlockEditor_BlockColorsStyleSelector__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./WPBlockEditor/BlockColorsStyleSelector */ "./src/WPBlockEditor/BlockColorsStyleSelector.js");
-/* harmony import */ var _WPBlockEditor_BlockEdit__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./WPBlockEditor/BlockEdit */ "./src/WPBlockEditor/BlockEdit.js");
-/* harmony import */ var _WPBlockEditor_BlockIcon__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./WPBlockEditor/BlockIcon */ "./src/WPBlockEditor/BlockIcon.js");
-/* harmony import */ var _WPBlockEditor_BlockNavigationDropdown__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./WPBlockEditor/BlockNavigationDropdown */ "./src/WPBlockEditor/BlockNavigationDropdown.js");
-/* harmony import */ var _WPBlockEditor_BlockVariationPicker__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./WPBlockEditor/BlockVariationPicker */ "./src/WPBlockEditor/BlockVariationPicker.js");
-/* harmony import */ var _WPBlockEditor_BlockVerticalAlignmentToolbar__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./WPBlockEditor/BlockVerticalAlignmentToolbar */ "./src/WPBlockEditor/BlockVerticalAlignmentToolbar.js");
-/* harmony import */ var _WPBlockEditor_ColorPaletteControl__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./WPBlockEditor/ColorPaletteControl */ "./src/WPBlockEditor/ColorPaletteControl.js");
-/* harmony import */ var _WPBlockEditor_ContrastChecker__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./WPBlockEditor/ContrastChecker */ "./src/WPBlockEditor/ContrastChecker.js");
-/* harmony import */ var _WPBlockEditor_GradientPicker__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./WPBlockEditor/GradientPicker */ "./src/WPBlockEditor/GradientPicker.js");
-/* harmony import */ var _WPBlockEditor_ColorGradientControl__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./WPBlockEditor/ColorGradientControl */ "./src/WPBlockEditor/ColorGradientControl.js");
-/* harmony import */ var _WPBlockEditor_PanelColorGradientSettings__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./WPBlockEditor/PanelColorGradientSettings */ "./src/WPBlockEditor/PanelColorGradientSettings.js");
-/* harmony import */ var _WPBlockEditor_ImageSizeControl__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./WPBlockEditor/ImageSizeControl */ "./src/WPBlockEditor/ImageSizeControl.js");
+/* harmony import */ var _WPBlockEditor_InnerBlocksWithInnerBlockProps__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./WPBlockEditor/InnerBlocksWithInnerBlockProps */ "./src/WPBlockEditor/InnerBlocksWithInnerBlockProps.js");
+/* harmony import */ var _WPBlockEditor_AlignmentToolbar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./WPBlockEditor/AlignmentToolbar */ "./src/WPBlockEditor/AlignmentToolbar.js");
+/* harmony import */ var _WPBlockEditor_BlockAlignmentControl__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./WPBlockEditor/BlockAlignmentControl */ "./src/WPBlockEditor/BlockAlignmentControl.js");
+/* harmony import */ var _WPBlockEditor_BlockAlignmentMatrixToolbar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./WPBlockEditor/BlockAlignmentMatrixToolbar */ "./src/WPBlockEditor/BlockAlignmentMatrixToolbar.js");
+/* harmony import */ var _WPBlockEditor_BlockBreadcrumb__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./WPBlockEditor/BlockBreadcrumb */ "./src/WPBlockEditor/BlockBreadcrumb.js");
+/* harmony import */ var _WPBlockEditor_BlockControls__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./WPBlockEditor/BlockControls */ "./src/WPBlockEditor/BlockControls.js");
+/* harmony import */ var _WPBlockEditor_BlockColorsStyleSelector__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./WPBlockEditor/BlockColorsStyleSelector */ "./src/WPBlockEditor/BlockColorsStyleSelector.js");
+/* harmony import */ var _WPBlockEditor_BlockEdit__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./WPBlockEditor/BlockEdit */ "./src/WPBlockEditor/BlockEdit.js");
+/* harmony import */ var _WPBlockEditor_BlockIcon__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./WPBlockEditor/BlockIcon */ "./src/WPBlockEditor/BlockIcon.js");
+/* harmony import */ var _WPBlockEditor_BlockNavigationDropdown__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./WPBlockEditor/BlockNavigationDropdown */ "./src/WPBlockEditor/BlockNavigationDropdown.js");
+/* harmony import */ var _WPBlockEditor_BlockVariationPicker__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./WPBlockEditor/BlockVariationPicker */ "./src/WPBlockEditor/BlockVariationPicker.js");
+/* harmony import */ var _WPBlockEditor_BlockVerticalAlignmentToolbar__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./WPBlockEditor/BlockVerticalAlignmentToolbar */ "./src/WPBlockEditor/BlockVerticalAlignmentToolbar.js");
+/* harmony import */ var _WPBlockEditor_ColorPaletteControl__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./WPBlockEditor/ColorPaletteControl */ "./src/WPBlockEditor/ColorPaletteControl.js");
+/* harmony import */ var _WPBlockEditor_ContrastChecker__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./WPBlockEditor/ContrastChecker */ "./src/WPBlockEditor/ContrastChecker.js");
+/* harmony import */ var _WPBlockEditor_GradientPicker__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./WPBlockEditor/GradientPicker */ "./src/WPBlockEditor/GradientPicker.js");
+/* harmony import */ var _WPBlockEditor_ColorGradientControl__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./WPBlockEditor/ColorGradientControl */ "./src/WPBlockEditor/ColorGradientControl.js");
+/* harmony import */ var _WPBlockEditor_PanelColorGradientSettings__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./WPBlockEditor/PanelColorGradientSettings */ "./src/WPBlockEditor/PanelColorGradientSettings.js");
+/* harmony import */ var _WPBlockEditor_ImageSizeControl__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./WPBlockEditor/ImageSizeControl */ "./src/WPBlockEditor/ImageSizeControl.js");
 // import './WPComponents/WPComponents';
+
 
 
 
