@@ -22,3 +22,4 @@ import './WPBlockEditor/GradientPicker';
 import './WPBlockEditor/ColorGradientControl';
 import './WPBlockEditor/PanelColorGradientSettings';
 import './WPBlockEditor/ImageSizeControl';
+import './WPBlockEditor/InspectorAdvancedControls';

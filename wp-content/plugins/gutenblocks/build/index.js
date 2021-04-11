@@ -1489,6 +1489,79 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])(BLOC
 
 /***/ }),
 
+/***/ "./src/WPBlockEditor/InspectorAdvancedControls.js":
+/*!********************************************************!*\
+  !*** ./src/WPBlockEditor/InspectorAdvancedControls.js ***!
+  \********************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/WPBlockEditor/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+ //styles that make it look good in the editor
+
+
+var BLOCKNAME = "inspector-advanced-controls";
+var BLOCKPATH = "wp-gb/".concat(BLOCKNAME);
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__["registerBlockType"])(BLOCKPATH, {
+  apiVersion: 2,
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])(BLOCKNAME.replace("-", " ").toUpperCase(), 'wp-gb'),
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('The description'),
+  category: 'wp-gb',
+  icon: 'smiley',
+  attributes: {
+    user: {
+      type: "string",
+      default: null
+    }
+  },
+  edit: function edit(_ref) {
+    var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", Object(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__["useBlockProps"])(), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__["InspectorAdvancedControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__["SelectControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Select a user'),
+      value: attributes.user,
+      onChange: function onChange(user) {
+        return setAttributes({
+          user: user
+        });
+      },
+      options: [{
+        value: null,
+        label: 'Select a user',
+        disabled: !!attributes.user
+      }, {
+        value: 'andy',
+        label: 'Andy'
+      }, {
+        value: 'betty',
+        label: 'Betty'
+      }, {
+        value: 'charlie',
+        label: 'Charlie'
+      }]
+    })));
+  }
+});
+
+/***/ }),
+
 /***/ "./src/WPBlockEditor/PanelColorGradientSettings.js":
 /*!*********************************************************!*\
   !*** ./src/WPBlockEditor/PanelColorGradientSettings.js ***!
@@ -1932,7 +2005,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _WPBlockEditor_ColorGradientControl__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./WPBlockEditor/ColorGradientControl */ "./src/WPBlockEditor/ColorGradientControl.js");
 /* harmony import */ var _WPBlockEditor_PanelColorGradientSettings__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./WPBlockEditor/PanelColorGradientSettings */ "./src/WPBlockEditor/PanelColorGradientSettings.js");
 /* harmony import */ var _WPBlockEditor_ImageSizeControl__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./WPBlockEditor/ImageSizeControl */ "./src/WPBlockEditor/ImageSizeControl.js");
+/* harmony import */ var _WPBlockEditor_InspectorAdvancedControls__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./WPBlockEditor/InspectorAdvancedControls */ "./src/WPBlockEditor/InspectorAdvancedControls.js");
 // import './WPComponents/WPComponents';
+
 
 
 
