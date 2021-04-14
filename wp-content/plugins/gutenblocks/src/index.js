@@ -23,3 +23,5 @@ import './WPBlockEditor/ColorGradientControl';
 import './WPBlockEditor/PanelColorGradientSettings';
 import './WPBlockEditor/ImageSizeControl';
 import './WPBlockEditor/InspectorAdvancedControls';
+import './WPBlockEditor/InspectorControls';
+import './WPBlockEditor/LinkControl';
