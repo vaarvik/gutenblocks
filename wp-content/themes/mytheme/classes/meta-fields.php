@@ -202,7 +202,7 @@ class mt_meta_field {
 
 function mt_get_field( $meta_key, $post_id = false ) {
 	if( !$post_id ) $post_id = get_the_ID();
-	return get_post_meta( $post_id, $meta_key, true );
+	return htmlspecialchars( get_post_meta( $post_id, $meta_key, true ) );
 }
 
 
